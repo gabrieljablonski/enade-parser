@@ -8,6 +8,8 @@ class Key:
     SPACE = 'space'
     SHIFT = 'shift'
     ALT = 'alt'
+    ENTER = 'enter'
+    ESC = 'esc'
     PRNT_SCRN = 'print screen'
 
     def __init__(self):
@@ -29,8 +31,8 @@ def _join_hotkeys_decorator(f):
     or
         f('hk1+hk2+...')
     """
-    def new_f(*hotkeys):
-        return f(_join_hotkeys(*hotkeys))
+    def new_f(*args, **kwargs):
+        return f(_join_hotkeys(*args), **kwargs)
     return new_f
 
 
@@ -43,6 +45,6 @@ def is_pressed(hotkey):
 
 
 @_join_hotkeys_decorator
-def send_hotkey(hotkey):
+def send_hotkey(hotkey, wait=.05):
     kb.press_and_release(hotkey)
-    sleep(.05)
+    sleep(wait)
