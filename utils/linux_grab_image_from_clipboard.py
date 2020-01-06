@@ -8,7 +8,7 @@ out = check_output('scrot -v'.split())
 if 'not found' in str(out):
     raise Exception(out)
 else:
-    print(f"scrot installation found: {out}")
+    print(f"scrot installation found: {str(out)}")
 
 
 def grab_clipboard():
