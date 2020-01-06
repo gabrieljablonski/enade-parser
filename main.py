@@ -26,21 +26,21 @@ def main():
                 keyboard_grab_activated = not keyboard_grab_activated
                 print(f"keyboard {'de' if not keyboard_grab_activated else ''}activated")
 
-            if not keyboard_grab_activated:
-                continue
-
-            if is_pressed(Key.SPACE):
-                hotkey_pressed = True
-                cv2.imshow('image', capture_picture())
-
-            for hk, tag in TAG_MAPPING.items():
-                if is_pressed(hk):
+            if keyboard_grab_activated:
+                if is_pressed(Key.SPACE):
                     hotkey_pressed = True
-                    modify_selected_text(surround_with, tag=tag)
+                    cv2.imshow('image', capture_picture())
 
-            if is_pressed(REMOVE_TAG):
-                hotkey_pressed = True
-                modify_selected_text(remove_tag)
+                for hk, tag in TAG_MAPPING.items():
+                    if is_pressed(hk):
+                        hotkey_pressed = True
+                        modify_selected_text(surround_with, tag=tag)
+
+                if is_pressed(REMOVE_TAG):
+                    hotkey_pressed = True
+                    modify_selected_text(remove_tag)
+            if hotkey_pressed:
+                last_action = time()
 
 
 if __name__ == '__main__':
