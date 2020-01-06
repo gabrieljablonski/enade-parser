@@ -11,8 +11,12 @@ else:
     del ImageGrab
 
     def grab_clipboard():
-        send_hotkey(Key.ALT, Key.PRNT_SCRN)
+        send_hotkey(Key.ALT, Key.PRNT_SCRN, wait=.5)
         return _grab_clipboard()
+
+
+WIN_NAME_CROP = 'Select region to crop'
+WIN_NAME_CAPTURE = 'Image captured'
 
 
 class ImageGrabException(Exception):
@@ -47,5 +51,7 @@ def capture_picture():
         raise ImageGrabException('Failed to grab image.\n', e)
 
     image = cv2.cvtColor(img_grab, cv2.COLOR_RGB2BGR)
-    roi = cv2.selectROI('Select region to crop', image)
+    roi = cv2.selectROI(WIN_NAME_CROP, image)
+    if roi[2:] == (0, 0):  # (0, 0, 0, 0) if no ROI is selected; (x, y, 0, 0) if clicked but no area was selected
+        return None
     return best_crop(image, roi)
