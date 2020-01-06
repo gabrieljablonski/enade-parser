@@ -17,15 +17,15 @@ class Tag:
 
 TAG_HOTKEY_PREFIX = 'ctrl+alt'
 BASE_MAPPING = {
-    Key.A: Tag.CENTERED_HEADER,
-    Key.S: Tag.PORQUE,
-    Key.D: Tag.TXT_HEADER,
-    Key.F: Tag.PARAGRAPH,
-    Key.G: Tag.IMG_SOURCE,
-    Key.H: Tag.TXT_SOURCE,
-    Key.J: Tag.QUESTION_BODY,
-    Key.K: Tag.QUESTION_OPTIONS,
-    Key.L: Tag.ANSWER_OPTIONS,
+    Key.Z: Tag.CENTERED_HEADER,
+    Key.X: Tag.PORQUE,
+    Key.V: Tag.TXT_HEADER,
+    Key.B: Tag.IMG_SOURCE,
+    Key.A: Tag.PARAGRAPH,
+    Key.S: Tag.QUESTION_BODY,
+    Key.F: Tag.ANSWER_OPTIONS,
+    Key.G: Tag.TXT_SOURCE,
+    Key.H: Tag.QUESTION_OPTIONS,
 }
 
 TAG_MAPPING = {
