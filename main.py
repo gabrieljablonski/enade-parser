@@ -9,6 +9,10 @@ from utils.image import capture_picture
 
 ACTION_DELAY = 1.
 
+# BadDrawable:
+# sudo nano /etc/environment
+# QT_X11_NO_MITSHM=1
+
 
 def main():
     keyboard_grab_activated = True
@@ -28,15 +32,18 @@ def main():
 
             if keyboard_grab_activated:
                 if is_pressed(Key.SPACE):
+                    print("Capturing image.")
                     hotkey_pressed = True
                     cv2.imshow('image', capture_picture())
 
                 for hk, tag in TAG_MAPPING.items():
                     if is_pressed(hk):
+                        print(f"Inserting {tag}.")
                         hotkey_pressed = True
                         modify_selected_text(surround_with, tag=tag)
 
                 if is_pressed(REMOVE_TAG):
+                    print(f"Removed tag.")
                     hotkey_pressed = True
                     modify_selected_text(remove_tag)
             if hotkey_pressed:
