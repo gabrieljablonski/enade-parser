@@ -3,7 +3,7 @@ import numpy as np
 from platform import system
 
 if system() == 'Linux':
-    ...
+    from .linux_grab_image_from_clipboard import grab_clipboard
 else:
     from PIL import ImageGrab
     from hotkeys import send_hotkey, Key
