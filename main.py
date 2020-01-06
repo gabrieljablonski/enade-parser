@@ -14,11 +14,11 @@ pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tessera
 
 def is_pressed(hotkey):
     global last_action
-    check = kb.is_pressed(hotkey)
-    if check:
+    pressed = kb.is_pressed(hotkey)
+    if pressed:
         last_action = now
         kb.release(hotkey)
-    return check
+    return pressed
 
 
 def modify_selected_text(modify, *args, **kwargs):
