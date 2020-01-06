@@ -47,7 +47,7 @@ def best_crop(img, roi, grayscale=False):
     return auto_crop(manual_crop(img, roi), grayscale=grayscale)
 
 
-def capture_picture(grayscale=False):
+def capture_image(grayscale=False):
     try:
         img_grab = grab_image_from_clipboard()
     except (IsADirectoryError, FileNotFoundError, IOError) as e:

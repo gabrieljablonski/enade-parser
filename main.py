@@ -2,7 +2,7 @@ import cv2
 from time import time, sleep
 
 from utils.text import modify_selected_text, surround_with, remove_tag, copy
-from utils.image import capture_picture, WIN_NAME_CAPTURE, WIN_NAME_CROP
+from utils.image import capture_image, WIN_NAME_CAPTURE, WIN_NAME_CROP
 from utils.ocr import get_text_in_image
 from hotkeys import is_pressed, Key
 from xml_tags import TAG_MAPPING, REMOVE_TAG, NO_PADDING
@@ -34,7 +34,7 @@ def check_image_operations(image_open, hotkey_pressed):
             print('Finish the operation with the last image first.')
         else:
             print('Capturing image.')
-            img = capture_picture()
+            img = capture_image()
             if img is None:
                 print('Canceled image capture.')
             else:
@@ -65,7 +65,7 @@ def check_ocr_operations(hotkey_pressed):
     if is_pressed(Key.CTRL, Key.ALT, Key.SPACE):
         hotkey_pressed = True
         print('Capturing image for text extraction.')
-        img = capture_picture(grayscale=True)
+        img = capture_image(grayscale=True)
         if img is None:
             print('Canceled image capture.')
             return hotkey_pressed
