@@ -45,6 +45,6 @@ def is_pressed(hotkey):
 
 
 @_join_hotkeys_decorator
-def send_hotkey(hotkey, wait=.05):
+def send_hotkey(hotkey, wait=.1):
     kb.press_and_release(hotkey)
     sleep(wait)
