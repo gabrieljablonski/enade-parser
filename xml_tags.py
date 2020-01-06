@@ -2,9 +2,9 @@ from hotkeys import Key
 
 
 class Tag:
-    CENTERED_HEADER = 'header'
-    PORQUE = 'porque'
+    HEADER = 'header'  # centered
     TXT_HEADER = 'text_header'  # left aligned
+    PORQUE = 'porque'
     PARAGRAPH = 'paragraph'
 
     IMG_SOURCE = 'img_src'
@@ -14,18 +14,25 @@ class Tag:
     QUESTION_OPTIONS = 'question_options'
     ANSWER_OPTIONS = 'answers'
 
+    ITALIC = 'i'
+    BOLD = 'b'
+
 
 TAG_HOTKEY_PREFIX = 'ctrl+alt'
 BASE_MAPPING = {
-    Key.Z: Tag.CENTERED_HEADER,
+    Key.Z: Tag.HEADER,
     Key.X: Tag.PORQUE,
     Key.V: Tag.TXT_HEADER,
-    Key.B: Tag.IMG_SOURCE,
     Key.A: Tag.PARAGRAPH,
     Key.S: Tag.QUESTION_BODY,
     Key.F: Tag.ANSWER_OPTIONS,
     Key.G: Tag.TXT_SOURCE,
     Key.H: Tag.QUESTION_OPTIONS,
+    Key.J: Tag.IMG_SOURCE,
+
+    Key.I: Tag.ITALIC,
+    Key.B: Tag.BOLD,
+
 }
 
 TAG_MAPPING = {
@@ -34,3 +41,4 @@ TAG_MAPPING = {
 }
 
 REMOVE_TAG = f"{TAG_HOTKEY_PREFIX}+{Key.R}"
+NO_PADDING = Tag.ITALIC, Tag.BOLD
