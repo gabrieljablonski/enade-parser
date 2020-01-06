@@ -15,7 +15,7 @@ class Tag:
     ANSWER_OPTIONS = 'answers'
 
 
-TAG_PREFIX = 'ctrl+alt'
+TAG_HOTKEY_PREFIX = 'ctrl+alt'
 BASE_MAPPING = {
     Key.A: Tag.CENTERED_HEADER,
     Key.S: Tag.PORQUE,
@@ -29,8 +29,8 @@ BASE_MAPPING = {
 }
 
 TAG_MAPPING = {
-    f"{TAG_PREFIX}+{k}": v
+    f"{TAG_HOTKEY_PREFIX}+{k}": v
     for k, v in BASE_MAPPING.items()
 }
 
-REMOVE_TAG = f"{TAG_PREFIX}+{Key.R}"
+REMOVE_TAG = f"{TAG_HOTKEY_PREFIX}+{Key.R}"
