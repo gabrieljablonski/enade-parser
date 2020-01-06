@@ -1,10 +1,11 @@
 import cv2
 from time import time, sleep
 
+from utils.text import modify_selected_text, surround_with, remove_tag, copy
+from utils.image import capture_picture, WIN_NAME_CAPTURE, WIN_NAME_CROP
+from utils.ocr import get_text_in_image
 from hotkeys import is_pressed, Key
 from xml_tags import TAG_MAPPING, REMOVE_TAG, NO_PADDING
-from utils.text import modify_selected_text, surround_with, remove_tag
-from utils.image import capture_picture, WIN_NAME_CAPTURE, WIN_NAME_CROP
 
 
 ACTION_DELAY = 1.
@@ -32,9 +33,8 @@ def check_image_operations(image_open, hotkey_pressed):
         if image_open:
             print('Finish the operation with the last image first.')
         else:
-            print("Capturing image.")
+            print('Capturing image.')
             img = capture_picture()
-            cv2.destroyWindow(WIN_NAME_CROP)
             if img is None:
                 print('Canceled image capture.')
             else:
@@ -47,15 +47,32 @@ def check_image_operations(image_open, hotkey_pressed):
 def check_tag_operations(hotkey_pressed):
     for hk, tag in TAG_MAPPING.items():
         if is_pressed(hk):
-            print(f"Inserting {tag}.")
             hotkey_pressed = True
-            pad = tag not in NO_PADDING
-            modify_selected_text(surround_with, tag=tag, pad_nl=pad)
+            print(f"Inserting `{tag}` tag.")
+            pad_nl = tag not in NO_PADDING
+            modify_selected_text(surround_with, tag=tag, pad_nl=pad_nl)
+            break
 
     if is_pressed(REMOVE_TAG):
-        print(f"Removed tag.")
         hotkey_pressed = True
+        print('Removed tag.')
         modify_selected_text(remove_tag)
+
+    return hotkey_pressed
+
+
+def check_ocr_operations(hotkey_pressed):
+    if is_pressed(Key.CTRL, Key.ALT, Key.SPACE):
+        hotkey_pressed = True
+        print('Capturing image for text extraction.')
+        img = capture_picture(grayscale=True)
+        if img is None:
+            print('Canceled image capture.')
+            return hotkey_pressed
+
+        txt = get_text_in_image(img)
+        copy(txt)
+        print(f"Copied text to clipboard: {repr(txt)}")
 
     return hotkey_pressed
 
@@ -78,6 +95,7 @@ def main():
             if keyboard_grab_activated:
                 image_open, hotkey_pressed = check_image_operations(image_open, hotkey_pressed)
                 hotkey_pressed = check_tag_operations(hotkey_pressed)
+                hotkey_pressed = check_ocr_operations(hotkey_pressed)
             if hotkey_pressed:
                 last_action = time()
 
