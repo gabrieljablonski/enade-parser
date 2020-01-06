@@ -7,6 +7,8 @@ from PIL import ImageGrab
 from pyperclip import copy, paste
 from time import time, sleep
 
+from xml_tags import TAG_MAPPING, REMOVE_TAG
+
 
 # REMINDER TO DOWNLOAD `por.traineddata`
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
@@ -32,7 +34,6 @@ def modify_selected_text(modify, *args, **kwargs):
 def remove_tag(txt):
     """
         removes outmost pair of opening and closing tags
-
         remove_tag("<tag>txt</tag>") -> "txt"
     """
     txt = txt.strip()
@@ -66,7 +67,6 @@ def dedent_text(txt, indent_level=2):
 def surround_with(txt, tag, pad_nl=True, indent_level=2):
     """
         surrounds text with provided tag in XML style
-
         surround_with("txt", "tag") -> "<tag>txt</tag>"
     """
     txt = txt.strip()
@@ -123,8 +123,9 @@ while True:
         if is_pressed('space'):
             capture_picture()
 
-        if is_pressed('ctrl+alt+h'):
-            modify_selected_text(surround_with, tag='h1')
+        for hk, tag in TAG_MAPPING.items():
+            if is_pressed(hk):
+                modify_selected_text(surround_with, tag=tag)
 
-        if is_pressed('ctrl+alt+r'):
+        if is_pressed(REMOVE_TAG):
             modify_selected_text(remove_tag)
