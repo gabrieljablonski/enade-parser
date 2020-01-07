@@ -20,7 +20,7 @@ class Key:
 Key = Key()
 
 
-def _join_hotkeys(*hotkeys):
+def join_hotkeys(*hotkeys):
     return '+'.join(hotkeys)
 
 
@@ -32,7 +32,7 @@ def _join_hotkeys_decorator(f):
         f('hk1+hk2+...')
     """
     def new_f(*args, **kwargs):
-        return f(_join_hotkeys(*args), **kwargs)
+        return f(join_hotkeys(*args), **kwargs)
     return new_f
 
 
