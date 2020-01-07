@@ -4,6 +4,9 @@ from pyperclip import copy, paste
 from hotkeys import send_hotkey, Key
 
 
+DEFAULT_INDENT_LEVEL = 4
+
+
 def modify_selected_text(modify, *args, **kwargs):
     send_hotkey(Key.CTRL, Key.C)
     text = paste()
@@ -12,13 +15,13 @@ def modify_selected_text(modify, *args, **kwargs):
     send_hotkey(Key.CTRL, Key.V)
 
 
-def indent_text(txt, indent_level=2):
+def indent_text(txt, indent_level=DEFAULT_INDENT_LEVEL):
     ind = ' ' * indent_level
     lines = txt.split('\n')
     return f"{ind}{ind.join(lines)}"
 
 
-def dedent_text(txt, indent_level=2):
+def dedent_text(txt, indent_level=DEFAULT_INDENT_LEVEL):
     ind = ' ' * indent_level
     out_lines = []
     for line in txt.split('\n'):
@@ -28,7 +31,7 @@ def dedent_text(txt, indent_level=2):
     return '\n'.join(out_lines)
 
 
-def surround_with(txt, tag, pad_nl=True, indent_level=2):
+def surround_with(txt, tag, pad_nl=True, indent_level=DEFAULT_INDENT_LEVEL):
     """
         surrounds text with provided tag in XML style
         surround_with("txt", "tag") -> "<tag>txt</tag>"
