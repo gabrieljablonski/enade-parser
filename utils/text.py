@@ -50,10 +50,52 @@ def surround_with(text, tag, pad_nl=True, indent_level=DEFAULT_INDENT_LEVEL):
     if tag == Tag.LINK:
         if not text.startswith('<') and not text.endswith('/>'):
             print('Selected text is invalid. It should be: `<link/>')
-            return txt
-        txt = txt[1:-2]
-    padding = '\n' if pad_nl else ''
-    content = txt if not padding else indent_text(txt, indent_level)
+            return text
+        text = text[1:-2]
+
+    if tag in (Tag.QUESTION_OPTIONS, Tag.ANSWER_OPTIONS):
+        if tag == Tag.QUESTION_OPTIONS:
+            fmt = """
+                I. option 1
+                II. option 2
+                III. option 3
+                ...
+            """
+            pattern = r'^I\. ([\s\S]*)\nII\. ([\s\S]*)\nIII\. ([\s\S]*?)(?:\nIV\. ([\s\S]*?))?(?:\nV\. ([\s\S]*?))?$'
+        else:
+            fmt = """
+                A option 1
+                B option 2
+                C option 3
+
+                D option 4
+                
+                or
+                
+                A) option 1
+                B) option 2
+                C) option 3
+                D) option 4
+            """
+            pattern = r'^\(?A\)? ([\s\S]*)[\s]+\(?B\)? ([\s\S]*)[\s]+\(?C\)? ([\s\S]*)[\s]+\(?D\)? ([\s\S]*)[\s]+\(?E\)? ([\s\S]*)$'
+        options = re.match(pattern, sanitize(text))
+        if options is None:
+            msg = f"""
+                Failed to match options. Format should be:
+                ```
+                {fmt.strip()}
+                ```
+                Each option may contain new lines within it.
+            """
+            print(sanitize(msg))
+            return text
+        text = CRLF.join(
+            surround_with(option, tag=Tag.OPTION)
+            for option in options.groups() if option is not None
+        )
+
+    padding = CRLF if pad_nl else ''
+    content = text if not padding else indent_text(text, indent_level)
     return f"""<{tag}>{padding}{content}{padding}</{tag}>"""
 
 
