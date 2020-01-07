@@ -1,4 +1,4 @@
-from hotkeys import Key
+from hotkeys import Key, join_hotkeys
 
 
 class Tag:
@@ -6,6 +6,7 @@ class Tag:
     TXT_HEADER = 'text_header'  # left aligned
     PORQUE = 'porque'
     PARAGRAPH = 'paragraph'
+    LINK = 'link'
 
     IMG_SOURCE = 'img_src'
     TXT_SOURCE = 'txt_src'
@@ -18,7 +19,6 @@ class Tag:
     BOLD = 'b'
 
 
-TAG_HOTKEY_PREFIX = 'ctrl+alt'
 BASE_MAPPING = {
     Key.Z: Tag.HEADER,
     Key.X: Tag.PORQUE,
@@ -29,16 +29,17 @@ BASE_MAPPING = {
     Key.G: Tag.TXT_SOURCE,
     Key.H: Tag.QUESTION_OPTIONS,
     Key.J: Tag.IMG_SOURCE,
+    Key.L: Tag.LINK,
 
     Key.I: Tag.ITALIC,
     Key.B: Tag.BOLD,
-
 }
 
+TAG_HOTKEY_PREFIX = Key.CTRL, Key.ALT
 TAG_MAPPING = {
-    f"{TAG_HOTKEY_PREFIX}+{k}": v
+    join_hotkeys(*TAG_HOTKEY_PREFIX, k): v
     for k, v in BASE_MAPPING.items()
 }
+REMOVE_TAG = join_hotkeys(*TAG_HOTKEY_PREFIX, Key.R)
 
-REMOVE_TAG = f"{TAG_HOTKEY_PREFIX}+{Key.R}"
-NO_PADDING = Tag.ITALIC, Tag.BOLD
+NO_PADDING = Tag.ITALIC, Tag.BOLD, Tag.LINK
