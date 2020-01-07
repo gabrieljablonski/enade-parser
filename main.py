@@ -2,10 +2,11 @@ import cv2
 from time import time, sleep
 
 from utils.text import modify_selected_text, surround_with, remove_tag, copy
-from utils.image import capture_image, WIN_NAME_CAPTURE, WIN_NAME_CROP
+from utils.image import capture_image, WIN_NAME_CAPTURE
 from utils.ocr import get_text_in_image
-from hotkeys import is_pressed, Key
-from xml_tags import TAG_MAPPING, REMOVE_TAG, NO_PADDING
+from utils.hotkeys import is_pressed, Key
+
+from xml_tag_mapping import TAG_MAPPING, REMOVE_TAG, NO_PADDING
 
 
 ACTION_DELAY = 1.
@@ -13,6 +14,13 @@ ACTION_DELAY = 1.
 # BadDrawable:
 # sudo nano /etc/environment
 # QT_X11_NO_MITSHM=1
+
+
+def setup():
+    print('Starting...')
+    sleep(0.1)
+    is_pressed(Key.ALT)  # this hangs on first call on linux (?)
+    print('Ready.')
 
 
 def check_image_operations(image_open, hotkey_pressed):
@@ -62,7 +70,7 @@ def check_tag_operations(hotkey_pressed):
 
 
 def check_ocr_operations(hotkey_pressed):
-    if is_pressed(Key.CTRL, Key.ALT, Key.SPACE):
+    if is_pressed(Key.CTRL, Key.ALT, Key.ENTER):
         hotkey_pressed = True
         print('Capturing image for text extraction.')
         img = capture_image(grayscale=True)
@@ -78,6 +86,8 @@ def check_ocr_operations(hotkey_pressed):
 
 
 def main():
+    setup()
+
     image_open = False
     keyboard_grab_activated = True
     last_action = time()
