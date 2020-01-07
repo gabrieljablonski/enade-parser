@@ -2,6 +2,7 @@ import re
 from pyperclip import copy, paste
 
 from hotkeys import send_hotkey, Key
+from xml_tags import Tag
 
 
 DEFAULT_INDENT_LEVEL = 4
@@ -37,6 +38,11 @@ def surround_with(txt, tag, pad_nl=True, indent_level=DEFAULT_INDENT_LEVEL):
         surround_with("txt", "tag") -> "<tag>txt</tag>"
     """
     txt = txt.strip()
+    if tag == Tag.LINK:
+        if not txt.startswith('<') and not txt.endswith('/>'):
+            print('Selected text is invalid. It should be: `<link/>')
+            return txt
+        txt = txt[1:-2]
     padding = '\n' if pad_nl else ''
     content = txt if not padding else indent_text(txt, indent_level)
     return f"""<{tag}>{padding}{content}{padding}</{tag}>"""
