@@ -21,13 +21,6 @@ HK_CONFIRM = Key.ENTER
 # QT_X11_NO_MITSHM=1
 
 
-def setup():
-    print('Starting...')
-    sleep(0.1)
-    is_pressed(Key.ALT)  # this hangs on first call on linux (?)
-    print('Ready.')
-
-
 def check_image_operations(image_open, hotkey_pressed):
     if image_open:
         pressed = False
@@ -92,11 +85,11 @@ def check_ocr_operations(hotkey_pressed):
     return hotkey_pressed
 
 
-def main():
-    setup()
 
+
+def main():
     image_open = False
-    keyboard_grab_activated = True
+    keyboard_grab_activated = False
     last_action = time()
 
     while True:
@@ -106,7 +99,7 @@ def main():
         if now - last_action > ACTION_DELAY:
             if is_pressed(HK_TOGGLE_KEYBOARD):
                 hotkey_pressed = True
-                keyboard_grab_activated = not keyboard_grab_activated
+                keyboard_grab_activated = False
                 print(f"keyboard {'de' if not keyboard_grab_activated else ''}activated")
 
             if keyboard_grab_activated:
