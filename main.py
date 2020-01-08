@@ -6,10 +6,15 @@ from utils.image import capture_image, WIN_NAME_CAPTURE
 from utils.ocr import get_text_in_image
 from utils.hotkeys import is_pressed, Key
 
-from xml_tag_mapping import TAG_MAPPING, REMOVE_TAG, NO_PADDING
+from xml_tag_mapping import TAG_MAPPING, HK_REMOVE_TAG, NO_PADDING
 
 
 ACTION_DELAY = 1.
+HK_CAPTURE_IMAGE = Key.CTRL, Key.SPACE
+HK_CAPTURE_OCR = Key.CTRL, Key.ALT, Key.ENTER
+HK_TOGGLE_KEYBOARD = Key.CTRL, Key.SHIFT
+HK_CANCEL = Key.ESC
+HK_CONFIRM = Key.ENTER
 
 # BadDrawable:
 # sudo nano /etc/environment
@@ -26,17 +31,17 @@ def setup():
 def check_image_operations(image_open, hotkey_pressed):
     if image_open:
         pressed = False
-        if is_pressed(Key.ESC):
+        if is_pressed(HK_CANCEL):
             pressed = True
             print('Cancelling image capture.')
-        elif is_pressed(Key.ENTER):
+        elif is_pressed(HK_CONFIRM):
             pressed = True
             print('Saving image.')
         if pressed:
             cv2.destroyWindow(WIN_NAME_CAPTURE)
             image_open = False
 
-    if is_pressed(Key.CTRL, Key.SPACE):
+    if is_pressed(HK_CAPTURE_IMAGE):
         hotkey_pressed = True
         if image_open:
             print('Finish the operation with the last image first.')
@@ -46,6 +51,8 @@ def check_image_operations(image_open, hotkey_pressed):
             if img is None:
                 print('Canceled image capture.')
             else:
+                print(f"Showing captured image. "
+                      f"Press `{HK_CANCEL.upper()}` to cancel or `{HK_CONFIRM.upper()}` to confirm.")
                 cv2.imshow(WIN_NAME_CAPTURE, img)
                 image_open = True
 
@@ -61,7 +68,7 @@ def check_tag_operations(hotkey_pressed):
             modify_selected_text(surround_with, tag=tag, pad_nl=pad_nl)
             break
 
-    if is_pressed(REMOVE_TAG):
+    if is_pressed(HK_REMOVE_TAG):
         hotkey_pressed = True
         print('Removed tag.')
         modify_selected_text(remove_tag)
@@ -70,7 +77,7 @@ def check_tag_operations(hotkey_pressed):
 
 
 def check_ocr_operations(hotkey_pressed):
-    if is_pressed(Key.CTRL, Key.ALT, Key.ENTER):
+    if is_pressed(HK_CAPTURE_OCR):
         hotkey_pressed = True
         print('Capturing image for text extraction.')
         img = capture_image(grayscale=True)
@@ -97,7 +104,7 @@ def main():
         now = time()
         hotkey_pressed = False
         if now - last_action > ACTION_DELAY:
-            if is_pressed(Key.CTRL, Key.SHIFT):
+            if is_pressed(HK_TOGGLE_KEYBOARD):
                 hotkey_pressed = True
                 keyboard_grab_activated = not keyboard_grab_activated
                 print(f"keyboard {'de' if not keyboard_grab_activated else ''}activated")
