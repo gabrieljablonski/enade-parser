@@ -53,6 +53,27 @@ def surround_with(text, tag, pad_nl=True, indent_level=DEFAULT_INDENT_LEVEL):
             return text
         text = text[1:-2]
 
+    if tag == Tag.PORQUE:
+        match = re.match(r'([\s\S]*)PORQUE([\s\S]*)', text)
+        if match is None:
+            msg = f"""
+                Failed to match options. Format should be:
+                ```
+                First sentence
+                PORQUE
+                Second sentence
+                ```
+                Each sentence may contain new lines within it.
+            """
+            print(sanitize(msg))
+            return text
+        first, second = match.groups()
+        text = (
+            f"{surround_with(first, tag=Tag.FIRST)}{CRLF}"
+            f"PORQUE{CRLF}"
+            f"{surround_with(second, tag=Tag.SECOND)}"
+        )
+
     if tag in (Tag.QUESTION_OPTIONS, Tag.ANSWER_OPTIONS):
         if tag == Tag.QUESTION_OPTIONS:
             fmt = """
@@ -60,14 +81,21 @@ def surround_with(text, tag, pad_nl=True, indent_level=DEFAULT_INDENT_LEVEL):
                 II. option 2
                 III. option 3
                 ...
+                
+                may contain from 3 to 5 options
             """
-            pattern = r'^I\. ([\s\S]*)\nII\. ([\s\S]*)\nIII\. ([\s\S]*?)(?:\nIV\. ([\s\S]*?))?(?:\nV\. ([\s\S]*?))?$'
+            pattern = (
+                r'^I\. ([\s\S]*)\n'
+                r'II\. ([\s\S]*)\n'
+                r'III\. ([\s\S]*?)'
+                r'(?:\nIV\. ([\s\S]*?))?'
+                r'(?:\nV\. ([\s\S]*?))?$'
+            )
         else:
             fmt = """
                 A option 1
                 B option 2
                 C option 3
-
                 D option 4
                 
                 or
@@ -77,7 +105,13 @@ def surround_with(text, tag, pad_nl=True, indent_level=DEFAULT_INDENT_LEVEL):
                 C) option 3
                 D) option 4
             """
-            pattern = r'^\(?A\)? ([\s\S]*)[\s]+\(?B\)? ([\s\S]*)[\s]+\(?C\)? ([\s\S]*)[\s]+\(?D\)? ([\s\S]*)[\s]+\(?E\)? ([\s\S]*)$'
+            pattern = (
+                r'^\(?A\)? ([\s\S]*)[\s]+' 
+                r'\(?B\)? ([\s\S]*)[\s]+' 
+                r'\(?C\)? ([\s\S]*)[\s]+'
+                r'\(?D\)? ([\s\S]*)[\s]+'
+                r'\(?E\)? ([\s\S]*)$'
+            )
         options = re.match(pattern, sanitize(text))
         if options is None:
             msg = f"""
