@@ -1,9 +1,9 @@
 EasyProcess==0.2.8
 keyboard==0.13.4
 MouseInfo==0.1.2
-numpy==1.18.0
+numpy==1.18.1
 opencv-python==4.1.2.30
-Pillow==6.2.1
+Pillow==7.0.0
 PyGetWindow==0.0.8
 PyMsgBox==1.0.7
 pyperclip==1.7.0
@@ -12,3 +12,4 @@ pyscreenshot==0.6
 PyScreeze==0.1.25
 pytesseract==0.3.1
 PyTweening==1.0.3
+Unidecode==1.1.1
