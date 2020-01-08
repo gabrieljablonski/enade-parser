@@ -1,6 +1,7 @@
 from string import ascii_uppercase
 import keyboard as kb
 from time import sleep
+from collections.abc import Iterable
 
 
 class Key:
@@ -21,7 +22,13 @@ Key = Key()
 
 
 def join_hotkeys(*hotkeys):
-    return '+'.join(hotkeys)
+    hks = []
+    for h in hotkeys:
+        if type(h) is tuple or type(h) is list:
+            hks.extend(h)
+        else:
+            hks.append(h)
+    return '+'.join(hks)
 
 
 def _join_hotkeys_decorator(f):
@@ -30,6 +37,8 @@ def _join_hotkeys_decorator(f):
         f(hk1, hk2, ...)
     or
         f('hk1+hk2+...')
+    or
+        f((hk1, hk2, hk3))
     """
     def new_f(*args, **kwargs):
         return f(join_hotkeys(*args), **kwargs)
