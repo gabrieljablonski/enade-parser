@@ -6,13 +6,13 @@ class Tag:
     TITLE = 'title'  # generic title, centered
     PORQUE = 'porque'
 
-    PARAGRAPH = 'paragraph'  # generic paragraph, formatting is not relevant
+    TEXT_BLOCK = 'text_block'  # generic paragraphs, formatting is not relevant
     TEXT = 'text'  # text that should maintain its formatting (e.g. poems)
     LINK = 'link'
     FORMULA = 'formula'
 
-    IMG_SOURCE = 'img_src'
-    TXT_SOURCE = 'txt_src'
+    SOURCE = 'source'
+    LIST = 'list'
 
     QUESTION_BODY = 'question'
     QUESTION_OPTIONS = 'question_options'
@@ -24,22 +24,23 @@ class Tag:
     # not hotkey bindings
     FIRST = 'first'  # first sentence inside <porque> tag
     SECOND = 'second'  # second sentence inside <porque> tag
-    OPTION = 'option'  # for both questions and answers
+    ITEM = 'item'  # for both questions and answers
+    PARAGRAPH = 'paragraph'  # text block element
 
 
 BASE_MAPPING = {
     Key.X: Tag.PORQUE,
     Key.V: Tag.TXT_HEADER,
-    Key.A: Tag.PARAGRAPH,
-    Key.S: Tag.TXT_SOURCE,
+    Key.A: Tag.TEXT_BLOCK,
+    Key.S: Tag.SOURCE,
     Key.F: Tag.FORMULA,
     Key.G: Tag.QUESTION_BODY,
     Key.H: Tag.QUESTION_OPTIONS,
-    Key.J: Tag.IMG_SOURCE,
     Key.K: Tag.ANSWER_OPTIONS,
     Key.L: Tag.LINK,
     Key.T: Tag.TITLE,
     Key.Y: Tag.TEXT,
+    Key.O: Tag.LIST,
 
     Key.I: Tag.ITALIC,
     Key.B: Tag.BOLD,
@@ -56,4 +57,4 @@ for k, v in BASE_MAPPING.items():
 
 HK_REMOVE_TAG = join_hotkeys(*TAG_HOTKEY_PREFIX, Key.R)
 
-NO_PADDING = Tag.ITALIC, Tag.BOLD, Tag.LINK, Tag.FORMULA
+NO_PADDING = Tag.ITALIC, Tag.BOLD, Tag.LINK, Tag.FORMULA, Tag.TXT_HEADER
