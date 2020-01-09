@@ -48,10 +48,24 @@ def surround_with(text, tag, pad_nl=True, indent_level=DEFAULT_INDENT_LEVEL):
     """
     text = text.strip()
     if tag == Tag.LINK:
-        if not text.startswith('<') and not text.endswith('/>'):
-            print('Selected text is invalid. It should be: `<link/>')
+        if not text.startswith('<') and not text.endswith('>'):
+            print('Selected text is invalid. It should be: `<link>`')
             return text
-        text = text[1:-2]
+        text = text[1:-1]
+
+    if tag == Tag.TEXT_BLOCK:
+        text = CRLF.join(s.strip() for s in text.split(CRLF))
+        items = text.split(2 * CRLF)
+        text = CRLF.join(surround_with(item, Tag.PARAGRAPH) for item in items)
+
+    if tag == Tag.TEXT:
+        lines = map(str.strip, text.split('\n'))
+        text = f"<br/>{CRLF}".join(lines) + '<br/>'
+
+    if tag == Tag.LIST:
+        text = CRLF.join(s.strip() for s in text.split(CRLF))
+        items = text.split(2*CRLF)
+        text = CRLF.join(surround_with(item, Tag.ITEM) for item in items)
 
     if tag == Tag.PORQUE:
         match = re.match(r'([\s\S]*)PORQUE([\s\S]*)', text)
@@ -124,7 +138,7 @@ def surround_with(text, tag, pad_nl=True, indent_level=DEFAULT_INDENT_LEVEL):
             print(sanitize(msg))
             return text
         text = CRLF.join(
-            surround_with(option, tag=Tag.OPTION)
+            surround_with(option, tag=Tag.ITEM)
             for option in options.groups() if option is not None
         )
 
