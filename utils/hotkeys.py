@@ -49,7 +49,9 @@ def _join_hotkeys_decorator(f):
 def is_pressed(hotkey):
     pressed = kb.is_pressed(hotkey)
     if pressed:
-        kb.release(hotkey)
+        hks = hotkey.split('+')
+        for hk in hks:
+            kb.release(hk)
     return pressed
 
 
