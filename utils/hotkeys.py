@@ -1,7 +1,6 @@
 from string import ascii_uppercase
 import keyboard as kb
 from time import sleep
-from collections.abc import Iterable
 
 
 class Key:

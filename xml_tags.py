@@ -1,6 +1,3 @@
-from utils.hotkeys import Key, join_hotkeys
-
-
 class Tag:
     TXT_HEADER = 'text_header'  # 'texto 01', 'texto 02', ...; left aligned
     TITLE = 'title'  # generic title, centered
@@ -28,33 +25,5 @@ class Tag:
     PARAGRAPH = 'paragraph'  # text block element
 
 
-BASE_MAPPING = {
-    Key.X: Tag.PORQUE,
-    Key.V: Tag.TXT_HEADER,
-    Key.A: Tag.TEXT_BLOCK,
-    Key.S: Tag.SOURCE,
-    Key.F: Tag.FORMULA,
-    Key.G: Tag.QUESTION_BODY,
-    Key.H: Tag.QUESTION_OPTIONS,
-    Key.K: Tag.ANSWER_OPTIONS,
-    Key.L: Tag.LINK,
-    Key.T: Tag.TITLE,
-    Key.Y: Tag.TEXT,
-    Key.O: Tag.LIST,
-
-    Key.I: Tag.ITALIC,
-    Key.B: Tag.BOLD,
-}
-
-TAG_HOTKEY_PREFIX = Key.CTRL, Key.ALT
-TAG_MAPPING = {}
-REVERSE_MAPPING = {}
-
-for k, v in BASE_MAPPING.items():
-    hk = join_hotkeys(*TAG_HOTKEY_PREFIX, k)
-    TAG_MAPPING[hk] = v
-    REVERSE_MAPPING[v] = [hk]
-
-HK_REMOVE_TAG = join_hotkeys(*TAG_HOTKEY_PREFIX, Key.R)
-
+# tags are placed `<tag>text</tag>` instead of `<tag>\ntext\n</tag>`
 NO_PADDING = Tag.ITALIC, Tag.BOLD, Tag.LINK, Tag.FORMULA, Tag.TXT_HEADER

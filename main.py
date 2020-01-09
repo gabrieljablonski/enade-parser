@@ -18,7 +18,10 @@ from utils.ocr import get_text_in_image
 from utils.hotkeys import is_pressed, Key, join_hotkeys
 from utils.static_vars import static_vars
 
-from xml_tag_mapping import TAG_MAPPING, HK_REMOVE_TAG, NO_PADDING
+from xml_tags import NO_PADDING
+from hotkey_mapping import (
+    TAG_MAPPING, HK_REMOVE_TAG, HK_TOGGLE_KEYBOARD, HK_CONFIRM, HK_CANCEL, HK_CAPTURE_OCR, HK_CAPTURE_IMAGE
+)
 from convert_xml_to_html import xml_to_html, RELOAD_INTERVAL
 
 # BadDrawable:
@@ -26,11 +29,6 @@ from convert_xml_to_html import xml_to_html, RELOAD_INTERVAL
 # QT_X11_NO_MITSHM=1
 
 ACTION_DELAY = 1.
-HK_CAPTURE_IMAGE = Key.CTRL, Key.SPACE
-HK_CAPTURE_OCR = Key.CTRL, Key.ALT, Key.ENTER
-HK_TOGGLE_KEYBOARD = Key.CTRL, Key.SHIFT, Key.ALT
-HK_CANCEL = Key.ESC
-HK_CONFIRM = Key.ENTER
 
 CURRENT_QUESTION_FILE_NAME = 'current_question.xml'
 CURRENT_QUESTION_HTML = CURRENT_QUESTION_FILE_NAME.replace('xml', 'html')
