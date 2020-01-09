@@ -19,6 +19,7 @@ from utils.hotkeys import is_pressed, Key, join_hotkeys
 from utils.static_vars import static_vars
 
 from xml_tag_mapping import TAG_MAPPING, HK_REMOVE_TAG, NO_PADDING
+from convert_xml_to_html import xml_to_html, RELOAD_INTERVAL
 
 # BadDrawable:
 # sudo nano /etc/environment
@@ -27,11 +28,13 @@ from xml_tag_mapping import TAG_MAPPING, HK_REMOVE_TAG, NO_PADDING
 ACTION_DELAY = 1.
 HK_CAPTURE_IMAGE = Key.CTRL, Key.SPACE
 HK_CAPTURE_OCR = Key.CTRL, Key.ALT, Key.ENTER
-HK_TOGGLE_KEYBOARD = Key.CTRL, Key.SHIFT
+HK_TOGGLE_KEYBOARD = Key.CTRL, Key.SHIFT, Key.ALT
 HK_CANCEL = Key.ESC
 HK_CONFIRM = Key.ENTER
 
 CURRENT_QUESTION_FILE_NAME = 'current_question.xml'
+CURRENT_QUESTION_HTML = CURRENT_QUESTION_FILE_NAME.replace('xml', 'html')
+
 IMAGES_DIR_NAME = 'images'
 
 
@@ -44,9 +47,9 @@ def check_image_operations(image_open, hotkey_pressed):
             print('Cancelling image capture.')
         elif is_pressed(HK_CONFIRM):
             try:
-                out_path = save_image(check_image_operations.image)
+                out_path = save_image(check_image_operations.image).replace('\\', '/')
 
-                tag = f'<img src="{out_path}">'
+                tag = f'<img src="{out_path}" />'
                 copy(tag)
                 print(f"Copied tag to clipboard: {repr(tag)}")
 
@@ -80,7 +83,7 @@ def check_tag_operations(hotkey_pressed):
     for hk, tag in TAG_MAPPING.items():
         if is_pressed(hk):
             hotkey_pressed = True
-            print(f"Inserting `{tag}` tag.")
+            # print(f"Inserting `{tag}` tag.")
             pad_nl = tag not in NO_PADDING
             modify_selected_text(surround_with, tag=tag, pad_nl=pad_nl)
             break
@@ -121,23 +124,37 @@ def save_image(image):
         match = re.match(r'.*(\d+)\.png$', last_image)
         index = int(match.group(1)) + 1
 
-    out_path = str(Path(IMAGES_DIR_NAME).joinpath(Path(f"{prefix}_{menu.current_question}_{index}.png")))
+    out_path = Path(f"{prefix}_{menu.question_type}_{menu.current_question}_{index}.png")
+    out_path = str(Path(IMAGES_DIR_NAME).joinpath(out_path))
     cv2.imwrite(out_path, image)
     print(f"Image saved as {out_path}")
     return out_path
 
 
-def save_question(dst_file_path):
-    if dst_file_path.exists():
-        print(f"File {dst_file_path} already exists. Are you sure you want to override it? (Y/N)")
+def save_question():
+    prefix = get_output_file_path_prefix()
+    out_path = Path(f"{prefix}_{menu.question_type}_{menu.current_question}.xml")
+    if out_path.exists():
+        print(f"File {out_path} already exists. Are you sure you want to override it? (Y/N)")
         if not prompt_yn():
-            raise OSError(f"File {dst_file_path} already exists")
-        os.remove(dst_file_path)
-    print(f"Saving question as: {dst_file_path}")
+            raise OSError(f"File {out_path} already exists")
+        os.remove(out_path)
+
+    print(f"Saving question as: {out_path}")
     try:
-        os.rename(CURRENT_QUESTION_FILE_NAME, dst_file_path)
+        with open(CURRENT_QUESTION_FILE_NAME, encoding='utf8') as f:
+            xml = f.read()
+        xml = f"<html>{xml}</html>"
+        html_path = str(out_path).replace('xml', 'html')
+        html = xml_to_html(xml)
+        with open(html_path, 'w', encoding='utf8') as out:
+            out.write(html)
+    except Exception as e:
+        print(f"Failed to save HTML: {e}")
+    try:
+        os.rename(CURRENT_QUESTION_FILE_NAME, out_path)
     except OSError as e:
-        raise OSError(f"failed to rename file {CURRENT_QUESTION_FILE_NAME} to {dst_file_path}: {e}")
+        raise OSError(f"failed to rename file {CURRENT_QUESTION_FILE_NAME} to {out_path}: {e}")
 
 
 def prompt_yn():
@@ -175,7 +192,7 @@ def get_output_file_path_prefix():
     return f"{unidecode(s.lower())}_{menu.year}"
 
 
-@static_vars(subject='', year='', current_question=1)
+@static_vars(subject='', year='', current_question=1, question_type='d')
 def menu():
     while True:
         if not menu.subject:
@@ -199,11 +216,14 @@ def menu():
             Path(base_path).joinpath(Path(IMAGES_DIR_NAME)).mkdir(parents=True, exist_ok=True)
             os.chdir(base_path)
         else:
+            qt = 'discursive' if menu.question_type == 'd' else 'multiple choice'
             options = {
                 1: 'Enable keyboard grab.',
                 2: f"Change current question number (current is {menu.current_question}).",
-                3: 'Change subject/year.',
-                4: 'Save current question.',
+                3: f"Change current question type (current is {qt}).",
+                4: 'Change subject/year.',
+                5: 'Save current question.',
+                6: 'Open HTML preview.',
                 0: 'Exit.'
             }
             print('Choose an option:')
@@ -241,24 +261,22 @@ def menu():
                         print('Invalid question number.')
 
             if opt == 3:
+                print('Is the question multiple choice or discursive? (M/d)')
+                while True:
+                    inp = input('>> ')
+                    if not inp or inp.lower() in ('m', 'd'):
+                        menu.question_type = inp.lower() or 'm'
+                        break
+
+            if opt == 4:
                 os.chdir('..')
                 menu.subject, menu.year, menu.active_dir, menu.images_dir, menu.current_question = '', '', '', '', 1
                 continue
 
-            if opt == 4:
-                print('Is the question discursive or multiple choice? (M/d)')
-                while True:
-                    inp = input('>> ')
-                    if not inp or inp.lower() in ('d', 'm'):
-                        question_type = inp.lower() or 'm'
-                        break
-
+            if opt == 5:
                 prefix = get_output_file_path_prefix()
-                qt = 'choice' if question_type == 'm' else 'disc'
-                out_file_path = Path(f"{prefix}_{menu.current_question}_{qt}.xml")
-
                 try:
-                    save_question(out_file_path)
+                    save_question()
                 except OSError as e:
                     print(e)
                 else:
@@ -266,11 +284,58 @@ def menu():
                 finally:
                     continue
 
+            if opt == 6:
+                os.system(CURRENT_QUESTION_HTML)
+
+
+def update_html_file():
+    html_opened = False
+
+    def wait_for_xml_file():
+        while True:
+            if not os.path.exists(CURRENT_QUESTION_FILE_NAME):
+                sleep(1)
+                continue
+            break
+
+    while True:
+        try:
+            with open(CURRENT_QUESTION_FILE_NAME, encoding='utf8') as f:
+                xml = f.read()
+            if not xml and html_opened:
+                continue
+        except FileNotFoundError:
+            wait_for_xml_file()
+            continue
+        else:
+            xml = (
+                f"<html><h1>Question Number: {menu.current_question}</h1><br/>\n"
+                f"{xml}\n"
+                f"</html>\n"
+            )
+            try:
+                html = xml_to_html(xml, CURRENT_QUESTION_HTML)
+            except:
+                continue
+            else:
+                try:
+                    with open(CURRENT_QUESTION_HTML, 'w', encoding='utf8') as f:
+                        f.write(html)
+                except Exception as e:
+                    print(f"Failed to save HTML preview: {e}")
+                if not html_opened:
+                    os.system(CURRENT_QUESTION_HTML)
+                    html_opened = True
+        finally:
+            sleep(0.5*RELOAD_INTERVAL/1000)
+
 
 def main():
     image_open = False
     keyboard_grab_activated = False
     last_action = time()
+
+    Thread(target=update_html_file).start()
 
     while True:
         _ = cv2.waitKey(1) & 0xFF
