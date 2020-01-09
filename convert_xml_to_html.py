@@ -24,7 +24,7 @@ class HTMLTag:
 
 
 XML_TO_HTML_TAG_MAPPING = {
-    Tag.TXT_HEADER: HTMLTag('h1', style='text-align: left'),
+    Tag.TEXT_HEADER: HTMLTag('h1', style='text-align: left'),
     Tag.TITLE: HTMLTag('h1', style='text-align: center'),
     Tag.PORQUE: HTMLTag('div'),
 
@@ -34,6 +34,8 @@ XML_TO_HTML_TAG_MAPPING = {
     # both have special handling
     Tag.LINK: HTMLTag('a'),
     Tag.FORMULA: HTMLTag('img'),
+
+    Tag.TABLE: HTMLTag('div'),
 
     Tag.SOURCE: HTMLTag('p', style='font-style: italic'),
     Tag.LIST: HTMLTag('ul'),

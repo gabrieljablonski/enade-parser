@@ -1,5 +1,5 @@
 class Tag:
-    TXT_HEADER = 'text_header'  # 'texto 01', 'texto 02', ...; left aligned
+    TEXT_HEADER = 'text_header'  # 'texto 01', 'texto 02', ...; left aligned
     TITLE = 'title'  # generic title, centered
     PORQUE = 'porque'
 
@@ -18,7 +18,9 @@ class Tag:
     ITALIC = 'i'
     BOLD = 'b'
 
-    # not hotkey bindings
+    TABLE = 'table'  # placed around img tags for tables, may be useful later on
+
+    # no hotkey bindings
     FIRST = 'first'  # first sentence inside <porque> tag
     SECOND = 'second'  # second sentence inside <porque> tag
     ITEM = 'item'  # for both questions and answers
@@ -26,4 +28,4 @@ class Tag:
 
 
 # tags are placed `<tag>text</tag>` instead of `<tag>\ntext\n</tag>`
-NO_PADDING = Tag.ITALIC, Tag.BOLD, Tag.LINK, Tag.FORMULA, Tag.TXT_HEADER
+NO_PADDING = Tag.ITALIC, Tag.BOLD, Tag.LINK, Tag.FORMULA, Tag.TEXT_HEADER
