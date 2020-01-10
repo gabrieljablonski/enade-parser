@@ -47,6 +47,7 @@ def _join_hotkeys_decorator(f):
 @_join_hotkeys_decorator
 def is_pressed(hotkey):
     pressed = kb.is_pressed(hotkey)
+    sleep(.2)  # testing as bug fix for sticky keys
     if pressed:
         hks = hotkey.split('+')
         for hk in hks:
