@@ -19,6 +19,8 @@ Move `por.traineddata` to `<TESSERACT_PATH>/tessdata`
 Set as default program for XML files.
 
 - [Portuguese - Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-portuguese)
+- [XML Tools](https://marketplace.visualstudio.com/items?itemName=DotJoshJohnson.xml)
+
 
 Enable spell checking on XML files.
 
