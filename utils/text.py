@@ -2,7 +2,7 @@ import re
 from pyperclip import copy, paste
 
 from utils.hotkeys import send_hotkey, Key
-from xml_tag_mapping import Tag
+from xml_tags import Tag
 
 
 DEFAULT_INDENT_LEVEL = 4

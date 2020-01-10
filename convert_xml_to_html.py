@@ -2,7 +2,7 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 from urllib.parse import quote
 
-from xml_tag_mapping import Tag
+from xml_tags import Tag
 
 RELOAD_SCRIPT = """
 <script>
