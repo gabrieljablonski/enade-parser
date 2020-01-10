@@ -333,7 +333,7 @@ def main():
     keyboard_grab_activated = False
     last_action = time()
 
-    Thread(target=update_html_file).start()
+    Thread(target=update_html_file, daemon=True).start()
 
     while True:
         _ = cv2.waitKey(1) & 0xFF
