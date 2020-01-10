@@ -10,6 +10,7 @@ class Tag:
 
     SOURCE = 'source'
     LIST = 'list'
+    CAPTION = 'caption'
 
     QUESTION_BODY = 'question'
     QUESTION_OPTIONS = 'question_options'

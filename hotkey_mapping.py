@@ -12,6 +12,7 @@ HK_CONFIRM = Key.ENTER
 BASE_MAPPING = {
     Key.X: Tag.PORQUE,
     Key.V: Tag.TEXT_HEADER,
+    Key.M: Tag.CAPTION,
 
     Key.A: Tag.TEXT_BLOCK,
     Key.S: Tag.SOURCE,

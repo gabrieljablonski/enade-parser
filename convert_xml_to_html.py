@@ -36,6 +36,7 @@ XML_TO_HTML_TAG_MAPPING = {
     Tag.FORMULA: HTMLTag('img'),
 
     Tag.TABLE: HTMLTag('div'),
+    Tag.CAPTION: HTMLTag('p', style='font-style: bold'),
 
     Tag.SOURCE: HTMLTag('p', style='font-style: italic'),
     Tag.LIST: HTMLTag('ul'),
