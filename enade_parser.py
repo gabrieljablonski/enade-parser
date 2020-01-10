@@ -14,7 +14,7 @@ del Tk
 
 from utils.text import modify_selected_text, surround_with, remove_tag, copy
 from utils.image import capture_image, WIN_NAME_CAPTURE
-from utils.ocr import get_text_in_image
+from utils.ocr import set_tesseract_path, get_text_in_image
 from utils.hotkeys import is_pressed, Key, join_hotkeys
 from utils.static_vars import static_vars
 
@@ -358,4 +358,11 @@ def main():
 
 
 if __name__ == '__main__':
+    import argparse
+    parser = argparse.ArgumentParser(description='Enade parser.')
+    parser.add_argument('--tesseract-path', default='', type=str, help='path to the tesseract binary')
+    args = parser.parse_args()
+
+    set_tesseract_path(args.tesseract_path)
+
     main()
