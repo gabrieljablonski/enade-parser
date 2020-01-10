@@ -22,7 +22,7 @@ Set as default program for XML files.
 
 Enable spell checking on XML files.
 
-## Optional
+## Recommended
 
 - Enable autosave
 - Set default program for HTML files as the same for PDF files
