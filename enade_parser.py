@@ -15,7 +15,7 @@ del Tk
 from utils.text import modify_selected_text, surround_with, remove_tag, copy
 from utils.image import capture_image, WIN_NAME_CAPTURE
 from utils.ocr import set_tesseract_path, get_text_in_image
-from utils.hotkeys import is_pressed, Key, join_hotkeys
+from utils.hotkeys import is_pressed, Key, join_hotkeys, kb
 from utils.static_vars import static_vars
 
 from xml_tags import NO_PADDING
@@ -28,7 +28,7 @@ from convert_xml_to_html import xml_to_html, RELOAD_INTERVAL
 # sudo nano /etc/environment
 # QT_X11_NO_MITSHM=1
 
-ACTION_DELAY = 1.
+ACTION_DELAY = .5
 
 CURRENT_QUESTION_FILE_NAME = 'current_question.xml'
 CURRENT_QUESTION_HTML = CURRENT_QUESTION_FILE_NAME.replace('xml', 'html')
@@ -144,7 +144,7 @@ def save_question():
             xml = f.read()
         xml = f"<html>{xml}</html>"
         html_path = str(out_path).replace('xml', 'html')
-        html = xml_to_html(xml)
+        html = xml_to_html(xml, include_reload_script=False)
         with open(html_path, 'w', encoding='utf8') as out:
             out.write(html)
     except Exception as e:
@@ -276,7 +276,7 @@ def menu():
                 try:
                     save_question()
                 except OSError as e:
-                    print(e)
+                    print("Failed to save the question. Have you already saved it?")
                 else:
                     menu.current_question += 1
                 finally:
@@ -312,7 +312,7 @@ def update_html_file():
                 f"</html>\n"
             )
             try:
-                html = xml_to_html(xml, CURRENT_QUESTION_HTML)
+                html = xml_to_html(xml, file_path=CURRENT_QUESTION_HTML)
             except:
                 continue
             else:
