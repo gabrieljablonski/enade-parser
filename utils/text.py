@@ -1,5 +1,6 @@
 import re
 from pyperclip import copy, paste
+from time import sleep
 
 from utils.hotkeys import send_hotkey, Key
 from xml_tags import Tag
@@ -18,11 +19,14 @@ def sanitize(text):
 
 def modify_selected_text(modify, *args, **kwargs):
     send_hotkey(Key.CTRL, Key.C)
+    sleep(.1)
     text = paste()
     new_text = modify(text, *args, **kwargs)
     if text.strip() != new_text:
         copy(new_text)
+        sleep(.1)
         send_hotkey(Key.CTRL, Key.V)
+        sleep(.1)
 
 
 def indent_text(text, indent_level=DEFAULT_INDENT_LEVEL):
