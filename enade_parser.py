@@ -112,7 +112,7 @@ def check_ocr_operations(hotkey_pressed):
 
 def save_image(image):
     prefix = get_output_file_path_prefix()
-    images = glob.glob(f"{IMAGES_DIR_NAME}/*_{menu.current_question}_*.png")
+    images = glob.glob(f"{IMAGES_DIR_NAME}/*_{menu.question_type}_{menu.current_question}_*.png")
 
     if not images:
         index = 0
@@ -224,7 +224,7 @@ def menu():
                 6: 'Open HTML preview.',
                 0: 'Exit.'
             }
-            print('Choose an option:')
+            print('\n-----------\nChoose an option:')
             for o, txt in options.items():
                 print(f"-{o}: {txt}")
             while True:
@@ -306,8 +306,13 @@ def update_html_file():
             wait_for_xml_file()
             continue
         else:
+            qt = (
+                'Multiple Choice' 
+                if menu.question_type == 'm' 
+                else 'Discursive'
+            )
             xml = (
-                f"<html><h1>Question Number: {menu.current_question}</h1><br/>\n"
+                f"<html><h1>{qt} Question Number: {menu.current_question}</h1><br/>\n"
                 f"{xml}\n"
                 f"</html>\n"
             )
