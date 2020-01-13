@@ -17,7 +17,7 @@ BASE_MAPPING = {
     Key.A: Tag.TEXT_BLOCK,
     Key.S: Tag.SOURCE,
     Key.F: Tag.FORMULA,
-    Key.G: Tag.QUESTION_BODY,
+    Key.G: Tag.QUESTION,
     Key.H: Tag.QUESTION_OPTIONS,
     Key.K: Tag.ANSWER_OPTIONS,
     Key.L: Tag.LINK,

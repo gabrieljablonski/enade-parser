@@ -40,7 +40,7 @@ XML_TO_HTML_TAG_MAPPING = {
 
     Tag.SOURCE: HTMLTag('p', style='font-style: italic'),
     Tag.LIST: HTMLTag('ul'),
-    Tag.QUESTION_BODY: HTMLTag('p', style='font-size: 24'),
+    Tag.QUESTION: HTMLTag('p', style='font-size: 24'),
 
     Tag.QUESTION_OPTIONS: HTMLTag('ol', generic_attributes={'type': 'I'}),
     Tag.ANSWER_OPTIONS: HTMLTag('ol', generic_attributes={'type': 'A'}),
@@ -52,7 +52,7 @@ XML_TO_HTML_TAG_MAPPING = {
 }
 
 
-def xml_to_html(xml_string, file_path=''):
+def xml_to_html(xml_string, file_path='', include_reload_script=True):
     root = ET.fromstring(xml_string)
     for xml_tag, html_tag in XML_TO_HTML_TAG_MAPPING.items():
         for child in root.iter():
@@ -77,10 +77,12 @@ def xml_to_html(xml_string, file_path=''):
                     el.set(attr, val)
 
     file_path = str(Path(file_path).absolute()).replace('\\','/')
-    script = RELOAD_SCRIPT.format(
-        file_path=quote(file_path, safe=':/'),
-        reload_interval=RELOAD_INTERVAL
-    ) if file_path else ''
-    et_as_string = ET.tostring(root, encoding='unicode')
-    html = f"{et_as_string}\r\n\r\n{script}".strip()
-    return html
+
+    html = ET.tostring(root, encoding='unicode')
+    if include_reload_script:
+        script = RELOAD_SCRIPT.format(
+            file_path=quote(file_path, safe=':/'),
+            reload_interval=RELOAD_INTERVAL
+        ) if file_path else ''
+        html = f"{html}\r\n\r\n{script}"
+    return html.strip()

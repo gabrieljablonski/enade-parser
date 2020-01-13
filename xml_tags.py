@@ -12,9 +12,9 @@ class Tag:
     LIST = 'list'
     CAPTION = 'caption'
 
-    QUESTION_BODY = 'question'
+    QUESTION = 'question'
     QUESTION_OPTIONS = 'question_options'
-    ANSWER_OPTIONS = 'answers'
+    ANSWER_OPTIONS = 'answer_options'
 
     ITALIC = 'i'
     BOLD = 'b'
