@@ -45,12 +45,23 @@ def dedent_text(text, indent_level=DEFAULT_INDENT_LEVEL):
     return '\n'.join(out_lines)
 
 
-def surround_with(text, tag, pad_nl=True, indent_level=DEFAULT_INDENT_LEVEL):
+def _auto_tag_link(text):
+    match = re.match(r'([\s\S]*)(<http[\s\S]*?>)([\s\S]*)', text)
+    if match is not None:
+        b, link, a = match.groups()
+        link = surround_with(link, tag=Tag.LINK, pad_nl=False, auto_tag_link=False)
+        text = f"{b}{link}{a}"
+    return text
+
+
+def surround_with(text, tag, pad_nl=True, indent_level=DEFAULT_INDENT_LEVEL, auto_tag_link=True):
     """
         surrounds text with provided tag in XML style
         surround_with("text", "tag") -> "<tag>text</tag>"
     """
     text = text.strip()
+    if auto_tag_link:
+        text = _auto_tag_link(text)
     if tag == Tag.LINK:
         if not text.startswith('<') and not text.endswith('>'):
             print('Selected text is invalid. It should be: `<link>`')
