@@ -50,7 +50,7 @@ def best_crop(img, roi, grayscale=False):
 def capture_image(grayscale=False):
     try:
         img_grab = grab_image_from_clipboard()
-    except (IsADirectoryError, FileNotFoundError, IOError) as e:
+    except (IsADirectoryError, FileNotFoundError, IOError, Exception) as e:
         raise ImageGrabException('Failed to grab image.\n', e)
 
     image = cv2.cvtColor(img_grab, cv2.COLOR_RGB2BGR)
