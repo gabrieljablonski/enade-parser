@@ -24,7 +24,14 @@ Set as default program for XML files.
 
 Enable spell checking on XML files.
 
-## Recommended
+## Recommended Options
 
-- Enable autosave
+- Enable autosave in VSCode
 - Set default program for HTML files as the same for PDF files
+
+## Running
+```
+python .\enade_parser.py --tesseract-path "<TESSERACT_PATH>"
+```
+
+`TESSERACT_PATH` defaults to `C:\Program Files\Tesseract-OCR\tesseract.exe`.
