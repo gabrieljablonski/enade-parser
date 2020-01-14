@@ -1,0 +1,41 @@
+<text_block>
+    <paragraph>
+        O Índice de Lerner proporciona uma análise do poder de mercado da firma, ou seja, quando uma empresa
+        enfrenta uma curva de demanda negativamente inclinada, então tem capacidade para escolher o preço
+        de mercado. Esse índice é dado por:
+    </paragraph>
+</text_block>
+
+<text>
+    <formula>L=\frac{P-CMg}{P}=\frac{1}{E_{pd}}</formula><br/>
+</text>
+
+<text_block>
+    <paragraph>
+        em que,
+    </paragraph>
+    <paragraph>
+        <formula>L</formula> é o Índice de Lerner, tal que <formula>0\leq L\leq 1</formula>; <formula>P</formula> é o preço; <formula>CMg</formula> é o custo marginal da firma; <formula>E_{pd}</formula> e é a
+        elasticidade-preço da demanda.
+    </paragraph>
+    <paragraph>
+        Quanto maior o Índice de Lerner, maior é a distância entre o preço praticado e o preço concorrencial.
+        Assim, quanto menos elástica for a curva de demanda com a qual a firma se depara, maior será a diferença
+        entre o preço e o custo marginal e, portanto, maior é o seu poder de mercado.
+    </paragraph>
+</text_block>
+<source>
+    PINDYCK, R. S.; RUBINFELD, D. L. <b>Microeconomia.</b> São Paulo: Pearson, 2010 (adaptado).
+</source>
+<question>
+    Considerando as informações apresentadas, faça o que se pede nos itens a seguir.
+    <list>
+        <item>
+            a) Supondo uma elasticidade-preço da demanda em módulo igual a 4, calcule o Índice de Lerner e, com
+            base nesse resultado, explique a relação entre o custo marginal e o preço.
+        </item>
+        <item>
+            b) Identifique dois fatores que afetam o poder de mercado das firmas.
+        </item>
+    </list>
+</question>

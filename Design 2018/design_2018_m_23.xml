@@ -1,0 +1,34 @@
+<text_block>
+    <paragraph>
+        Os desenhos a seguir, identificados com as letras A, B, C, D e E, apresentam perspectivas isométricas de
+        cinco objetos.
+    </paragraph>
+</text_block>
+<img src="images/design_2018_m_23_0.png" />
+<text_block>
+    <paragraph>
+        Já os desenhos a seguir, identificados, aleatoriamente, com os números 1, 2, 3, 4 e 5, representam as
+        <b>vistas</b> (superior, frontal e lateral) das perspectivas isométricas representadas acima.
+    </paragraph>
+</text_block>
+<img src="images/design_2018_m_23_1.png" />
+<question>
+    Com base na análise dos desenhos, assinale a opção correta.
+</question>
+<answer_options>
+    <item>
+        A perspectiva A corresponde às vistas 3 e a perspectiva E corresponde às vistas 4.
+    </item>
+    <item>
+        A perspectiva B corresponde às vistas 1 e a perspectiva D corresponde às vistas 3.
+    </item>
+    <item>
+        A perspectiva C corresponde às vistas 4 e a perspectiva A corresponde às vistas 3.
+    </item>
+    <item>
+        A perspectiva D corresponde às vistas 5 e a perspectiva B corresponde às vistas 5.
+    </item>
+    <item>
+        A perspectiva E corresponde às vistas 1 e a perspectiva B corresponde às vistas 4.
+    </item>
+</answer_options>

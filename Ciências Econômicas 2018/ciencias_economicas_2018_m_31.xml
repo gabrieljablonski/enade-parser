@@ -1,0 +1,61 @@
+<text_block>
+    <paragraph>
+        Um pesquisador estimou a regressão apresentada a seguir a partir de uma amostra composta por 567
+        observações, referentes a indivíduos no mercado de trabalho.
+    </paragraph>
+</text_block>
+<img src="images/ciencias_economicas_2018_m_31_0.png" />
+<text_block>
+    <paragraph>
+        Nessa regressão,
+        <list>
+            <item>
+                ln é o logaritmo natural;
+            </item>
+            <item>
+                S são os salários medidos em R$;
+            </item>
+            <item>
+                E é o número de anos de escolaridade;
+            </item>
+            <item>
+                X é o número de anos de experiência profissional;
+            </item>
+            <item>
+                G é uma variável binária que assume o valor 1 para indivíduos do gênero feminino e 0 para
+                indivíduos do gênero masculino;
+            </item>
+            <item>
+                u é uma variável aleatória com média 0, não correlacionada com as demais variáveis;
+            </item>
+            <item>
+                os números entre parênteses são os erros-padrão das estimativas.
+            </item>
+        </list>
+    </paragraph>
+</text_block>
+
+<question>
+    Com base no modelo estimado, a respeito da diferença salarial entre homens e mulheres, assinale a
+    opção correta.
+</question>
+<answer_options>
+    <item>
+        A diferença salarial entre homens e mulheres aumenta quanto maior for a escolaridade de ambos.
+    </item>
+    <item>
+        A diferença salarial entre homens e mulheres diminui quanto maior for a experiência profissional de ambos.
+    </item>
+    <item>
+        O modelo não rejeita a hipótese de igualdade salarial entre homens e mulheres, uma vez que o
+        coeficiente estimado da variável G não é significante.
+    </item>
+    <item>
+        As mulheres ganham aproximadamente 4% a menos do que os homens, independentemente do
+        tempo de escolaridade e de experiência profissional que tenham.
+    </item>
+    <item>
+        O salário de uma mulher com dez anos de escolaridade é aproximadamente 3% menor que o de um
+        homem com a mesma escolaridade e experiência profissional.
+    </item>
+</answer_options>

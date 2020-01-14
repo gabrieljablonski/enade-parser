@@ -1,0 +1,43 @@
+<text_block>
+    <paragraph>
+        O prefeito de uma cidade decidiu tornar os atos de planejamento de orçamento do ano fiscal seguinte
+        mais próximos da sociedade. Para tanto, solicitou ao departamento de informática a elaboração e gestão
+        de uma página referente ao planejamento em uma rede social. Foi criada uma equipe que coletou
+        sugestões e deu respostas aos cidadãos, que participaram ativamente do processo. Após a formatação
+        do documento final e a inclusão neste dos símbolos pessoais do prefeito e de imagens de sua campanha ̶ na
+        qual havia se comprometido com o orçamento participativo ̶ , o planejamento foi finalizado e enviado à
+        consultoria jurídica para aprovação.
+    </paragraph>
+</text_block>
+<question>
+    Considerando essa situação, avalie as asserções a seguir e a relação proposta entre elas.
+    <porque>
+        <first>
+            I. A consultoria rejeitou a proposta de planejamento apresentada, focando seu parecer no princípio
+            da publicidade do ato administrativo.
+        </first>
+        PORQUE
+        <second>
+            II. Não podem ser utilizados símbolos ou imagens que caracterizem a promoção pessoal do agente
+            público na publicidade do ato administrativo.
+        </second>
+    </porque>
+    A respeito dessas asserções, assinale a opção correta.
+</question>
+<answer_options>
+    <item>
+        As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.
+    </item>
+    <item>
+        As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.
+    </item>
+    <item>
+        A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.
+    </item>
+    <item>
+        A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.
+    </item>
+    <item>
+        As asserções I e II são proposições falsas.
+    </item>
+</answer_options>

@@ -1,0 +1,66 @@
+<text_block>
+    <paragraph>
+        Um município possui apenas duas ambulâncias
+        para realizar o transporte diário dos cidadãos
+        que precisam ser atendidos em hospital de
+        municípios vizinhos. Essas ambulâncias precisam
+        passar, semanalmente, por manutenção corretiva.
+        No entanto, a empresa que presta serviço de
+        manutenção nos veículos teve sua falência
+        decretada. Diante do risco de colapso no serviço
+        de saúde, a prefeitura realizou contratação
+        emergencial para prestação de serviços de
+        manutenção de veículos, uma vez que o
+        município não conta com todos os equipamentos
+        e profissionais necessários para uma série
+        de tratamentos de saúde demandados com
+        frequência pela população.
+    </paragraph>
+</text_block>
+
+<question>
+    Considerando essa situação, avalie as asserções a
+    seguir e a relação proposta entre elas.
+    
+    <porque>
+        <first>
+            I. Em caso de risco de colapso na prestação
+            de serviços públicos de saúde, é permitido à
+            Administração Pública realizar a contratação
+            emergencial para prestação de serviços de
+            manutenção de ambulância.
+        </first>
+        PORQUE
+        <second>
+            II. Em casos de calamidade pública, a Lei de
+            Licitações e Contratos autoriza a contratação
+            para prestação de serviços com dispensa de
+            licitação.
+        </second>
+    </porque>
+    
+    A respeito dessas asserções, assinale a opção
+    correta.
+</question>
+
+<answer_options>
+    <item>
+        As asserções I e II são proposições verdadeiras,
+        e a II é uma justificativa correta da I.
+    </item>
+    <item>
+        As asserções I e II são proposições verdadeiras,
+        mas a II não é uma justificativa correta da I.
+    </item>
+    <item>
+        A asserção I é uma proposição verdadeira, e a II
+        é uma proposição falsa.
+    </item>
+    <item>
+        A asserção I é uma proposição falsa, e a II é uma
+        proposição verdadeira.
+    </item>
+    <item>
+        As asserções I e II são proposições falsas.
+    </item>
+</answer_options>

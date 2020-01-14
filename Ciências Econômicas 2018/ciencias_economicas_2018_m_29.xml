@@ -1,0 +1,41 @@
+<text_block>
+    <paragraph>
+        Em um mercado competitivo, a curva de demanda é dada por <formula>Q^D = 300 - 30p</formula>, em que <formula>Q^D</formula> é a quantidade
+        demandada e <formula>p</formula> é o preço do produto; e a curva de oferta é dada por <formula>Q^O = 10p + 20</formula>, em que <formula>Q^O</formula> é a
+        quantidade ofertada.
+    </paragraph>
+</text_block>
+<question>
+    Com base nos dados apresentados, avalie as afirmações a seguir.
+    <question_options>
+        <item>
+            Em equilíbrio, sem intervenção governamental, a quantidade de produto transacionado no
+            mercado será de 90 unidades, e o preço praticado será de R$ 7,00 por unidade.
+        </item>
+        <item>
+            O consumidor tem um excedente no valor de R$ 135,00.
+        </item>
+        <item>
+            Se o governo tabelar o preço do produto em R$ 6,00, haverá um excesso de oferta de
+            50 unidades.
+        </item>
+    </question_options>
+    É correto o que se afirma em
+</question>
+<answer_options>
+    <item>
+        I, apenas.
+    </item>
+    <item>
+        III, apenas.
+    </item>
+    <item>
+        I e II, apenas.
+    </item>
+    <item>
+        II e III, apenas.
+    </item>
+    <item>
+        I, II e III.
+    </item>
+</answer_options>
