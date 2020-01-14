@@ -46,7 +46,7 @@ def dedent_text(text, indent_level=DEFAULT_INDENT_LEVEL):
 
 
 def _auto_tag_link(text):
-    match = re.match(r'([\s\S]*)(<http[\s\S]*?>)([\s\S]*)', text)
+    match = re.match(r'([\s\S]*)(<(?:http|www)[\s\S]*?>)([\s\S]*)', text)
     if match is not None:
         b, link, a = match.groups()
         link = surround_with(link, tag=Tag.LINK, pad_nl=False, auto_tag_link=False)
@@ -66,7 +66,7 @@ def surround_with(text, tag, pad_nl=True, indent_level=DEFAULT_INDENT_LEVEL, aut
         if not text.startswith('<') and not text.endswith('>'):
             print('Selected text is invalid. It should be: `<link>`')
             return text
-        text = text[1:-1]
+        text = text[1:-1].replace('&', '&amp;')
 
     if tag == Tag.TEXT_BLOCK:
         text = CRLF.join(s.strip() for s in text.split(CRLF))
@@ -135,11 +135,11 @@ def surround_with(text, tag, pad_nl=True, indent_level=DEFAULT_INDENT_LEVEL, aut
                 D) option 4
             """
             pattern = (
-                r'^\(?A\)? ([\s\S]*)[\s]+' 
-                r'\(?B\)? ([\s\S]*)[\s]+' 
-                r'\(?C\)? ([\s\S]*)[\s]+'
-                r'\(?D\)? ([\s\S]*)[\s]+'
-                r'\(?E\)? ([\s\S]*)$'
+                r'^\(?A\)? ([\s\S]*?)[\s]+' 
+                r'\(?B\)? ([\s\S]*?)[\s]+' 
+                r'\(?C\)? ([\s\S]*?)[\s]+'
+                r'\(?D\)? ([\s\S]*?)[\s]+'
+                r'\(?E\)? ([\s\S]*?)$'
             )
         options = re.match(pattern, sanitize(text))
         if options is None:
