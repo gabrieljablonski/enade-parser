@@ -3,7 +3,7 @@ class Tag:
     TITLE = 'title'  # generic title, centered
     PORQUE = 'porque'
 
-    TEXT_BLOCK = 'text_block'  # generic paragraphs, formatting is not relevant
+    PARAGRAPH = 'paragraph'  # generic paragraphs, formatting is not relevant
     TEXT = 'text'  # text that should maintain its formatting (e.g. poems)
     LINK = 'link'
     FORMULA = 'formula'
@@ -25,7 +25,6 @@ class Tag:
     FIRST = 'first'  # first sentence inside <porque> tag
     SECOND = 'second'  # second sentence inside <porque> tag
     ITEM = 'item'  # for both questions and answers
-    PARAGRAPH = 'paragraph'  # text block element
 
 
 # tags are placed `<tag>text</tag>` instead of `<tag>\ntext\n</tag>`

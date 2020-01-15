@@ -14,7 +14,7 @@ BASE_MAPPING = {
     Key.V: Tag.TEXT_HEADER,
     Key.M: Tag.CAPTION,
 
-    Key.A: Tag.TEXT_BLOCK,
+    Key.A: Tag.PARAGRAPH,
     Key.S: Tag.SOURCE,
     Key.F: Tag.FORMULA,
     Key.G: Tag.QUESTION,

@@ -68,10 +68,11 @@ def surround_with(text, tag, pad_nl=True, indent_level=DEFAULT_INDENT_LEVEL, aut
             return text
         text = text[1:-1].replace('&', '&amp;')
 
-    if tag == Tag.TEXT_BLOCK:
+    if tag == Tag.PARAGRAPH:
         text = CRLF.join(s.strip() for s in text.split(CRLF))
         items = text.split(2 * CRLF)
         text = CRLF.join(surround_with(item, Tag.PARAGRAPH) for item in items)
+        return text
 
     if tag == Tag.TEXT:
         lines = map(str.strip, text.split('\n'))
