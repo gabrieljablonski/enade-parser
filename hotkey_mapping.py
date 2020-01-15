@@ -10,6 +10,7 @@ HK_CONFIRM = Key.ENTER
 
 
 BASE_MAPPING = {
+    Key.Z: Tag.CENTERED_TEXT,
     Key.X: Tag.PORQUE,
     Key.V: Tag.TEXT_HEADER,
     Key.M: Tag.CAPTION,

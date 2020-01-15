@@ -24,6 +24,7 @@ class HTMLTag:
 
 
 XML_TO_HTML_TAG_MAPPING = {
+    Tag.CENTERED_TEXT: HTMLTag('p', style='text-align: center'),
     Tag.TEXT_HEADER: HTMLTag('h1', style='text-align: left'),
     Tag.TITLE: HTMLTag('h1', style='text-align: center'),
     Tag.PORQUE: HTMLTag('div'),

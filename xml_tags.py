@@ -1,4 +1,5 @@
 class Tag:
+    CENTERED_TEXT = 'centered_text'
     TEXT_HEADER = 'text_header'  # 'texto 01', 'texto 02', ...; left aligned
     TITLE = 'title'  # generic title, centered
     PORQUE = 'porque'

@@ -74,7 +74,7 @@ def surround_with(text, tag, pad_nl=True, indent_level=DEFAULT_INDENT_LEVEL, fir
         text = CRLF.join(surround_with(item, Tag.PARAGRAPH, first_level_call=False) for item in items)
         return text
 
-    if tag == Tag.TEXT:
+    if tag in (Tag.CENTERED_TEXT, Tag.TEXT):
         lines = map(str.strip, text.split('\n'))
         text = f"<br/>{CRLF}".join(lines) + '<br/>'
 
