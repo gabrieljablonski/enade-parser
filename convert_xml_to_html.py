@@ -28,7 +28,7 @@ XML_TO_HTML_TAG_MAPPING = {
     Tag.TITLE: HTMLTag('h1', style='text-align: center'),
     Tag.PORQUE: HTMLTag('div'),
 
-    Tag.TEXT_BLOCK: HTMLTag('div'),
+    Tag.PARAGRAPH: HTMLTag('p'),
     Tag.TEXT: HTMLTag('p'),
 
     # both have special handling
@@ -48,7 +48,6 @@ XML_TO_HTML_TAG_MAPPING = {
     Tag.FIRST: HTMLTag('p'),
     Tag.SECOND: HTMLTag('p'),
     Tag.ITEM: HTMLTag('li'),
-    Tag.PARAGRAPH: HTMLTag('p'),
 }
 
 

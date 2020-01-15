@@ -49,18 +49,18 @@ def _auto_tag_link(text):
     match = re.match(r'([\s\S]*)(<(?:http|www)[\s\S]*?>)([\s\S]*)', text)
     if match is not None:
         b, link, a = match.groups()
-        link = surround_with(link, tag=Tag.LINK, pad_nl=False, auto_tag_link=False)
+        link = surround_with(link, tag=Tag.LINK, pad_nl=False, first_level_call=False)
         text = f"{b}{link}{a}"
     return text
 
 
-def surround_with(text, tag, pad_nl=True, indent_level=DEFAULT_INDENT_LEVEL, auto_tag_link=True):
+def surround_with(text, tag, pad_nl=True, indent_level=DEFAULT_INDENT_LEVEL, first_level_call=True):
     """
         surrounds text with provided tag in XML style
         surround_with("text", "tag") -> "<tag>text</tag>"
     """
     text = text.strip()
-    if auto_tag_link:
+    if first_level_call:
         text = _auto_tag_link(text)
     if tag == Tag.LINK:
         if not text.startswith('<') and not text.endswith('>'):
@@ -68,10 +68,10 @@ def surround_with(text, tag, pad_nl=True, indent_level=DEFAULT_INDENT_LEVEL, aut
             return text
         text = text[1:-1].replace('&', '&amp;')
 
-    if tag == Tag.PARAGRAPH:
+    if tag == Tag.PARAGRAPH and first_level_call:
         text = CRLF.join(s.strip() for s in text.split(CRLF))
         items = text.split(2 * CRLF)
-        text = CRLF.join(surround_with(item, Tag.PARAGRAPH) for item in items)
+        text = CRLF.join(surround_with(item, Tag.PARAGRAPH, first_level_call=False) for item in items)
         return text
 
     if tag == Tag.TEXT:
