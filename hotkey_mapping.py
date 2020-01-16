@@ -10,21 +10,21 @@ HK_CONFIRM = Key.ENTER
 
 
 BASE_MAPPING = {
-    Key.Z: Tag.CENTERED_TEXT,
+    Key.Z: Tag.PARAGRAPH,
     Key.X: Tag.PORQUE,
     Key.V: Tag.TEXT_HEADER,
     Key.M: Tag.CAPTION,
 
-    Key.A: Tag.PARAGRAPH,
     Key.S: Tag.SOURCE,
     Key.F: Tag.FORMULA,
-    Key.G: Tag.QUESTION,
-    Key.H: Tag.QUESTION_OPTIONS,
+    Key.H: Tag.QUESTION,
+    Key.J: Tag.QUESTION_OPTIONS,
     Key.K: Tag.ANSWER_OPTIONS,
     Key.L: Tag.LINK,
 
     Key.T: Tag.TITLE,
     Key.Y: Tag.TEXT,
+    Key.U: Tag.CENTERED_TEXT,
     Key.O: Tag.LIST,
     Key.P: Tag.TABLE,
 
