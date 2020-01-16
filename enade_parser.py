@@ -36,8 +36,14 @@ CURRENT_QUESTION_HTML = CURRENT_QUESTION_FILE_NAME.replace('xml', 'html')
 IMAGES_DIR_NAME = 'images'
 
 
+def append_to_current_question(text):
+    text = text.replace('\r\n', '\n')
+    with open(CURRENT_QUESTION_FILE_NAME, 'a', encoding='utf8') as out:
+        out.write(f"{text}\n")
+
+
 @static_vars(image=None)
-def check_image_operations(image_open, hotkey_pressed):
+def check_image_operations(image_open, hotkey_pressed, mode):
     if image_open:
         pressed = False
         if is_pressed(HK_CANCEL):
@@ -46,11 +52,11 @@ def check_image_operations(image_open, hotkey_pressed):
         elif is_pressed(HK_CONFIRM):
             try:
                 out_path = save_image(check_image_operations.image).replace('\\', '/')
-
-                tag = f'<img src="{out_path}" />'
-                copy(tag)
-                print(f"Copied tag to clipboard: {repr(tag)}")
-
+                img_tag = f'<img src="{out_path}" />'
+                copy(img_tag)
+                print(f"Copied tag to clipboard: {repr(img_tag)}")
+                if mode == 'auto':
+                    append_to_current_question(img_tag)
                 pressed = True
             except Exception as e:
                 print(f"Failed to save image: {e}")
@@ -77,13 +83,15 @@ def check_image_operations(image_open, hotkey_pressed):
     return image_open, hotkey_pressed
 
 
-def check_tag_operations(hotkey_pressed):
+def check_tag_operations(hotkey_pressed, mode):
     for hk, tag in TAG_MAPPING.items():
         if is_pressed(hk):
             hotkey_pressed = True
             # print(f"Inserting `{tag}` tag.")
             pad_nl = tag not in NO_PADDING
-            modify_selected_text(surround_with, tag=tag, pad_nl=pad_nl)
+            text = modify_selected_text(surround_with, tag=tag, pad_nl=pad_nl)
+            if text and mode == 'auto':
+                append_to_current_question(text)
             break
 
     if is_pressed(HK_REMOVE_TAG):
@@ -94,7 +102,7 @@ def check_tag_operations(hotkey_pressed):
     return hotkey_pressed
 
 
-def check_ocr_operations(hotkey_pressed):
+def check_ocr_operations(hotkey_pressed, mode):
     if is_pressed(HK_CAPTURE_OCR):
         hotkey_pressed = True
         print('Capturing image for text extraction.')
@@ -103,9 +111,11 @@ def check_ocr_operations(hotkey_pressed):
             print('Canceled image capture.')
             return hotkey_pressed
 
-        txt = get_text_in_image(img)
-        copy(txt)
-        print(f"Copied text to clipboard: {repr(txt)}")
+        text = get_text_in_image(img)
+        copy(text)
+        print(f"Copied text to clipboard: {repr(text)}")
+        if mode == 'auto':
+            append_to_current_question(text)
 
     return hotkey_pressed
 
@@ -190,7 +200,7 @@ def get_output_file_path_prefix():
     return f"{unidecode(s.lower())}_{menu.year}"
 
 
-@static_vars(subject='', year='', current_question=1, question_type='d')
+@static_vars(subject='', year='', current_question=1, question_type='d', mode='')
 def menu():
     while True:
         if not menu.subject:
@@ -253,6 +263,7 @@ def menu():
             if opt in (MANUAL_MODE, AUTO_MODE):
                 print(f"Enabling hotkeys, use {join_hotkeys(HK_TOGGLE_KEYBOARD).upper()} to disable them.")
                 open_current_question_file()
+                menu.mode = 'manual' if opt == MANUAL_MODE else 'auto'
                 return
 
             if opt == CHANGE_QUESTION_NUMBER:
@@ -361,12 +372,12 @@ def main():
             if is_pressed(HK_TOGGLE_KEYBOARD):
                 hotkey_pressed = True
                 keyboard_grab_activated = False
-                print(f"Keyboard deactivated")
+                print(f"Hotkeys deactivated")
 
             if keyboard_grab_activated:
-                image_open, hotkey_pressed = check_image_operations(image_open, hotkey_pressed)
-                hotkey_pressed = check_tag_operations(hotkey_pressed)
-                hotkey_pressed = check_ocr_operations(hotkey_pressed)
+                image_open, hotkey_pressed = check_image_operations(image_open, hotkey_pressed, menu.mode)
+                hotkey_pressed = check_tag_operations(hotkey_pressed, menu.mode)
+                hotkey_pressed = check_ocr_operations(hotkey_pressed, menu.mode)
             if hotkey_pressed:
                 last_action = time()
 

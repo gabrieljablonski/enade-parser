@@ -27,6 +27,7 @@ def modify_selected_text(modify, *args, **kwargs):
         sleep(.1)
         send_hotkey(Key.CTRL, Key.V)
         sleep(.1)
+        return new_text
 
 
 def indent_text(text, indent_level=DEFAULT_INDENT_LEVEL):
