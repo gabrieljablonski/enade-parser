@@ -11,6 +11,7 @@ class Key:
     ENTER = 'enter'
     ESC = 'esc'
     PRNT_SCRN = 'print screen'
+    WIN = 'windows'
 
     def __init__(self):
         for c in ascii_uppercase:

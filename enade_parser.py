@@ -20,7 +20,7 @@ from utils.static_vars import static_vars
 
 from xml_tags import NO_PADDING
 from hotkey_mapping import (
-    TAG_MAPPING, HK_REMOVE_TAG, HK_TOGGLE_KEYBOARD, HK_CONFIRM, HK_CANCEL, HK_CAPTURE_OCR, HK_CAPTURE_IMAGE
+    TAG_MAPPING, HK_REMOVE_TAG, HK_TOGGLE_MODE, HK_CONFIRM, HK_CANCEL, HK_CAPTURE_OCR, HK_CAPTURE_IMAGE, HK_BACK_TO_MENU
 )
 from convert_xml_to_html import xml_to_html, RELOAD_INTERVAL
 
@@ -261,7 +261,6 @@ def menu():
                 exit()
 
             if opt in (MANUAL_MODE, AUTO_MODE):
-                print(f"Enabling hotkeys, use {join_hotkeys(HK_TOGGLE_KEYBOARD).upper()} to disable them.")
                 open_current_question_file()
                 menu.mode = 'manual' if opt == MANUAL_MODE else 'auto'
                 return
@@ -360,19 +359,28 @@ def main():
 
     Thread(target=update_html_file, daemon=True).start()
 
+    toggle_mode = join_hotkeys(HK_TOGGLE_MODE).upper()
+    back_to_menu = join_hotkeys(HK_BACK_TO_MENU).upper()
+
     while True:
         _ = cv2.waitKey(1) & 0xFF
         now = time()
         if not keyboard_grab_activated:
             menu()
+            print(f"Enabling {menu.mode} mode, use {toggle_mode} to toggle between manual and auto mode.")
+            print(f"Use {back_to_menu} to go back to menu.")
             keyboard_grab_activated = True
 
         hotkey_pressed = False
         if now - last_action > ACTION_DELAY:
-            if is_pressed(HK_TOGGLE_KEYBOARD):
+            if is_pressed(HK_TOGGLE_MODE):
+                hotkey_pressed = True
+                menu.mode = 'auto' if menu.mode == 'manual' else 'manual'
+                print(f"Enabled {menu.mode} mode. Press {back_to_menu} to go back to menu.")
+
+            if is_pressed(HK_BACK_TO_MENU):
                 hotkey_pressed = True
                 keyboard_grab_activated = False
-                print(f"Hotkeys deactivated")
 
             if keyboard_grab_activated:
                 image_open, hotkey_pressed = check_image_operations(image_open, hotkey_pressed, menu.mode)
