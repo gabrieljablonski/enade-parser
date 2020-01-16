@@ -101,7 +101,7 @@ def surround_with(text, tag, pad_nl=True, indent_level=DEFAULT_INDENT_LEVEL, fir
         first, second = match.groups()
         text = (
             f"{surround_with(first, tag=Tag.FIRST)}{CRLF}"
-            f"PORQUE{CRLF}"
+            f"<{Tag.PQ}/>{CRLF}"
             f"{surround_with(second, tag=Tag.SECOND)}"
         )
 

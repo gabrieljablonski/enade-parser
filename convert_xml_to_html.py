@@ -28,6 +28,7 @@ XML_TO_HTML_TAG_MAPPING = {
     Tag.TEXT_HEADER: HTMLTag('h1', style='text-align: left'),
     Tag.TITLE: HTMLTag('h1', style='text-align: center'),
     Tag.PORQUE: HTMLTag('div'),
+    Tag.PQ: HTMLTag('p', style='text-align: center; font-style: bold; font-size: 20'),
 
     Tag.PARAGRAPH: HTMLTag('p'),
     Tag.TEXT: HTMLTag('p'),
@@ -46,8 +47,8 @@ XML_TO_HTML_TAG_MAPPING = {
     Tag.QUESTION_OPTIONS: HTMLTag('ol', generic_attributes={'type': 'I'}),
     Tag.ANSWER_OPTIONS: HTMLTag('ol', generic_attributes={'type': 'A'}),
 
-    Tag.FIRST: HTMLTag('p'),
-    Tag.SECOND: HTMLTag('p'),
+    Tag.FIRST: HTMLTag('p', style='text-align: center'),
+    Tag.SECOND: HTMLTag('p', style='text-align: center'),
     Tag.ITEM: HTMLTag('li'),
 }
 
@@ -70,6 +71,9 @@ def xml_to_html(xml_string, file_path='', include_reload_script=True):
                         'alt': el.text,
                     }
                     el.text = ''
+
+                if xml_tag == Tag.PQ:
+                    el.text = 'PORQUE'
 
                 if html_tag.style is not None:
                     el.set('style', f"{html_tag.style}")

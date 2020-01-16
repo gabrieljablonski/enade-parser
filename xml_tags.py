@@ -3,6 +3,7 @@ class Tag:
     TEXT_HEADER = 'text_header'  # 'texto 01', 'texto 02', ...; left aligned
     TITLE = 'title'  # generic title, centered
     PORQUE = 'porque'
+    PQ = 'pq'  # placeholder for the actual "PORQUE" text
 
     PARAGRAPH = 'paragraph'  # generic paragraphs, formatting is not relevant
     TEXT = 'text'  # text that should maintain its formatting (e.g. poems)
