@@ -215,37 +215,47 @@ def menu():
             os.chdir(base_path)
         else:
             qt = 'discursive' if menu.question_type == 'd' else 'multiple choice'
-            options = {
-                1: 'Enable keyboard grab.',
-                2: f"Change current question number (current is {menu.current_question}).",
-                3: f"Change current question type (current is {qt}).",
-                4: 'Change subject/year.',
-                5: 'Save current question.',
-                6: 'Open HTML preview.',
-                0: 'Exit.'
-            }
+            EXIT = 'Exit.'
+            AUTO_MODE = 'Activate auto mode.'
+            MANUAL_MODE = 'Activate manual mode.'
+            CHANGE_QUESTION_NUMBER = f"Change current question number (current is {menu.current_question})."
+            CHANGE_QUESTION_TYPE = f"Change current question type (current is {qt})."
+            CHANGE_SUBJECT_YEAR = 'Change subject/year.'
+            SAVE_CURRENT_QUESTION = 'Save current question.'
+            OPEN_HTML_PREVIEW = 'Open HTML preview.'
+            options = (
+                EXIT,
+                AUTO_MODE,
+                MANUAL_MODE,
+                CHANGE_QUESTION_NUMBER,
+                CHANGE_QUESTION_TYPE,
+                CHANGE_SUBJECT_YEAR,
+                SAVE_CURRENT_QUESTION,
+                OPEN_HTML_PREVIEW,
+            )
             print('\n-----------\nChoose an option:')
-            for o, txt in options.items():
-                print(f"-{o}: {txt}")
+            for i, txt in enumerate(options):
+                print(f"-{i}: {txt}")
             while True:
                 inp = input('>> ')
                 try:
                     opt = int(inp)
-                    if opt not in options:
+                    if opt < 0:
                         raise ValueError
+                    opt = options[opt]
                     break
-                except ValueError:
+                except (ValueError, IndexError):
                     print('Invalid option')
 
-            if opt == 0:
+            if opt == EXIT:
                 exit()
 
-            if opt == 1:
-                print(f"Enabling keyboard grab, use {join_hotkeys(HK_TOGGLE_KEYBOARD).upper()} to disable it.")
+            if opt in (MANUAL_MODE, AUTO_MODE):
+                print(f"Enabling hotkeys, use {join_hotkeys(HK_TOGGLE_KEYBOARD).upper()} to disable them.")
                 open_current_question_file()
                 return
 
-            if opt == 2:
+            if opt == CHANGE_QUESTION_NUMBER:
                 print('Insert new question number:')
                 while True:
                     inp = input('>> ')
@@ -258,7 +268,7 @@ def menu():
                     except ValueError:
                         print('Invalid question number.')
 
-            if opt == 3:
+            if opt == CHANGE_QUESTION_TYPE:
                 print('Is the question multiple choice or discursive? (M/d)')
                 while True:
                     inp = input('>> ')
@@ -266,13 +276,12 @@ def menu():
                         menu.question_type = inp.lower() or 'm'
                         break
 
-            if opt == 4:
+            if opt == CHANGE_SUBJECT_YEAR:
                 os.chdir('..')
                 menu.subject, menu.year, menu.active_dir, menu.images_dir, menu.current_question = '', '', '', '', 1
                 continue
 
-            if opt == 5:
-                prefix = get_output_file_path_prefix()
+            if opt == SAVE_CURRENT_QUESTION:
                 try:
                     save_question()
                 except OSError as e:
@@ -282,7 +291,7 @@ def menu():
                 finally:
                     continue
 
-            if opt == 6:
+            if opt == OPEN_HTML_PREVIEW:
                 os.system(CURRENT_QUESTION_HTML)
 
 
