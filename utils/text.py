@@ -61,13 +61,13 @@ def surround_with(text, tag, pad_nl=True, indent_level=DEFAULT_INDENT_LEVEL, fir
         surround_with("text", "tag") -> "<tag>text</tag>"
     """
     text = text.strip()
-    if first_level_call:
-        text = _auto_tag_link(text)
     if tag == Tag.LINK:
         if not text.startswith('<') and not text.endswith('>'):
             print('Selected text is invalid. It should be: `<link>`')
             return text
         text = text[1:-1].replace('&', '&amp;')
+    elif first_level_call:
+        text = _auto_tag_link(text)
 
     if tag == Tag.PARAGRAPH and first_level_call:
         text = CRLF.join(s.strip() for s in text.split(CRLF))
