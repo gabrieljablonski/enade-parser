@@ -4,3 +4,4 @@ venv/
 pdfs*/
 __pycache__/
 installation/
+old_tags/
