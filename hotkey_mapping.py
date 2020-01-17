@@ -18,8 +18,8 @@ BASE_MAPPING = {
 
     Key.S: Tag.SOURCE,
     Key.F: Tag.FORMULA,
-    Key.H: Tag.QUESTION,
-    Key.J: Tag.QUESTION_OPTIONS,
+    Key.H: Tag.QUESTION_OPTIONS,
+    Key.J: Tag.QUESTION,
     Key.K: Tag.ANSWER_OPTIONS,
     Key.L: Tag.LINK,
 
