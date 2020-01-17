@@ -1,0 +1,62 @@
+<paragraph>
+    A previsão dos níveis de demanda é fundamental
+    para as organizações públicas e privadas. Os
+    níveis de demanda e os instantes em que
+    ocorrem afetam principalmente a capacidade
+    e o nível de serviço. Para a previsão logística,
+    diversas características devem ser consideradas,
+    como: i) aspecto espacial; ii) aspecto temporal;
+    iii) extensão da variabilidade; iv) grau de
+    aleatoriedade. Entre os diversos métodos
+    utilizados na logística, a ponderação exponencial
+    é um dos melhores para a previsão de curto
+    prazo. Nesse método, em que as observações
+    passadas não recebem peso igual, obtém-se um
+    tipo de média móvel. Sua fórmula é a seguinte:
+</paragraph>
+<centered_text>
+    <formula>F_{t+1} = \alpha A_t + (1-\alpha)F_t</formula> , em que<br/>
+</centered_text>
+<text>
+    <formula>t</formula> = período de tempo atual;<br/>
+    <formula>\alpha</formula> = constante da ponderada exponencial;<br/>
+    <formula>A_t</formula> = demanda no período <formula>t</formula>;<br/>
+    <formula>F_t</formula> = previsão para o período <formula>t</formula>;<br/>
+    <formula>F_{t+1}</formula> = previsão para o período seguinte <formula>t</formula>, ou o próximo período.<br/>
+</text>
+<source>
+    BALLOU, R. H. <b>Gerenciamento da cadeia de suprimentos:</b> logística
+    empresarial. 5. ed. Porto Alegre: Bookman, 2010 (adaptado).
+</source>
+<paragraph>
+    Alguns dados trimestrais de uma organização,
+    mostrados no quadro a seguir, representam uma
+    série de tempo de demanda para o seu principal item.
+</paragraph>
+<table>
+    <image src="images/administracao_publica_2018_m_30_0.png" />
+</table>
+<question>
+    Com base nessas informações, considerando-se
+    que uma constante de ponderada exponencial seja
+    igual a 0,2 e que a previsão de demanda anterior <formula>F_o</formula>
+    tenha sido de 975, conclui-se que a previsão para o
+    primeiro trimestre será de
+</question>
+<answer_options>
+    <item>
+        975.
+    </item>
+    <item>
+        1 000.
+    </item>
+    <item>
+        1 025.
+    </item>
+    <item>
+        1 050.
+    </item>
+    <item>
+        1 075.
+    </item>
+</answer_options>

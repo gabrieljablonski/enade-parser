@@ -1,0 +1,53 @@
+<paragraph>
+    Em pesquisa realizada com um conjunto de 15 empresas do setor varejista, no ano de 2017, foram levantadas,
+    para cada uma delas, as seguintes informações: o investimento em responsabilidade socioambiental (IRSC),
+    medido pelo percentual do investimento total aplicado em atividades e projetos socioambientais; a satisfação
+    dos clientes (SAT), medida obtida de uma amostra de clientes, em escala que varia de 0 a 10; a lucratividade
+    anual (LUC), referente à relação entre o lucro líquido total e a receita total; e o crescimento de receita (CREC)
+    em relação a 2016, descontada a inflação. Os dados levantados estão dispostos na tabela a seguir.
+</paragraph>
+<table>
+    <image src="images/administracao_2018_m_23_0.png" />
+</table>
+<paragraph>
+    Foram extraídas medidas de correlação de Pearson entre IRSC e CREC (correlação de 0,72), e entre SAT e
+    LUC (correlação de 0,17). Os gráficos a seguir apresentam essas relações entre as variáveis.
+</paragraph>
+<image src="images/administracao_2018_m_23_1.png" />
+<paragraph>
+    Com base nos dados expostos, avalie as asserções a seguir e a relação proposta entre elas.
+</paragraph>
+<porque>
+    <first>
+        I. Os gráficos refletem visualmente que a relação linear entre IRSC e CREC é mais forte do que SAC
+        e LUC, o que indica níveis de correlação distintos: um mais próximo da associação perfeita (0,72),
+        outro mais próximo da total falta de associação (0,17).
+    </first>
+    <pq/>
+    <second>
+        II. As correlações calculadas sinalizam que o marketing (associado com a variável SAT) e a relação
+        com a sociedade (associada com a variável IRSC) predizem resultados financeiros de maneiras
+        variadas; porém, tomadas em conjunto, pela soma das correlações (0,72 + 0,17), que se aproxima
+        de 0,9, as duas variáveis predizem fortemente o resultado financeiro conjunto de CREC e LUC.
+    </second>
+</porque>
+<question>
+    A respeito dessas asserções, assinale a opção correta.
+</question>
+<answer_options>
+    <item>
+        As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.
+    </item>
+    <item>
+        As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.
+    </item>
+    <item>
+        A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.
+    </item>
+    <item>
+        A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.
+    </item>
+    <item>
+        As asserções I e II são proposições falsas.
+    </item>
+</answer_options>

@@ -1,0 +1,57 @@
+<paragraph>
+    Um estudo desenvolvido para avaliar a relação entre a cobertura por serviços de saneamento e indicadores
+    epidemiológicos nos países da América Latina, analisou a taxa de mortalidade infantil, processando-se a
+    análise por meio de regressão linear múltipla, conforme mostrado na tabela a seguir. Encontrou-se um
+    coeficiente <formula>R^2</formula> ajustado de 0,782, tendo permanecido, no modelo final, as variáveis Esperança de vida ao
+    nascer e Cobertura por sistemas de esgotamento sanitário.
+</paragraph>
+<title>
+    Regressão multivariada linear entre a taxa de mortalidade infantil e
+    indicadores demográficos, socioeconômicos, fatores de risco, gastos públicos e
+    de cobertura por serviços de saúde e de saneamento
+</title>
+<table>
+    <image src="images/administracao_publica_2018_m_35_0.png" />
+</table>
+<source>
+    TEIXEIRA, J. C; GOMES, M. H. R.; SOUZA, J. A. Associação entre cobertura por serviços de saneamento
+    e indicadores epidemiológicos nos países da América Latina: estudo com dados secundários.
+    <b>Revista Panamericana de Salud Publica,</b> v. 32, n. 6, Washington, dez. 2012 (adaptado).
+</source>
+<paragraph>
+    A partir das informações apresentadas, avalie as afirmações a seguir
+</paragraph>
+<question_options>
+    <item>
+        Os indicadores de Esperança de vida ao nascer e Cobertura por sistemas de esgotamento sanitário
+        apresentaram coeficiente <formula>\beta</formula> negativo, mostrando uma relação inversamente proporcional à taxa de
+        mortalidade infantil.
+    </item>
+    <item>
+        Na análise dos dados estatísticos, fica evidenciado que o aumento da Cobertura por sistemas de
+        esgotamento sanitário determina uma queda na taxa de mortalidade infantil.
+    </item>
+    <item>
+        O aumento na variável Esperança de vida ao nascer aumentará a taxa de mortalidade infantil.
+    </item>
+</question_options>
+<question>
+    É correto o que se afirma em
+</question>
+<answer_options>
+    <item>
+        I, apenas.
+    </item>
+    <item>
+        III, apenas.
+    </item>
+    <item>
+        I e II, apenas.
+    </item>
+    <item>
+        II e III, apenas.
+    </item>
+    <item>
+        I, II e III.
+    </item>
+</answer_options>

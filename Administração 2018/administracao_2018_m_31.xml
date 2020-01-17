@@ -1,0 +1,42 @@
+<paragraph>
+    Um clube de futebol brasileiro está se preparando para a próxima temporada de competições e tem duas
+    possibilidades de contratação de jogadores, um argentino ou um uruguaio. Procurando quantificar os
+    riscos e os ganhos possíveis com a contratação de cada jogador, a direção do clube elaborou a seguinte
+    matriz de análise de riscos.
+</paragraph>
+<table>
+    <image src="images/administracao_2018_m_31_0.png" />
+</table>
+<paragraph>
+    Com base na situação hipotética apresentada, avalie as asserções a seguir e a relação proposta entre elas.
+</paragraph>
+<porque>
+    <first>
+        I. A contratação do jogador argentino é recomendada com base na análise de risco.
+    </first>
+    <pq/>
+    <second>
+        II. A probabilidade de o jogador argentino se lesionar ou de ter um desempenho ruim é menor que a
+        apresentada pelo jogador uruguaio.
+    </second>
+</porque>
+<question>
+    A respeito dessas asserções, assinale a opção correta.
+</question>
+<answer_options>
+    <item>
+        As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.
+    </item>
+    <item>
+        As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.
+    </item>
+    <item>
+        A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.
+    </item>
+    <item>
+        A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.
+    </item>
+    <item>
+        As asserções I e II são proposições falsas.
+    </item>
+</answer_options>

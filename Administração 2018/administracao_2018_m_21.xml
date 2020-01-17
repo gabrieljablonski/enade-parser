@@ -1,0 +1,50 @@
+<paragraph>
+    A teoria matemática da Administração foi a que trouxe para os processos decisórios o foco no uso de
+    métodos oriundos das ciências exatas, em especial a Matemática Aplicada, a Computação e a Estatística.
+    Implementações de conhecimentos, tais como pesquisa operacional, teoria dos jogos, teoria das filas,
+    teoria das probabilidades, programação linear e modelagem estatística preditiva, passaram a fazer parte
+    do dia a dia de algumas áreas gerenciais.
+</paragraph>
+<paragraph>
+    A evolução gerencial recente diz respeito ao uso de grandes volumes de dados, com permanente
+    atualização e diferentes formatos (como numérico, textual e visual), que vêm associados ao conceito de
+    <i>Big Data.</i> O novo cenário para as práticas de gestão viabiliza um conceito de decisão baseada em dados
+    ou de gestão baseada em dados.
+</paragraph>
+<source>
+    ANDRADE, R.; AMBONI, N. <b>Teoria Geral da Administração.</b> São Paulo: Elsevier Brasil, 2017 (adaptado).
+</source>
+<question>
+    No que se refere a evolução recente comentada no texto, assinale a opção correta.
+</question>
+<answer_options>
+    <item>
+        A gestão baseada em dados refere-se à prática de captação, manipulação e análise de dados para
+        a tomada de decisão, utilizando, na atualidade, diferentes fontes, tipos e volumes de dados, além
+        de ferramentas computacionais estatísticas mais sofisticadas e com aplicações complementares aos
+        métodos convencionais de tomada de decisão.
+    </item>
+    <item>
+        Os conceitos associados à inteligência de negócios e à ciência de dados sinalizam uma reorientação
+        paradigmática da teoria matemática, que se distancia dos métodos efetivamente matemáticos, como
+        a pesquisa operacional ou a teoria das filas, e se aproxima da área de Educação e Psicologia, pelos
+        estudos de inteligência, e da área computacional, pelo estudo de dados.
+    </item>
+    <item>
+        O uso dos diferentes tipos de dados citados sinaliza uma complementação de métodos de análise
+        nos processos decisórios, com uso de métodos quantitativos convencionais, a exemplo das medidas
+        estatísticas ou análise de regressão, e de métodos de análise da pesquisa qualitativa, a exemplo dos
+        métodos etnográficos e projetivos.
+    </item>
+    <item>
+        O conceito de decisão baseada em dados, ainda que não represente novidade no cenário gerencial,
+        vem adquirindo novos contornos em função de sua aproximação com o conceito de <i>Big Data,</i> o qual
+        substitui pequenos volumes de dados e dispensa os procedimentos convencionais de pesquisa com
+        pequenas amostras, como métodos experimentais ou estudos por entrevistas.
+    </item>
+    <item>
+        As tendências associadas ao <i>Big Data,</i> devido à utilização de grandes números e valores, atualizam a
+        aproximação do conhecimento gerencial com a Matemática e a Estatística, com novas aplicações da
+        teoria dos conjuntos infinitos e da lei estatística dos grandes números.
+    </item>
+</answer_options>

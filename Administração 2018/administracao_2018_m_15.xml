@@ -1,0 +1,69 @@
+<text_header>Texto 1</text_header>
+<paragraph>
+    No esforço de gestão orientada à competitividade, a decisão baseada em informação é sempre uma
+    referência de valor para gestores mais eficientes e visionários. No contexto de grandes volumes de dados
+    e com produção continuada nos meios virtuais, associados ao conceito de <i>Big Data,</i> os gestores têm à
+    disposição dados que permitem melhor conhecimento de concorrentes, consumidores, colaboradores,
+    parceiros e outros agentes de influência e interação. No campo particular de marketing, essa realidade
+    alcança o conceito de inteligência de marketing, com foco nas variáveis de mercado e em dados e
+    informações, por exemplo, sobre consumidores e concorrentes.
+</paragraph>
+<source>
+    TURBAN, E. et al. <b>Business intelligence:</b> um enfoque gerencial para a inteligência do negócio. Porto Alegre: Bookman Editora, 2009 (adaptado).
+</source>
+<text_header>Texto 2</text_header>
+<paragraph>
+    Um debate sobre questões legais e éticas a respeito do uso de dados de consumidores atualmente
+    acessíveis a diferentes tecnologias de prospecção surgiu em decorrência da abundância de informações
+    nas redes sociais. A venda de tais dados a empresas interessadas em melhor direcionar seus esforços
+    de marketing, sem a autorização da pessoa, pode vir a criar os mais diversos transtornos. A constante
+    novidade dessas ferramentas e práticas dificulta a existência de referências legais de gestão e controle.
+    A base de decisão ética parece ser a referência central para os gestores.
+</paragraph>
+<source>
+    Disponível em: <link>https://super.abril.com.br/tecnologia/o-lado-negro-do-facebook/</link>. Acesso em: 27 jul. 2017 (adaptado).
+</source>
+<paragraph>
+    Considerando os desenvolvimentos relativos à inteligência de marketing, avalie as afirmações a seguir.
+</paragraph>
+<question_options>
+    <item>
+        Diferentemente da inteligência competitiva, voltada a dados externos, a inteligência de
+        marketing se operacionaliza por meio dos sistemas de processamentos de transações de dados
+        internos da organização, de modo que, com o devido consentimento do cliente, são eliminados
+        os problemas éticos no uso de tecnologias para melhorar as decisões de marketing com bases
+        em seus dados pessoais.
+    </item>
+    <item>
+        As redes sociais têm sido objeto de reflexão no debate contemporâneo porque as tecnologias
+        disponíveis permitem extrapolar o interesse gerencial dos prestadores de serviços e gerar ações de
+        marketing que, em algumas situações, não seriam permitidas pelos consumidores caso soubessem
+        do uso de seus dados.
+    </item>
+    <item>
+        As ferramentas convencionais de inteligência competitiva, cuja aplicação abrange a inteligência de
+        marketing, requerem cuidado e clareza no uso dos dados de mercado e dos clientes em potencial,
+        sendo a disseminação de boas práticas, o uso de códigos de ética e a reflexão ética continuada
+        exemplos de práticas que minimizam problemas em um cenário de falta de referência legal.
+    </item>
+</question_options>
+<question>
+    É correto o que se afirma em
+</question>
+<answer_options>
+    <item>
+        I, apenas.
+    </item>
+    <item>
+        III, apenas.
+    </item>
+    <item>
+        I e II, apenas.
+    </item>
+    <item>
+        II e III, apenas.
+    </item>
+    <item>
+        I, II e III.
+    </item>
+</answer_options>

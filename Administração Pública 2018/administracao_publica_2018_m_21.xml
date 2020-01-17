@@ -1,0 +1,42 @@
+<paragraph>
+    O gráfico a seguir apresenta o resultado da Previdência Social Urbana e Rural, no Brasil, em bilhões
+    nominais, de 2002 a 2015.
+</paragraph>
+<image src="images/administracao_publica_2018_m_21_0.png" />
+<source>
+    Disponível em: <link>http://www.camara.gov.br/proposicoesWeb/</link>. Acesso em: 23 jul. 2018 (adaptado).
+</source>
+<paragraph>
+    A partir dos dados apresentados, avalie as asserções a seguir e a relação proposta entre elas.
+</paragraph>
+<porque>
+    <first>
+        I. O resultado final, somadas a Previdência Social Urbana e a Rural, apresenta uma tendência de
+        déficit crescente.
+    </first>
+    <pq/>
+    <second>
+        II. Embora a partir do ano de 2009, a Previdência Social Urbana apresente resultados positivos, a
+        Previdência Social Rural apresenta resultados negativos e crescentes em toda a série histórica.
+    </second>
+</porque>
+<question>
+    A respeito dessas asserções, assinale a opção correta.
+</question>
+<answer_options>
+    <item>
+        As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.
+    </item>
+    <item>
+        As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.
+    </item>
+    <item>
+        A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.
+    </item>
+    <item>
+        A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.
+    </item>
+    <item>
+        As asserções I e II são proposições falsas.
+    </item>
+</answer_options>

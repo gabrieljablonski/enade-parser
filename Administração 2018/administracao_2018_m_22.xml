@@ -1,0 +1,48 @@
+<paragraph>
+    A gestão de processos BPM (<i>Business Process Management</i>) conecta gestão de negócios à tecnologia
+    de informação, com o objetivo de aperfeiçoar os processos nas organizações. A utilização da BPM nas
+    empresas tem como foco o aprimoramento dos resultados esperados do negócio, como o aumento
+    de produtividade, a redução de burocracia, a melhoria na rentabilidade, a mitigação de defeitos e de
+    desperdícios e a satisfação e retenção de clientes. A BPM foca também nas pessoas, que são o centro
+    natural desses processos de negócio.
+</paragraph>
+<source>
+    Disponível em: <link>http://www.abpmp-br.org/bpm-cbok-v3-0/</link> . Acesso em: 21 jul. 2018 (adaptado).
+</source>
+<paragraph>
+    Considerando o conceito de BPM, avalie as afirmações a seguir
+</paragraph>
+<question_options>
+    <item>
+        Em uma organização, a BPM deve incluir liderança, equipes e pessoas envolvidas de forma
+        colaborativa e propositiva.
+    </item>
+    <item>
+        As áreas funcionais de uma organização devem estar integradas para que o modelo de previsão de
+        dados do processo seja adequado às necessidades organizacionais.
+    </item>
+    <item>
+        Em uma organização, a governança deve ter conhecimento das funcionalidades e limitações da
+        ferramenta utilizada na gestão de processos.
+    </item>
+</question_options>
+<question>
+    É correto o que se afirma em
+</question>
+<answer_options>
+    <item>
+        I, apenas.
+    </item>
+    <item>
+        II, apenas.
+    </item>
+    <item>
+        I e III, apenas.
+    </item>
+    <item>
+        II e III, apenas.
+    </item>
+    <item>
+        I, II e III.
+    </item>
+</answer_options>
