@@ -37,7 +37,7 @@ XML_TO_HTML_TAG_MAPPING = {
     Tag.LINK: HTMLTag('a'),
     Tag.FORMULA: HTMLTag('img'),
 
-    Tag.IMAGE: HTMLTag('img', style='display: block; margin-left: auto; margin-right: auto; width: 50%;'),
+    Tag.IMAGE: HTMLTag('img', style='display: block; margin-left: auto; margin-right: auto; width: 80%;'),
     Tag.TABLE: HTMLTag('div'),
     Tag.CAPTION: HTMLTag('p', style='font-style: bold'),
 
@@ -63,6 +63,7 @@ def xml_to_html(xml_string, file_path='', include_reload_script=True):
                 el.tag = html_tag.tag
 
                 if xml_tag == Tag.LINK:
+                    el.text = el.text.replace(' ', '').replace('\r', '').replace('\n', '')
                     html_tag.generic_attributes = {
                         'href': el.text,
                     }
