@@ -37,6 +37,7 @@ XML_TO_HTML_TAG_MAPPING = {
     Tag.LINK: HTMLTag('a'),
     Tag.FORMULA: HTMLTag('img'),
 
+    Tag.IMAGE: HTMLTag('img', style='display: block; margin-left: auto; margin-right: auto; width: 50%;')
     Tag.TABLE: HTMLTag('div'),
     Tag.CAPTION: HTMLTag('p', style='font-style: bold'),
 

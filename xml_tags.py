@@ -21,6 +21,7 @@ class Tag:
     ITALIC = 'i'
     BOLD = 'b'
 
+    IMAGE = 'image'
     TABLE = 'table'  # placed around img tags for tables, may be useful later on
 
     # no hotkey bindings

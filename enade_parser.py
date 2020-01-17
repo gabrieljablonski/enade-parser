@@ -18,7 +18,7 @@ from utils.ocr import set_tesseract_path, get_text_in_image
 from utils.hotkeys import is_pressed, Key, join_hotkeys, kb
 from utils.static_vars import static_vars
 
-from xml_tags import NO_PADDING
+from xml_tags import NO_PADDING, Tag
 from hotkey_mapping import (
     TAG_MAPPING, HK_REMOVE_TAG, HK_TOGGLE_MODE, HK_CONFIRM, HK_CANCEL, HK_CAPTURE_OCR, HK_CAPTURE_IMAGE, HK_BACK_TO_MENU
 )
@@ -52,7 +52,7 @@ def check_image_operations(image_open, hotkey_pressed, mode):
         elif is_pressed(HK_CONFIRM):
             try:
                 out_path = save_image(check_image_operations.image).replace('\\', '/')
-                img_tag = f'<img src="{out_path}" />'
+                img_tag = f'<{Tag.IMAGE} src="{out_path}" />'
                 copy(img_tag)
                 print(f"Copied tag to clipboard: {repr(img_tag)}")
                 if mode == 'auto':
