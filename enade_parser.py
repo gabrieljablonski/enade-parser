@@ -288,7 +288,8 @@ def menu():
 
             if opt == CHANGE_SUBJECT_YEAR:
                 os.chdir('..')
-                menu.subject, menu.year, menu.active_dir, menu.images_dir, menu.current_question = '', '', '', '', 1
+                menu.subject, menu.year, menu.active_dir = '', '', ''
+                menu.images_dir, menu.current_question, menu.question_type, menu.mode = '', 1, 'd', ''
                 continue
 
             if opt == SAVE_CURRENT_QUESTION:
