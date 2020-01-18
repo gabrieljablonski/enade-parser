@@ -1,0 +1,42 @@
+<paragraph>
+    Uma empresa apresentou os seguintes dados, extraídos de seus arquivos contábeis:
+</paragraph>
+<list>
+    <item>
+        fluxo de caixa operacional (FCO) anual projetado em regime de perpetuidade:
+        R$ 30 000,00;
+    </item>
+    <item>
+        capital de terceiros: total de R$ 20 000,00;
+    </item>
+    <item>
+        custo da dívida: 20% ao ano;
+    </item>
+    <item>
+        alíquota do imposto de renda: 34%;
+    </item>
+    <item>
+        custo do capital do acionista: 30% ao ano.
+    </item>
+</list>
+<question>
+    Considerando-se que as despesas de juros são pagas e que o principal da dívida é renovado indefinidamente,
+    o Valor da Empresa para o Acionista (VEA) é de
+</question>
+<answer_options>
+    <item>
+        R$ 8 208,00.
+    </item>
+    <item>
+        R$ 86 666,67.
+    </item>
+    <item>
+        R$ 86 800,00.
+    </item>
+    <item>
+        R$ 91 200,00.
+    </item>
+    <item>
+        R$ 136 800,00.
+    </item>
+</answer_options>

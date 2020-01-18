@@ -1,0 +1,56 @@
+<paragraph>
+    Uma empresa fabrica sensores de presença, tanto externos quanto internos, para o setor de segurança.
+    Com a diminuição do consumo de produtos dessa natureza, o diretor da empresa supôs perda maior
+    na rentabilidade do produto sensor externo, já que, no período anterior, a empresa tinha vendido 300
+    unidades do sensor interno e 100 unidades do sensor externo, ambos produtos sem saldo inicial ou final
+    de estoque. O diretor solicitou, então, ao seu gerente de controladoria, que apresentasse um relatório que
+    evidenciasse a rentabilidade de cada produto. O gerente de controladoria apresentou a Demonstração do
+    Resultado do Exercício (DRE) simplificada de cada produto, para a qual se utilizou dos métodos do custeio
+    variável e do custeio por absorção, cujos dados estão expostos a seguir.
+</paragraph>
+<table>
+    <image src="images/ciencias_contabeis_2018_m_11_0.png" />
+</table>
+<table>
+    <image src="images/ciencias_contabeis_2018_m_11_1.png" />
+</table>
+<paragraph>
+    Com base nessa situação e nos dados apresentados, avalie as afirmações a seguir.
+</paragraph>
+<question_options>
+    <item>
+        A DRE elaborada pelo método do custeio por absorção dificulta a tomada de decisão sobre a
+        lucratividade por produto devido à utilização de critério de rateio.
+    </item>
+    <item>
+        Caso o diretor decida basear-se apenas na informação gerada na DRE, elaborada pelo método
+        do custeio variável, que apresenta a margem de contribuição do produto sensor externo com
+        resultado negativo, a empresa deverá deixar de fabricar esse produto.
+    </item>
+    <item>
+        No custeio por absorção, são considerados como custos do produto tanto os custos fixos quanto os
+        variáveis, diretos ou indiretos; já no custeio variável, levam-se em conta como custos do produto
+        apenas os custos variáveis, sendo os custos fixos separados e considerados como despesas do
+        período, indo diretamente para o resultado.
+    </item>
+</question_options>
+<question>
+    É correto o que se afirma em
+</question>
+<answer_options>
+    <item>
+        I, apenas.
+    </item>
+    <item>
+        III, apenas.
+    </item>
+    <item>
+        I e II, apenas.
+    </item>
+    <item>
+        II e III, apenas.
+    </item>
+    <item>
+        I, II e III.
+    </item>
+</answer_options>

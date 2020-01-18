@@ -1,0 +1,41 @@
+<paragraph>
+    Os dirigentes de uma empresa que industrializa máquinas para o setor calçadista pretendem aumentar a
+    oferta de novos equipamentos. Atualmente todos os controles operacionais da empresa são executados de
+    forma manual, havendo muito pouca interação entre os setores. Os diretores acreditam que investimentos
+    em recursos tecnológicos poderiam proporcionar bons resultados para a empresa, principalmente com o
+    aumento das atribuições de cada departamento, que ocorrerá a partir da oferta de novos produtos.
+</paragraph>
+<paragraph>
+    Considerando essa situação, avalie as asserções a seguir e a relação proposta entre elas.
+</paragraph>
+<porque>
+    <first>
+        I. A implantação de um programa ERP (<i>enterprise resource planning</i>) nessa empresa contribuirá para
+        a agilidade e a eficácia no planejamento, no controle e na tomada de decisão.
+    </first>
+    <pq/>
+    <second>
+        II. O programa ERP, dispondo da tecnologia necessária ao armazenamento e ao fluxo das informações
+        de negócios, permitirá a integração entre os departamentos da empresa.
+    </second>
+</porque>
+<question>
+    A respeito dessas asserções, assinale a opção correta.
+</question>
+<answer_options>
+    <item>
+        As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.
+    </item>
+    <item>
+        As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.
+    </item>
+    <item>
+        A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.
+    </item>
+    <item>
+        A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.
+    </item>
+    <item>
+        As asserções I e II são proposições falsas.
+    </item>
+</answer_options>

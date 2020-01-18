@@ -1,0 +1,38 @@
+<paragraph>
+    Durante auditoria em uma organização do setor de varejo, um auditor interno encontrou indícios de um
+    desvio de aproximadamente R$ 300 000,00 em materiais, o que apontava para provável ocorrência de
+    fraude. O desvio não havia sido detectado anteriormente porque o diretor do almoxarifado tinha registrado
+    o recebimento dos materiais no inventário permanente da organização e, em seguida, encaminhado o
+    relatório para o departamento de contas a pagar para processamento.
+</paragraph>
+<question>
+    Considerando a situação descrita, assinale a opção que apresenta o procedimento que, provavelmente,
+    teria levado à descoberta da fraude e dos materiais em falta.
+</question>
+<answer_options>
+    <item>
+        Elaboração de um inventário físico e confronto da quantidade de materiais apurada neste com uma
+        amostra aleatória dos pedidos de materiais, para verificação de eventuais diferenças e investigação
+        de suas causas.
+    </item>
+    <item>
+        Elaboração de um inventário físico e reconciliação dos valores que constam no estoque com os registros
+        que constam no inventário permanente, para verificação de eventuais diferenças e investigação de
+        suas causas.
+    </item>
+    <item>
+        Seleção de uma amostra aleatória dos registros de vendas e confronto destes com os registros que
+        constam no inventário permanente, para verificar se o material estava em estoque e investigar as
+        causas de quaisquer diferenças.
+    </item>
+    <item>
+        Seleção de uma amostra aleatória de relatórios de recebimento de materiais e comparação desses
+        relatórios com os registros que constam no inventário permanente, para verificação de eventuais
+        diferenças e investigação por tipo de produto.
+    </item>
+    <item>
+        Seleção de uma amostra aleatória dos pedidos de materiais e confronto destes com o relatório de
+        recebimento e com os registros que constam nos relatórios do departamento de contas a pagar, para
+        verificação de eventuais diferenças e investigação de suas causas.
+    </item>
+</answer_options>

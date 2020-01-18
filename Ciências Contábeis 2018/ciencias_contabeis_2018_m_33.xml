@@ -1,0 +1,54 @@
+<paragraph>
+    Uma empresa criou um produto para ser lançado no mercado e, para tanto, foi realizado um estudo
+    de mercado que indicou a demanda estimada entre 100 e 600 unidades de produto por mês. De posse
+    dessas informações, o pessoal do departamento de custos da empresa calculou a lucratividade esperada
+    da venda do produto, conforme volume de vendas, traçou a linha de tendência a partir da equação de
+    regressão e calculou o R-quadrado, obtendo os dados e o gráfico a seguir.
+</paragraph>
+<image src="images/ciencias_contabeis_2018_m_33_0.png" />
+<paragraph>
+    O departamento de marketing da empresa avaliou que a demanda pelo produto é sazonal, estando a
+    expectativa de vendas, nos meses de baixa demanda, próxima de 150 unidades e, nos meses de alta
+    demanda, em aproximadamente 550 unidades. O preço de venda operado pela empresa em qualquer
+    dos cenários será de R$ 6,00.
+</paragraph>
+<paragraph>
+    A respeito dessa situação hipotética, avalie as afirmações a seguir.
+</paragraph>
+<question_options>
+    <item>
+        Nos meses de alta demanda, segundo a previsão do departamento de marketing da empresa,
+        espera-se uma lucratividade de 80%.
+    </item>
+    <item>
+        Nos meses de baixa demanda, segundo a previsão do departamento de marketing da empresa,
+        espera-se uma lucratividade de 40%.
+    </item>
+    <item>
+        Nos meses de alta demanda, segundo a previsão do departamento de marketing da empresa, o
+        lucro líquido da empresa será de R$ 3 300,00.
+    </item>
+    <item>
+        O R-quadrado indica que a correlação entre as variáveis é significativa.
+    </item>
+</question_options>
+<question>
+    É correto apenas o que se afirma em
+</question>
+<answer_options>
+    <item>
+        I e III.
+    </item>
+    <item>
+        I e IV.
+    </item>
+    <item>
+        II e III.
+    </item>
+    <item>
+        I, II e IV.
+    </item>
+    <item>
+        II, III e IV.
+    </item>
+</answer_options>

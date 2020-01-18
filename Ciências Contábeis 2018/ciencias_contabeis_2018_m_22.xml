@@ -1,0 +1,61 @@
+<paragraph>
+    A empresa Alfa apresentou os seguintes dados contábeis:
+</paragraph>
+<list>
+    <item>
+        capital de terceiros: R$ 40 000,00;
+    </item>
+    <item>
+        capital próprio: R$ 60 000,00;
+    </item>
+    <item>
+        lucro operacional antes da despesa de juros: R$ 3 200,00;
+    </item>
+    <item>
+        custo médio de capital de terceiros: 5,00%;
+    </item>
+    <item>
+        retorno sobre os ativos: 3,20%;
+    </item>
+    <item>
+        retorno sobre o patrimônio líquido: 2,00%.
+    </item>
+</list>
+<paragraph>
+    Com base nos dados apresentados, avalie as afirmações a seguir.
+</paragraph>
+<question_options>
+    <item>
+        A empresa Alfa apresentou alavancagem financeira de seu patrimônio líquido com a utilização de
+        capital de terceiros.
+    </item>
+    <item>
+        Essa empresa teria obtido uma alavancagem financeira de seu patrimônio líquido no valor de
+        R$ 80,00 se o custo do capital de terceiros tivesse sido de 2%.
+    </item>
+    <item>
+        A empresa Alfa não terá dificuldade para obter novos empréstimos bancários, quanto ao aspecto
+        de endividamento, caso se considere que o índice de endividamento aceito pelo sistema bancário
+        é de 1.
+    </item>
+</question_options>
+<question>
+    É correto o que se afirma em
+</question>
+<answer_options>
+    <item>
+        I, apenas.
+    </item>
+    <item>
+        II, apenas.
+    </item>
+    <item>
+        I e III, apenas.
+    </item>
+    <item>
+        II e III, apenas.
+    </item>
+    <item>
+        I, II, III.
+    </item>
+</answer_options>
