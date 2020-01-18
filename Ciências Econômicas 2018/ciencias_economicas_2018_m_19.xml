@@ -1,0 +1,27 @@
+<paragraph>
+    Uma empresa produz um bem cujo preço unitário de mercado é R$ 20. O custo privado (CP) de produção
+    é dado por <formula>CP = 2q^2</formula>, em que q é a quantidade produzida. Destaca-se que o processo de produção desse
+    bem gera poluição do ar, cujo custo externo (CE) é dado por <formula>CE = 0,5q^2</formula>.
+</paragraph>
+<question>
+    A partir dessas informações, assinale a opção que apresenta as quantidades ótimas escolhidas pela firma
+    maximizadora de lucro, considerando duas situações: i) somente a sua estrutura de custos (<formula>q_1</formula>); ii) sua
+    estrutura de custos incorporando o custo externo (<formula>q_2</formula>).
+</question>
+<answer_options>
+    <item>
+        <formula>q_1 = 4; q_2 = 5</formula>
+    </item>
+    <item>
+        <formula>q_1 = 5; q_2 = 4</formula>
+    </item>
+    <item>
+        <formula>q_1 = 10; q_2 = 8</formula>
+    </item>
+    <item>
+        <formula>q_1 = 8; q_2 = 10</formula>
+    </item>
+    <item>
+        <formula>q_1 = 20; q_2 = 4</formula>
+    </item>
+</answer_options>

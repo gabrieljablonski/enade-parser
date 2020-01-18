@@ -1,0 +1,42 @@
+<paragraph>
+    Um pesquisador resolveu estimar uma versão da Lei de Okun para determinado país X. O resultado é
+    apresentado na equação a seguir.
+</paragraph>
+<centered_text>
+    <formula>u_t=u_n-0,5gy_t+e_t</formula>
+</centered_text>
+<paragraph>
+    em que <formula>u_t</formula> é a taxa de desemprego observada para o ano <formula>t</formula>; <formula>u_n</formula> é a taxa de desemprego natural; <formula>gy_t</formula>
+    é a taxa de crescimento do produto no ano <formula>t</formula>; <formula>e_t</formula> é o termo de resíduo. O país apresenta uma taxa de
+    desemprego natural igual a 10%.
+</paragraph>
+<paragraph>
+    Com o objetivo de analisar a predição do modelo, esse pesquisador utilizou os dados a seguir, para alguns
+    anos selecionados.
+</paragraph>
+<title>
+    Dados anuais selecionados do país X
+</title>
+<table>
+    <image src="images/ciencias_economicas_2018_m_25_0.png" />
+</table>
+<question>
+    Considerando as informações apresentadas, assinale a opção correta.
+</question>
+<answer_options>
+    <item>
+        Para o ano de 2013, o modelo previu uma taxa de desemprego inferior à observada.
+    </item>
+    <item>
+        Para o ano de 2014, a taxa de desemprego estimada foi igual à observada.
+    </item>
+    <item>
+        Para o ano de 2015, o modelo superestimou a taxa de desemprego.
+    </item>
+    <item>
+        Para o ano de 2016, o erro de previsão do modelo foi igual a zero.
+    </item>
+    <item>
+        Para o ano de 2017, o erro de previsão do modelo foi positivo.
+    </item>
+</answer_options>

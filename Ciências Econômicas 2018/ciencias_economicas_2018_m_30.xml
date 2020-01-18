@@ -1,0 +1,47 @@
+<paragraph>
+    Se o Índice de Desenvolvimento Humano (IDH) de uma região é muito alto, considera-se essa região
+    desenvolvida, se apresenta IDH médio ou alto, é considerada em desenvolvimento e, por fim, se apresenta
+    IDH baixo ou muito baixo, é considerada subdesenvolvida. A tabela a seguir apresenta a frequência relativa
+    das 27 Unidades da Federação do Brasil em relação às classes do IDH.
+</paragraph>
+<table>
+    <image src="images/ciencias_economicas_2018_m_30_0.png" />
+</table>
+<source>
+    Disponível em: <link>http://www.atlasbrasil.org.br</link>. Acesso em: 12 jul. 2018 (adaptado).
+</source>
+<paragraph>
+    Nesse contexto, avalie as afirmações a seguir, a respeito das medidas de tendência central dos dados
+    agrupados apresentados na tabela.
+</paragraph>
+<question_options>
+    <item>
+        A média do IDH das Unidades da Federação está situada na 3ª classe (IDH médio).
+    </item>
+    <item>
+        A moda do IDH das Unidades da Federação está situada na 4ª classe (IDH alto).
+    </item>
+    <item>
+        A mediana do IDH das Unidades da Federação está situada na 3ª classe (IDH médio).
+    </item>
+</question_options>
+<question>
+    É correto o que se afirma em
+</question>
+<answer_options>
+    <item>
+        I, apenas.
+    </item>
+    <item>
+        III, apenas.
+    </item>
+    <item>
+        I e II, apenas.
+    </item>
+    <item>
+        II e III, apenas.
+    </item>
+    <item>
+        I, II e III.
+    </item>
+</answer_options>
