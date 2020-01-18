@@ -80,8 +80,11 @@ def surround_with(text, tag, pad_nl=True, indent_level=DEFAULT_INDENT_LEVEL, fir
         text = f"<br/>{CRLF}".join(lines) + '<br/>'
 
     if tag == Tag.LIST:
-        text = CRLF.join(s.strip() for s in text.split(CRLF))
-        items = text.split(2*CRLF)
+        if '•' in text:
+            items = filter(str.strip, text.split('•'))
+        else:
+            text = CRLF.join(s.strip() for s in text.split(CRLF))
+            items = text.split(2*CRLF)
         text = CRLF.join(surround_with(item, Tag.ITEM) for item in items)
 
     if tag == Tag.PORQUE:
