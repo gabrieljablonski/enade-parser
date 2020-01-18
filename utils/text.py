@@ -108,25 +108,57 @@ def surround_with(text, tag, pad_nl=True, indent_level=DEFAULT_INDENT_LEVEL, fir
             f"{surround_with(second, tag=Tag.SECOND)}"
         )
 
-    if tag in (Tag.QUESTION_OPTIONS, Tag.ANSWER_OPTIONS):
-        if tag == Tag.QUESTION_OPTIONS:
-            fmt = """
+    if tag == Tag.QUESTION_OPTIONS and first_level_call:
+        pattern = (
+            r'^([\s\S]*?\n)?'
+            r'I\. ([\s\S]*)\n'
+            r'II\. ([\s\S]*)\n'
+            r'III\. ([\s\S]*?)'
+            r'(?:\nIV\. ([\s\S]*?))?'
+            r'(?:\nV\. ([\s\S]*?))?'
+            r'(?:\nVI\. ([\s\S]*?))?$'
+        )
+        match = re.match(pattern, sanitize(text))
+        if match is None:
+            msg = f"""
+                Failed to match options. Format should be:
+                ```
                 I. option 1
                 II. option 2
                 III. option 3
                 ...
                 
-                may contain from 3 to 5 options
+                may contain from 3 to 6 options
+                ```
+                Each option may contain new lines within it.
             """
-            pattern = (
-                r'^I\. ([\s\S]*)\n'
-                r'II\. ([\s\S]*)\n'
-                r'III\. ([\s\S]*?)'
-                r'(?:\nIV\. ([\s\S]*?))?'
-                r'(?:\nV\. ([\s\S]*?))?$'
-            )
-        else:
-            fmt = """
+            print(sanitize(msg))
+            return text
+        paragraph, *options = match.groups()
+        text = CRLF.join(
+            surround_with(option, tag=Tag.ITEM)
+            for option in options if option is not None
+        )
+        if paragraph:
+            paragraph = surround_with(paragraph, tag=Tag.PARAGRAPH)
+            question_options = surround_with(text, tag=Tag.QUESTION_OPTIONS, first_level_call=False)
+            return f"{paragraph}{CRLF}{question_options}"
+
+    
+    if tag == Tag.ANSWER_OPTIONS and first_level_call:
+        pattern = (
+            r'^([\s\S]*?\n)?'
+            r'\(?A\)? ([\s\S]*?)[\s]+' 
+            r'\(?B\)? ([\s\S]*?)[\s]+' 
+            r'\(?C\)? ([\s\S]*?)[\s]+'
+            r'\(?D\)? ([\s\S]*?)[\s]+'
+            r'\(?E\)? ([\s\S]*?)$'
+        )
+        match = re.match(pattern, sanitize(text))
+        if match is None:
+            msg = f"""
+                Failed to match options. Format should be:
+                ```
                 A option 1
                 B option 2
                 C option 3
@@ -138,29 +170,20 @@ def surround_with(text, tag, pad_nl=True, indent_level=DEFAULT_INDENT_LEVEL, fir
                 B) option 2
                 C) option 3
                 D) option 4
-            """
-            pattern = (
-                r'^\(?A\)? ([\s\S]*?)[\s]+' 
-                r'\(?B\)? ([\s\S]*?)[\s]+' 
-                r'\(?C\)? ([\s\S]*?)[\s]+'
-                r'\(?D\)? ([\s\S]*?)[\s]+'
-                r'\(?E\)? ([\s\S]*?)$'
-            )
-        options = re.match(pattern, sanitize(text))
-        if options is None:
-            msg = f"""
-                Failed to match options. Format should be:
-                ```
-                {fmt.strip()}
                 ```
                 Each option may contain new lines within it.
             """
             print(sanitize(msg))
             return text
+        question, *options = match.groups()
         text = CRLF.join(
             surround_with(option, tag=Tag.ITEM)
-            for option in options.groups() if option is not None
+            for option in options if option is not None
         )
+        if question:
+            question = surround_with(question, tag=Tag.QUESTION)
+            answer_options = surround_with(text, tag=Tag.ANSWER_OPTIONS, first_level_call=False)
+            return f"{question}{CRLF}{answer_options}"
 
     padding = CRLF if pad_nl else ''
     content = text if not padding else indent_text(text, indent_level)
