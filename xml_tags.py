@@ -32,3 +32,11 @@ class Tag:
 
 # tags are placed `<tag>text</tag>` instead of `<tag>\ntext\n</tag>`
 NO_PADDING = Tag.ITALIC, Tag.BOLD, Tag.LINK, Tag.FORMULA, Tag.TEXT_HEADER
+# won't trigger the append to file function, even in auto mode
+NO_AUTO_SAVE = (
+    Tag.ITALIC, 
+    Tag.BOLD, 
+    Tag.LINK, 
+    Tag.FORMULA, 
+    Tag.TABLE,
+)

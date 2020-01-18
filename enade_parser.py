@@ -18,7 +18,7 @@ from utils.ocr import set_tesseract_path, get_text_in_image
 from utils.hotkeys import is_pressed, Key, join_hotkeys, kb
 from utils.static_vars import static_vars
 
-from xml_tags import NO_PADDING, Tag
+from xml_tags import Tag, NO_PADDING, NO_AUTO_SAVE
 from hotkey_mapping import (
     TAG_MAPPING, HK_REMOVE_TAG, HK_TOGGLE_MODE, HK_CONFIRM, HK_CANCEL, HK_CAPTURE_OCR, HK_CAPTURE_IMAGE, HK_BACK_TO_MENU
 )
@@ -90,7 +90,7 @@ def check_tag_operations(hotkey_pressed, mode):
             # print(f"Inserting `{tag}` tag.")
             pad_nl = tag not in NO_PADDING
             text = modify_selected_text(surround_with, tag=tag, pad_nl=pad_nl)
-            if text and mode == 'auto':
+            if text and mode == 'auto' and tag not in NO_AUTO_SAVE:
                 append_to_current_question(text)
             break
 
