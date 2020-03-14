@@ -1,0 +1,162 @@
+[
+  {
+    "id": 2,
+    "text":
+      "<p> A Economia Solidária expressa formas de organização econômica – de produção, prestação de serviços, comercialização, finanças e consumo – baseadas no trabalho associado, na autogestão, na propriedade coletiva dos meios de produção, na cooperação e na solidariedade. São diversas atividades econômicas realizadas por organizações solidárias como cooperativas, associações, empresas recuperadas por trabalhadores em regime de autogestão, grupos solidários informais, fundos rotativos etc. Nos últimos anos, a Economia Solidária tem experimentado expansão no Brasil, em especial, dentre os segmentos populacionais mais vulneráveis.</p><p style=\"font-style: italic\"> Disponível em: <a href=\"http://www.unisolbrasil.org.br/2015/\">http://www.unisolbrasil.org.br/2015/</a>. Acesso em: 12 jul. 2018 (adaptado).</p><p> Considerando as informações apresentadas, avalie as asserções a seguir e a relação proposta entre elas.</p><div> <p style=\"text-align: center\"> I. O fomento de atividades econômicas orientadas pelos princípios da Economia Solidária deve ser objeto de atenção no âmbito da gestão pública e requer políticas voltadas para essa área de atuação. </p><p style=\"text-align: center; font-style: bold; font-size: 20\">PORQUE</p><p style=\"text-align: center\"> II. A destinação de recursos públicos para empreendimentos fundamentados na Economia Solidária viabiliza a inclusão de diversos segmentos sociais na economia e promove a valorização de práticas e saberes construídos coletivamente. </p></div><p style=\"font-size: 24\"> A respeito dessas asserções, assinale a opção correta.</p>",
+    "options": [
+      {
+        "id": 1,
+        "text": "As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.",
+        "isAnswer": true
+      },
+      {
+        "id": 2,
+        "text": "As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.",
+        "isAnswer": false
+      },
+      {
+        "id": 3,
+        "text": "A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.",
+        "isAnswer": false
+      },
+      {
+        "id": 4,
+        "text": "A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.",
+        "isAnswer": false
+      },
+      {
+        "id": 5,
+        "text": "As asserções I e II são proposições falsas.",
+        "isAnswer": false
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "text":
+      "<h1 style=\"text-align: left\">TEXTO 1</h1><p> Os fluxos migratórios, fenômenos que remontam à própria história da humanidade, estão em ritmo crescente no mundo, tornando urgentes, em todos os países, as discussões sobre políticas públicas para migrantes. Segundo relatório da Organização das Nações Unidas (ONU), 65,6 milhões de pessoas foram deslocadas à força no mundo em 2016.</p><p> Em relação aos destinos de acolhimento, no mesmo período, dados oficiais do Alto Comissariado das Nações Unidas para Refugiados (ACNUR), apontam que 56% das pessoas deslocadas no mundo foram acolhidas por países da África e do Oriente Médio, 17% da Europa e 16% das Américas. Considerando o contexto brasileiro, de 2010 a 2015, a população de migrantes vindos de países da América do Sul cresceu 20% e alcançou o total de 207 mil pessoas.</p><p style=\"font-style: italic\"> Disponível em: <a href=\"https://nacoesunidas.org/populacao-de-migrantes-no-brasil-aumentou-20-no-periodo-2010-2015-revela-agencia-da-onu/\">https://nacoesunidas.org/populacao-de-migrantes-no-brasil-aumentou-20-no-periodo-2010-2015-revela-agencia-da-onu/</a>. Acesso em: 11 set. 2018 (adaptado).</p><h1 style=\"text-align: left\">TEXTO 2</h1><p> Recentemente, a situação de imigração no Brasil, por ondas de deslocamento de pessoas nas fronteiras, tem sido percebida cotidianamente em matérias divulgadas pela grande mídia, principalmente no caso do estado de Roraima, que tem notificado a entrada de um grande número de venezuelanos. Somente em solicitações, na condição de refugiados, os venezuelanos formalizaram 17.865 pedidos de acolhida ao Brasil em 2017.</p><p style=\"font-style: italic\"> Disponível em: <a href=\"http://www.acnur.org/portugues/dados-sobre-refugio/dados-sobre-refugio-no-brasil/\">http://www.acnur.org/portugues/dados-sobre-refugio/dados-sobre-refugio-no-brasil/</a>. Acesso em: 11 set. 2018 (adaptado).</p><p> Considerando as informações apresentadas, avalie as afirmações a seguir.</p><ol type=\"I\"> <li> A situação econômica dos países é fator determinante dos padrões de contorno dos deslocamentos internacionais e está representada na distribuição geográfica dos continentes que mais acolhem as pessoas deslocadas no mundo. </li><li> A América do Sul é a região em que há maior acolhimento de povos que, em razão de conflitos internos em seus países, têm se deslocado em massa. </li><li> As situações de conflitos entre brasileiros e venezuelanos apontam para a necessidade de revisão da infraestrutura e das políticas públicas voltadas aos migrantes e refugiados. </li><li> A sociedade brasileira, caracterizada pela solidariedade e tolerância, apresenta baixa resistência e rejeição aos imigrantes, sendo os conflitos recentes ocorridos na fronteira explicados pela omissão estatal em relação a políticas de acolhimento. </li></ol><p style=\"font-size: 24\"> É correto apenas o que se afirma em</p>",
+    "options": [
+      {
+        "id": 1,
+        "text": "I.",
+        "isAnswer": false
+      },
+      {
+        "id": 2,
+        "text": "III.",
+        "isAnswer": true
+      },
+      {
+        "id": 3,
+        "text": "I e IV.",
+        "isAnswer": false
+      },
+      {
+        "id": 4,
+        "text": "II e III.",
+        "isAnswer": false
+      },
+      {
+        "id": 5,
+        "text": "II e IV.",
+        "isAnswer": false
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "text":
+      "<h1 style=\"text-align: left\">TEXTO 1</h1><p> Com base em dados de 2015, estima-se que, no Brasil, haja em torno de 100 mil pessoas em situação de rua. A população que vivencia situação de rua é formada por pessoas que, em sua maioria, possuem menos que o necessário para atender às necessidades básicas do ser humano, estando no limite da indigência ou da pobreza extrema, com comprometimento da própria sobrevivência. A situação desse grupo excluído e marginalizado pode decorrer de diversos fatores, como desemprego estrutural, migração, uso prejudicial de álcool e outras drogas, presença de transtornos mentais, conflitos familiares, entre outros.</p><p style=\"font-style: italic\"> HINO, P.; SANTOS, J. O.; ROSA, A. S. Pessoas que vivenciam situação de rua sob o olhar da saúde. <b>Revista Brasileira de Enfermagem.</b> v. 71, Suplemento 1, p. 732-740, 2018 (adaptado).</p><h1 style=\"text-align: left\">TEXTO 2</h1><p> O Ministério da Saúde, em parceria com o Ministério do Desenvolvimento Social e Combate à Fome (MDS) e a Secretaria de Direitos Humanos da Presidência da República (SDH), lançou uma campanha que objetiva valorizar a saúde como um direito humano de cidadania e ressaltar que as pessoas em situação de rua têm o direito de ser atendidas na rede de serviços do SUS.</p><p style=\"font-style: italic\"> Disponível em: <a href=\"http://portalsaude.saude.gov.br/index.php/cidadao/principal/campanhas-publicitarias/19300-campanha-pop-rua\">http://portalsaude.saude.gov.br/index.php/cidadao/principal/campanhas-publicitarias/19300-campanha-pop-rua</a>. Acesso em: 11 set. 2018 (adaptado).</p><p> A respeito da população que vivencia situação de rua e considerando os textos apresentados, avalie as afirmações a seguir.</p><ol type=\"I\"> <li> Na elaboração de políticas públicas, devem ser considerados os fatores pessoais e contextuais que levam pessoas a viver em situação de rua, o que exige o trabalho de equipes multidisciplinares, com o objetivo de assegurar direitos de saúde, dignidade e cidadania a essa população. </li><li> A inexistência de endereço fixo que possibilite fazer cadastros oficiais e estabelecer contato quando necessário, inviabiliza a inserção dos indivíduos em situação de rua nas políticas públicas de saúde, educação e moradia. </li><li> A homogeneidade do grupo de pessoas que vivem em situação de rua contribui para o desenvolvimento das estratégias de acolhimento e de atendimento pelas equipes envolvidas em campanhas dirigidas a esse público. </li><li> A falta de moradia convencional e o comprometimento da identidade, da segurança, do bem-estar físico e emocional e do sentimento de pertencimento são problemas vivenciados pelas pessoas que vivem em situação de rua e requerem atenção do poder público. </li></ol><p style=\"font-size: 24\"> É correto apenas o que se afirma em</p>",
+    "options": [
+      {
+        "id": 1,
+        "text": "I e III.",
+        "isAnswer": false
+      },
+      {
+        "id": 2,
+        "text": "I e IV.",
+        "isAnswer": true
+      },
+      {
+        "id": 3,
+        "text": "II e III.",
+        "isAnswer": false
+      },
+      {
+        "id": 4,
+        "text": "I, II e IV.",
+        "isAnswer": false
+      },
+      {
+        "id": 5,
+        "text": "II, III e IV.",
+        "isAnswer": false
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "text":
+      "<p> A ideia de governo eletrônico, embora associada ao uso de tecnologia de informação no setor público, ultrapassa essa dimensão. Em alguns casos, está vinculada à modernização da administração pública por meio do uso de tecnologias de informação e comunicação (TIC) e à melhoria da eficiência dos processos operacionais e administrativos dos governos. Entre as causas determinantes da adoção das TIC de forma estratégica e intensiva pelos governos em seus processos internos e na melhoria dos serviços públicos prestados à sociedade, destacam-se: o uso intensivo das TIC pelos cidadãos, empresas privadas e organizações não governamentais; a migração da informação baseada em papel para mídias eletrônicas e serviços <i>on-line</i>; e o avanço e universalização da infraestrutura pública de telecomunicações e da internet.</p><p style=\"font-style: italic\"> DINIZ, E. H.; BARBOSA, A. F.; JUNQUEIRA, Á. R.B.; PRADO, O. O governo eletrônico no Brasil: perspectiva histórica a partir de um modelo estruturado de análise. In: <b>Revista de Administração Pública.</b> Rio de Janeiro: FGV, jan./fev. 2009, p. 24-25 (adaptado).</p><p style=\"font-size: 24\"> Considerando o texto apresentado, assinale a opção correta.</p>",
+    "options": [
+      {
+        "id": 1,
+        "text": "A gestão das TIC na Administração Pública deve focar o contexto interno da organização em busca de maior eficácia organizacional.",
+        "isAnswer": false
+      },
+      {
+        "id": 2,
+        "text": "A Administração Pública disponibiliza, por meio das TIC, dados e relatórios, oferecendo aos cidadãos a possibilidade de decidirem sobre as ações do Governo.",
+        "isAnswer": false
+      },
+      {
+        "id": 3,
+        "text": "A sociedade, por meio das TIC, passa a ter um instrumento de controle e fiscalização não só sobre as atividades do Poder Executivo, como também sobre o emprego de seus recursos.",
+        "isAnswer": true
+      },
+      {
+        "id": 4,
+        "text": "O Governo Federal, nos últimos anos, conseguiu transformar o país em uma comunidade digital, onde, apesar da desigualdade social, os cidadãos têm amplo acesso a modernos métodos de comunicação, como a internet.",
+        "isAnswer": false
+      },
+      {
+        "id": 5,
+        "text": "A disseminação no uso de sistemas gerenciais de informação reduz consideravelmente o risco de exclusão digital, na medida em que esses sistemas viabilizam a ampla comunicação das informações sobre as ações governamentais.",
+        "isAnswer": false
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "text":
+      "<p> A <i>accountability</i> democrática é um termo que caracteriza a responsabilização política do poder público em relação à sociedade, o que demanda um processo de comunicação para dar mais transparência às ações dos agentes políticos.</p><p style=\"font-style: italic\"> ABRUCIO, F. L.; LOUREIRO, M. R. Finanças públicas, democracia e <i>accountability</i>: debate teórico e o caso brasileiro. In: ARVATE, P. R.; BIDERMAN, C. <b>Economia do setor público no Brasil.</b> Rio de Janeiro: Elsevier; Campus, 2004 (adaptado).</p><p> Considerando esse contexto, avalie as afirmações a seguir.</p><ol type=\"I\"> <li> A responsabilização política do poder público em relação à sociedade é favorecida por ações que propiciam o acesso, a transparência e a fidedignidade nas informações públicas. </li><li> O insulamento burocrático é uma das características que podem ser verificadas em situação de <i>accountability</i> democrática. </li><li> A preponderância do poder executivo, com subordinação dos demais poderes, favorece a <i>accountability</i> sobre a atividade governamental. </li></ol><p style=\"font-size: 24\"> É correto o que se afirma em</p>",
+    "options": [
+      {
+        "id": 1,
+        "text": "I, apenas.",
+        "isAnswer": true
+      },
+      {
+        "id": 2,
+        "text": "II, apenas.",
+        "isAnswer": false
+      },
+      {
+        "id": 3,
+        "text": "I e III, apenas.",
+        "isAnswer": false
+      },
+      {
+        "id": 4,
+        "text": "II e III, apenas.",
+        "isAnswer": false
+      },
+      {
+        "id": 5,
+        "text": "I, II e III.",
+        "isAnswer": false
+      }
+    ]
+  }
+]
