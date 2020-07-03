@@ -1,0 +1,48 @@
+<paragraph>
+    Conforme dados do Atlas da Violência 2019, apresentados no gráfico a seguir, verifica-se o crescimento
+    no número de homicídios de mulheres no país durante o período de 2007 a 2017. Nesse período, a taxa
+    de homicídios entre as mulheres negras cresceu mais do que a taxa de homicídios entre as mulheres não
+    negras. A classificação de raça/cor do IBGE agrega negras como a soma de pretas e pardas e não negras
+    como a soma de brancas, amarelas e indígenas.
+</paragraph>
+<image src="images/engenharia_de_computacao_2019_m_6_0.png" />
+<source>
+    Instituto de Pesquisa Econômica Aplicada (IPEA); Fórum Brasileiro de Segurança Pública (Orgs.).
+    <b>Atlas da violência 2019.</b> Brasília: Ipea, 2019 (adaptado).
+</source>
+<paragraph>
+    Considerando as informações apresentadas, avalie as asserções a seguir e a relação proposta entre elas.
+</paragraph>
+<porque>
+    <first>
+        I. O maior crescimento dos casos de homicídios de mulheres negras em comparação com os casos de
+        mulheres não negras indica a relevância dos estudos a respeito das múltiplas variáveis relacionadas
+        a este fenômeno social.
+    </first>
+    <pq/>
+    <second>
+        II. A análise do gráfico permite concluir que, no início da série histórica, havia um contexto favorável
+        à superação da situação social de maior vulnerabilidade da mulher negra, em razão da menor
+        diferença entre as taxas de homicídios.
+    </second>
+</porque>
+<question>
+    A respeito dessas asserções, assinale a opção correta.
+</question>
+<answer_options>
+    <item>
+        As asserções I e II são verdadeiras, e a II é uma justificativa correta da I.
+    </item>
+    <item>
+        As asserções I e II são verdadeiras, mas a II não é uma justificativa correta da I.
+    </item>
+    <item>
+        A asserção I é uma proposição verdadeira e a II é uma proposição falsa.
+    </item>
+    <item>
+        A asserção I é uma proposição falsa e a II é uma proposição verdadeira.
+    </item>
+    <item>
+        As asserções I e II são falsas.
+    </item>
+</answer_options>

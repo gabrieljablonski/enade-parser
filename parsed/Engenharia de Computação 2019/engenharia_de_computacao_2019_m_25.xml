@@ -1,0 +1,82 @@
+<paragraph>
+    A linguagem Python não permite alguns tipos de otimização como, por exemplo, a recursão em cauda e,
+    devido à sua natureza dinâmica, é impossível realizar esse tipo de otimização em tempo de compilação
+    tal como em linguagens funcionais como Haskell ou ML.
+</paragraph>
+<source>
+    Disponível em: <link>http:/www.python-history.blogspot.com/2009/04/origins-of-pythons-functional-features.html</link>.
+    Acesso: em 15 jun. 2019 (adaptado).
+</source>
+<paragraph>
+    O trecho de código a seguir, escrito em Python, realiza a busca binária de um elemento <code>x</code> em uma lista
+    <code>lst</code> e a função <code>binary_search</code> tem código recursivo em cauda.
+</paragraph>
+<code> 1  def binary_search(x, lst, low=None, high=None):
+ 2      if low == None : low = 0
+ 3      if high == None : high = len(lst)-1
+ 4      mid = low + (high - low) // 2
+ 5      if low &gt; high :
+ 6          return None
+ 7      elif lst[mid] == x :
+ 8          return mid
+ 9      elif lst[mid] &gt; x :
+10          return binary_search(x, lst, low, mid-1)
+11      else :
+12          return binary_search(x, lst, mid+1, high)</code>
+<source>
+    Disponível em: <link>https://www.kylem.net/programming/tailcall.html</link>. Acesso em: 15 jun. 2019 (adaptado).
+</source>
+<paragraph>
+    Considerando esse trecho de código, avalie as afirmações a seguir.
+</paragraph>
+<question_options>
+    <item>
+        Substituindo-se o conteúdo da linha 10 por <code>high = mid - 1</code> e substituindo-se o conteúdo da
+        linha 12 por <code>low = mid + 1</code>, não se altera o resultado de uma busca.
+    </item>
+    <item>
+        Envolvendo-se o código das linhas 4 a 12 em um laço <code>while True</code>, substituindo-se o conteúdo
+        da linha 10 por <code>high = mid - 1</code> e substituindo-se o conteúdo da linha 12 por <code>low = mid + 1</code>
+        remove-se a recursão de cauda e o resultado da busca não é alterado.
+    </item>
+    <item>
+        Substituindo-se o código da linha 10 por:<br/>
+        <code>  newhigh = mid-1
+  return binary_search(x, lst, low, newhigh)</code><br/>
+        e substituindo-se o código da linha 12 por:<br/>
+        <code>  newlow = mid+1
+  return binary_search(x, lst, newlow, high)</code><br/>
+        remove-se a recursão de cauda.
+    </item>
+    <item>
+        Substituindo-se o conteúdo das linhas 9 a 12 por<br/>
+        <code>  if lst[mid] &gt; x :
+      newlow = low
+      newhigh = mid-1
+  else:
+      newlow = mid+1
+      newhigh = high
+  return binary_search(x, lst, newlow, newhigh)</code><br/>
+        mantém-se o resultado da busca.
+    </item>
+</question_options>
+<question>
+    É correto o que se afirma em
+</question>
+<answer_options>
+    <item>
+        I, apenas.
+    </item>
+    <item>
+        II e III, apenas.
+    </item>
+    <item>
+        II e IV, apenas.
+    </item>
+    <item>
+        I, III e IV, apenas.
+    </item>
+    <item>
+        I, II, III e IV.
+    </item>
+</answer_options>

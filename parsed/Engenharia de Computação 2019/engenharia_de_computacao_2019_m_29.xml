@@ -1,0 +1,66 @@
+<paragraph>
+    A Internet das Coisas (<i>Internet of Things</i> (IoT))
+    pode ser definida como um ambiente de objetos
+    físicos interconectados com a internet por meio
+    de sensores/atuadores embutidos, criando um
+    ecossistema de computação onipresente (ubíqua) e
+    introduzindo soluções funcionais nos processos do
+    dia-a-dia, sejam domésticos ou profissionais. É um
+    conjunto de tecnologias e protocolos associados
+    que permitem que objetos se conectem a uma
+    rede de comunicações e sejam identificados e
+    controlados por essa conexão. A IoT usa conceitos,
+    tecnologias e soluções que envolvem sistemas
+    distribuídos e redes de comunicação.
+</paragraph>
+<source>
+    MAGRANI, E. <b>A internet das coisas.</b> Rio de Janeiro:
+    FGV Editora, 2018 (adaptado).
+</source>
+<paragraph>
+    Nesse contexto, avalie as asserções a seguir e a
+    relação proposta entre elas.
+</paragraph>
+<porque>
+    <first>
+        I. Em soluções e aplicações para IoT, é preciso
+        garantir que essas funcionarão de forma
+        consistente em um ambiente concorrente,
+        onde ocorrem várias requisições ao mesmo
+        recurso compartilhado.
+    </first>
+    <pq/>
+    <second>
+        II. Em soluções atuais de IoT existe
+        heterogeneidade, ou seja, dentro do mesmo
+        ecossistema, uma variedade de sistemas
+        operacionais, hardware, linguagens de
+        programação e padrões de redes de
+        comunicação são utilizados.
+    </second>
+</porque>
+<question>
+    A respeito dessas asserções, assinale a alternativa
+    correta.
+</question>
+<answer_options>
+    <item>
+        As asserções I e II são proposições verdadeiras,
+        e a II é uma justificativa correta de I.
+    </item>
+    <item>
+        As asserções I e II são proposições verdadeiras,
+        mas a II não é uma justificativa correta de I.
+    </item>
+    <item>
+        A asserção I é uma proposição verdadeira, e a II
+        é uma proposição falsa.
+    </item>
+    <item>
+        A asserção I é uma proposição falsa, e a II é uma
+        proposição verdadeira.
+    </item>
+    <item>
+        As asserções I e II são proposições falsas.
+    </item>
+</answer_options>

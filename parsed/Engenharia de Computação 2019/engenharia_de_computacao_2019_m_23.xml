@@ -1,0 +1,26 @@
+<paragraph>
+    Considere o autômato de estados finitos
+    determinístico representado na figura a seguir.
+</paragraph>
+<image src="images/engenharia_de_computacao_2019_m_23_0.png" />
+<question>
+    O autômato representado reconhece a seguinte
+    linguagem regular
+</question>
+<answer_options>
+    <item>
+        {w <formula>\in</formula> {0,1}*| |w| é 4}.
+    </item>
+    <item>
+        {w <formula>\in</formula> {0,1}*| |w| é ímpar e termina com 1}.
+    </item>
+    <item>
+        {w <formula>\in</formula> {0,1}*| |w| é par e termina com 01}.
+    </item>
+    <item>
+        {w <formula>\in</formula> {0,1}*| |w| é ímpar e termina com 0}.
+    </item>
+    <item>
+        {w <formula>\in</formula> {0,1}*| |w| é par e termina com 11}.
+    </item>
+</answer_options>

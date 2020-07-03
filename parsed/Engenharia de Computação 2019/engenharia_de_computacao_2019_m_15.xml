@@ -1,0 +1,34 @@
+<paragraph>
+    O método de regressão linear pelos mínimos quadrados é um dos mais difundidos para encontrar
+    aproximações para modelos lineares em diferentes áreas, como por exemplo, processamento gráfico,
+    aprendizagem de máquina e visão computacional.
+</paragraph>
+<paragraph>
+    Em um sistema superdeterminado do tipo <formula>AX = B</formula>, que não possua solução (devido a erros nos dados), a
+    solução mais próxima, segundo o critério dos mínimos quadrados, é dada pelo sistema: <formula>A^T \cdot A X = A^T \cdot B</formula>,
+    em que <formula>A^T</formula> é a transposta de <formula>A</formula>. Considere o problema de encontrar a reta que melhor se ajusta a quatro pontos
+    no plano, segundo o critério dos mínimos quadrados, cujas coordenadas são:
+</paragraph>
+<image src="images/engenharia_de_computacao_2019_m_15_0.png" />
+<question>
+    Suponha que uma reta seja dada na forma funcional <formula>y = mx + c</formula>. Ao se substituírem as coordenadas de
+    cada ponto nesta equação, forma-se um sistema de equações <formula>AX = B</formula>, em que <formula>X</formula> é o vetor de incógnitas
+    <formula>\binom{m}{c}</formula>. A equação da reta que é solução dos mínimos quadrados é
+</question>
+<answer_options>
+    <item>
+        <formula>y = 0,5x + 1</formula>
+    </item>
+    <item>
+        <formula>y = x + 0,1</formula>
+    </item>
+    <item>
+        <formula>y = \frac{4}{3}(x+1)</formula>
+    </item>
+    <item>
+        <formula>y = 1,5x</formula>
+    </item>
+    <item>
+        <formula>y = 1,1x</formula>
+    </item>
+</answer_options>

@@ -1,0 +1,47 @@
+<html><p>
+    Uma empresa de análise de mercado de entregas de encomendas foi contratada para selecionar aquela
+    que prestaria serviço para seu cliente e fez um levantamento de dados do setor nos últimos 10 anos,
+    produzindo um relatório com a tabela a seguir, que apresenta 5 principais fornecedores em potencial para
+    o serviço de entrega de encomendas.
+</p>
+<div>
+    <img src="images/engenharia_de_computacao_2019_m_21_0.png" style="display: block; margin-left: auto; margin-right: auto; width: 80%;" />
+</div>
+<p>
+    Com base nessa situação e considerando que a tabela faz parte do banco de dados da empresa com o
+    nome de <code style="font-family: monospace; white-space: pre;">TABELA1</code>, avalie as afirmações a seguir.
+</p>
+<ol type="I">
+    <li>
+        O código em SQL que exclui da <code style="font-family: monospace; white-space: pre;">TABELA1</code> as informações do Fornecedor 1, Fornecedor 4 e Fornecedor 5
+        é: <code style="font-family: monospace; white-space: pre;">DELETE FROM TABELA1 WHERE CD6 = 'Regional' OR CD1 &gt; 160 OR CD5 &gt; 1;</code>
+    </li>
+    <li>
+        A inclusão de uma nova coluna com dados de taxa de eficiência de entrega para os fornecedores
+        constantes na <code style="font-family: monospace; white-space: pre;">TABELA1</code> é feita pelo código: <code style="font-family: monospace; white-space: pre;">INSERT INTO TABELA1 (CD7) SET CD7 = 'CD3/CD2';</code>
+    </li>
+    <li>
+        O código que reflete a escolha do cliente, o Fornecedor 3, é: <code style="font-family: monospace; white-space: pre;">SELECT Fornecedor FROM TABELA1 WHERE CD1 &gt; 100 AND (CD3/CD2) &gt; 0.99 AND CD5 &lt; 0.5 ORDER BY CD3;</code>
+    </li>
+</ol>
+<p style="font-size: 24">
+    É correto o que se afirma em
+</p>
+<ol type="A">
+    <li>
+        I, apenas.
+    </li>
+    <li>
+        III, apenas.
+    </li>
+    <li>
+        I e II, apenas.
+    </li>
+    <li>
+        II e III, apenas.
+    </li>
+    <li>
+        I, II e III.
+    </li>
+</ol>
+</html>

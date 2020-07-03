@@ -1,0 +1,61 @@
+<paragraph>
+    Uma estação de monitoramento de temperatura utiliza um termógrafo para registrar continuamente
+    em um gráfico os valores detectados por seus sensores. Um determinado ambiente foi monitorado ao
+    longo de três períodos distintos de um dia. O ambiente é considerado apropriado para um experimento
+    científico se, para qualquer período Pi de monitoramento σ(Pi
+    ) ≤ 2, em que σ(Pi
+    ) denota o desvio
+    padrão populacional do período Pi em que o ambiente foi monitorado.
+</paragraph>
+<paragraph>
+    As medidas de temperatura em °C, obtidas após um processo de quantização do sinal, são apresentadas
+    na tabela a seguir.
+</paragraph>
+<image src="images/engenharia_de_computacao_2019_m_32_0.png" />
+<paragraph>
+    A fim de automatizar o processamento dos sinais, o algoritmo a seguir foi desenvolvido, tendo como
+    entrada um período e como resultado um valor booleano que indica se o período é apropriado ou não.
+</paragraph>
+<code><b>Algoritmo:</b> viavel(<formula>P</formula>)
+    <b>entrada:</b> <formula>P</formula>: um período
+    <b>saída  :</b> um valor booleano que indica se <formula>P</formula> é apropriado para o experimento
+    <formula>total \leftarrow 0</formula>
+    <b>para</b> <formula>p \in P</formula> <b>faça</b>
+        <formula>total \leftarrow total + (p - AVG(P)) \times (p - AVG(P))</formula> // <formula>AVG</formula> denota a média de <formula>P</formula>
+    <b>fim</b>
+    <b>retorna</b> <formula>\sqrt{\frac{total}{|P|}} \leq 2</formula></code>
+<paragraph>
+    Com base no caso apresentado, avalie as afirmações a seguir.
+</paragraph>
+<question_options>
+    <item>
+        Conforme o funcionamento do algoritmo, os períodos <formula>P_1</formula>, <formula>P_2</formula> e <formula>P_3</formula> são apropriados.
+    </item>
+    <item>
+        O algoritmo calcula o desvio padrão amostral e, portanto, não é adequado para o estudo.
+    </item>
+    <item>
+        Caso executado sobre o período <formula>P = \{P_1, P_2, P_3\}</formula>, o algoritmo indica que ele é inapropriado
+        para o experimento.
+    </item>
+</question_options>
+<question>
+    É correto apenas o que se afirma em
+</question>
+<answer_options>
+    <item>
+        I, apenas.
+    </item>
+    <item>
+        II, apenas.
+    </item>
+    <item>
+        I e III, apenas.
+    </item>
+    <item>
+        II e III, apenas.
+    </item>
+    <item>
+        I, II e III.
+    </item>
+</answer_options>

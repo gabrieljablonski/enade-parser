@@ -1,0 +1,39 @@
+<paragraph>
+    Filtros normalizados são resultantes da compressão da faixa de frequência infinitamente longa
+    <formula>-\infty &lt; \omega &lt; \infty</formula> de um filtro analógico (tempo contínuo) para a faixa de frequência finita <formula>-\pi &lt; \Omega &lt; \pi</formula>
+    de um filtro digital (tempo discreto), com período <formula>2\pi</formula>.
+</paragraph>
+<source>
+    HAYKIN, S; VEEN, B.V. <b>Sinais e sistemas.</b> Porto Alegre: Bookman, 2001 (adaptado).
+</source>
+<paragraph>
+    A mudança da escala de frequências também pode ser pensada como uma normalização do eixo das
+    frequências em que a frequência de amostragem <formula>\omega_s</formula> corresponde a <formula>\pm \pi</formula> e qualquer outra frequência em
+    Hz, <formula>\omega</formula>, corresponde à frequência discreta <formula>\pm \Omega</formula>.
+</paragraph>
+<source>
+    OPPENHEIM, A. V; SCHAFER, R. W. <b>Discrete-time signal processing.</b> 3. ed. NJ: Prentice Hall, 1998 (adaptado).
+</source>
+<question>
+    Considerando um sistema de transmissão de dados com a máxima frequência do sinal de informação de
+    4 000 Hz, e frequência de amostragem de 20 000 amostras por segundo com um filtro digital de resposta
+    ideal que rejeite os sinais de frequências superiores a 6 000 Hz, a resposta em frequência do filtro que
+    atenda essas especificações é
+</question>
+<answer_options>
+    <item>
+        <image src="images/engenharia_de_computacao_2019_m_14_0.png" />
+    </item>
+    <item>
+        <image src="images/engenharia_de_computacao_2019_m_14_1.png" />
+    </item>
+    <item>
+        <image src="images/engenharia_de_computacao_2019_m_14_2.png" />
+    </item>
+    <item>
+        <image src="images/engenharia_de_computacao_2019_m_14_3.png" />
+    </item>
+    <item>
+        <image src="images/engenharia_de_computacao_2019_m_14_4.png" />
+    </item>
+</answer_options>

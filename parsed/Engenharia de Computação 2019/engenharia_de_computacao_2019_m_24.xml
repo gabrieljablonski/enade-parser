@@ -1,0 +1,55 @@
+<paragraph>
+    Protocolos de roteamento de estado de enlace
+    utilizam difusão para propagar informações de
+    estado de enlace que são usadas para calcular rotas
+    individuais. Entretanto, algumas técnicas provocam
+    a transmissão de pacotes redundantes na rede.
+    Idealmente, cada nó deveria receber apenas uma
+    cópia do pacote de difusão.
+</paragraph>
+<paragraph>
+    Uma técnica utilizada para resolver o problema da
+    redundância de pacotes, é a difusão por <i>spanning
+    tree.</i> Uma <i>spanning tree</i> de um grafo <formula>G = (N, E)</formula> é
+    um grafo <formula>G&#x27; = (N, E&#x27;)</formula> tal que <formula>E&#x27;</formula> é um subconjunto
+    de <formula>E</formula>, <formula>G&#x27;</formula> é conexo, não possui ciclos e contém todos
+    os nós originais em <formula>G</formula>. Se cada enlace tiver um
+    custo associado e o custo de uma árvore for a soma
+    dos custos dos enlaces, então uma árvore cujo
+    custo seja o mínimo entre todas as <i>spanning trees</i>
+    do grafo é denominada uma <i>spanning tree</i> mínima.
+</paragraph>
+<source>
+    KUROSE, J. F.; ROSS, K. W. <b>Redes de computadores e a Internet:</b>
+    uma abordagem top-down. 6. ed. São Paulo:
+    Pearson Education do Brasil, 2013 (adaptado).
+</source>
+<paragraph>
+    Considere uma rede composta por 6 roteadores,
+    designados pelas letras A, B, C, D, E e F, conectados
+    conforme a seguinte tabela de custos de seus enlaces:
+</paragraph>
+<table>
+    <image src="images/engenharia_de_computacao_2019_m_24_0.png" />
+</table>
+<question>
+    Neste cenário, o custo da <i>spanning tree</i> mínima
+    correspondente é, exatamente:
+</question>
+<answer_options>
+    <item>
+        5.
+    </item>
+    <item>
+        7.
+    </item>
+    <item>
+        8.
+    </item>
+    <item>
+        9.
+    </item>
+    <item>
+        11.
+    </item>
+</answer_options>

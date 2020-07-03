@@ -1,0 +1,83 @@
+<html><p>
+    A linguagem Python não permite alguns tipos de otimização como, por exemplo, a recursão em cauda e,
+    devido à sua natureza dinâmica, é impossível realizar esse tipo de otimização em tempo de compilação
+    tal como em linguagens funcionais como Haskell ou ML.
+</p>
+<p style="font-style: italic">
+    Disponível em: <a href="http:/www.python-history.blogspot.com/2009/04/origins-of-pythons-functional-features.html">http:/www.python-history.blogspot.com/2009/04/origins-of-pythons-functional-features.html</a>.
+    Acesso: em 15 jun. 2019 (adaptado).
+</p>
+<p>
+    O trecho de código a seguir, escrito em Python, realiza a busca binária de um elemento <code style="font-family: monospace; white-space: pre;">x</code> em uma lista
+    <code style="font-family: monospace; white-space: pre;">lst</code> e a função <code style="font-family: monospace; white-space: pre;">binary_search</code> tem código recursivo em cauda.
+</p>
+<code style="font-family: monospace; white-space: pre;"> 1  def binary_search(x, lst, low=None, high=None):
+ 2      if low == None : low = 0
+ 3      if high == None : high = len(lst)-1
+ 4      mid = low + (high - low) // 2
+ 5      if low &gt; high :
+ 6          return None
+ 7      elif lst[mid] == x :
+ 8          return mid
+ 9      elif lst[mid] &gt; x :
+10          return binary_search(x, lst, low, mid-1)
+11      else :
+12          return binary_search(x, lst, mid+1, high)</code>
+<p style="font-style: italic">
+    Disponível em: <a href="https://www.kylem.net/programming/tailcall.html">https://www.kylem.net/programming/tailcall.html</a>. Acesso em: 15 jun. 2019 (adaptado).
+</p>
+<p>
+    Considerando esse trecho de código, avalie as afirmações a seguir.
+</p>
+<ol type="I">
+    <li>
+        Substituindo-se o conteúdo da linha 10 por <code style="font-family: monospace; white-space: pre;">high = mid - 1</code> e substituindo-se o conteúdo da
+        linha 12 por <code style="font-family: monospace; white-space: pre;">low = mid + 1</code>, não se altera o resultado de uma busca.
+    </li>
+    <li>
+        Envolvendo-se o código das linhas 4 a 12 em um laço <code style="font-family: monospace; white-space: pre;">while True</code>, substituindo-se o conteúdo
+        da linha 10 por <code style="font-family: monospace; white-space: pre;">high = mid - 1</code> e substituindo-se o conteúdo da linha 12 por <code style="font-family: monospace; white-space: pre;">low = mid + 1</code>
+        remove-se a recursão de cauda e o resultado da busca não é alterado.
+    </li>
+    <li>
+        Substituindo-se o código da linha 10 por:<br />
+        <code style="font-family: monospace; white-space: pre;">  newhigh = mid-1
+  return binary_search(x, lst, low, newhigh)</code><br />
+        e substituindo-se o código da linha 12 por:<br />
+        <code style="font-family: monospace; white-space: pre;">  newlow = mid+1
+  return binary_search(x, lst, newlow, high)</code><br />
+        remove-se a recursão de cauda.
+    </li>
+    <li>
+        Substituindo-se o conteúdo das linhas 9 a 12 por<br />
+        <code style="font-family: monospace; white-space: pre;">  if lst[mid] &gt; x :
+      newlow = low
+      newhigh = mid-1
+  else:
+      newlow = mid+1
+      newhigh = high
+  return binary_search(x, lst, newlow, newhigh)</code><br />
+        mantém-se o resultado da busca.
+    </li>
+</ol>
+<p style="font-size: 24">
+    É correto o que se afirma em
+</p>
+<ol type="A">
+    <li>
+        I, apenas.
+    </li>
+    <li>
+        II e III, apenas.
+    </li>
+    <li>
+        II e IV, apenas.
+    </li>
+    <li>
+        I, III e IV, apenas.
+    </li>
+    <li>
+        I, II, III e IV.
+    </li>
+</ol>
+</html>

@@ -1,0 +1,62 @@
+<html><p>
+    Uma estação de monitoramento de temperatura utiliza um termógrafo para registrar continuamente
+    em um gráfico os valores detectados por seus sensores. Um determinado ambiente foi monitorado ao
+    longo de três períodos distintos de um dia. O ambiente é considerado apropriado para um experimento
+    científico se, para qualquer período Pi de monitoramento σ(Pi
+    ) ≤ 2, em que σ(Pi
+    ) denota o desvio
+    padrão populacional do período Pi em que o ambiente foi monitorado.
+</p>
+<p>
+    As medidas de temperatura em °C, obtidas após um processo de quantização do sinal, são apresentadas
+    na tabela a seguir.
+</p>
+<img src="images/engenharia_de_computacao_2019_m_32_0.png" style="display: block; margin-left: auto; margin-right: auto; width: 80%;" />
+<p>
+    A fim de automatizar o processamento dos sinais, o algoritmo a seguir foi desenvolvido, tendo como
+    entrada um período e como resultado um valor booleano que indica se o período é apropriado ou não.
+</p>
+<code style="font-family: monospace; white-space: pre;"><b>Algoritmo:</b> viavel(<img src="http://latex.codecogs.com/gif.latex?P" alt="P" />)
+    <b>entrada:</b> <img src="http://latex.codecogs.com/gif.latex?P" alt="P" />: um período
+    <b>saída  :</b> um valor booleano que indica se <img src="http://latex.codecogs.com/gif.latex?P" alt="P" /> é apropriado para o experimento
+    <img src="http://latex.codecogs.com/gif.latex?total \leftarrow 0" alt="total \leftarrow 0" />
+    <b>para</b> <img src="http://latex.codecogs.com/gif.latex?p \in P" alt="p \in P" /> <b>faça</b>
+        <img src="http://latex.codecogs.com/gif.latex?total \leftarrow total + (p - AVG(P)) \times (p - AVG(P))" alt="total \leftarrow total + (p - AVG(P)) \times (p - AVG(P))" /> // <img src="http://latex.codecogs.com/gif.latex?AVG" alt="AVG" /> denota a média de <img src="http://latex.codecogs.com/gif.latex?P" alt="P" />
+    <b>fim</b>
+    <b>retorna</b> <img src="http://latex.codecogs.com/gif.latex?\sqrt{\frac{total}{|P|}} \leq 2" alt="\sqrt{\frac{total}{|P|}} \leq 2" /></code>
+<p>
+    Com base no caso apresentado, avalie as afirmações a seguir.
+</p>
+<ol type="I">
+    <li>
+        Conforme o funcionamento do algoritmo, os períodos <img src="http://latex.codecogs.com/gif.latex?P_1" alt="P_1" />, <img src="http://latex.codecogs.com/gif.latex?P_2" alt="P_2" /> e <img src="http://latex.codecogs.com/gif.latex?P_3" alt="P_3" /> são apropriados.
+    </li>
+    <li>
+        O algoritmo calcula o desvio padrão amostral e, portanto, não é adequado para o estudo.
+    </li>
+    <li>
+        Caso executado sobre o período <img src="http://latex.codecogs.com/gif.latex?P = \{P_1, P_2, P_3\}" alt="P = \{P_1, P_2, P_3\}" />, o algoritmo indica que ele é inapropriado
+        para o experimento.
+    </li>
+</ol>
+<p style="font-size: 24">
+    É correto apenas o que se afirma em
+</p>
+<ol type="A">
+    <li>
+        I, apenas.
+    </li>
+    <li>
+        II, apenas.
+    </li>
+    <li>
+        I e III, apenas.
+    </li>
+    <li>
+        II e III, apenas.
+    </li>
+    <li>
+        I, II e III.
+    </li>
+</ol>
+</html>

@@ -1,0 +1,51 @@
+<html><p>
+    O algoritmo de criptografia <i>Data Encryption
+    Standard</i> (DES) cifra blocos de 64 bits utilizando
+    chaves simétricas de 56 bits. Atualmente o DES
+    não é mais considerado uma cifra segura devido
+    ao pequeno número de bits utilizado para a chave.
+    Para resolver o tamanho da chave, foi proposto
+    o DES Triplo (3DES), que utiliza três execuções do
+    DES e chaves de até 168 bits. A chave <img src="http://latex.codecogs.com/gif.latex?k" alt="k" /> para o
+    3DES é dividida em três partes (<img src="http://latex.codecogs.com/gif.latex?k_a" alt="k_a" />, <img src="http://latex.codecogs.com/gif.latex?k_b" alt="k_b" />, <img src="http://latex.codecogs.com/gif.latex?k_c" alt="k_c" />) e cada
+    uma destas partes é utilizada na execução de uma
+    instância do DES.
+</p>
+<p style="font-style: italic">
+    STALLINGS, W. <b>Criptografia e Segurança de Redes:</b> Princípios e práticas.
+    4ª ed. São Paulo: Pearson Prentice Hall, 2008 (adaptado).
+</p>
+<p style="font-size: 24">
+    O algoritmo DES define uma função <img src="http://latex.codecogs.com/gif.latex?C(m, k_1)" alt="C(m, k_1)" /> que
+    cifra uma mensagem <img src="http://latex.codecogs.com/gif.latex?m" alt="m" /> com uma chave <img src="http://latex.codecogs.com/gif.latex?k_1" alt="k_1" /> e uma
+    função <img src="http://latex.codecogs.com/gif.latex?(Dc, k_1)" alt="(Dc, k_1)" /> que decifra uma mensagem <img src="http://latex.codecogs.com/gif.latex?C" alt="C" />
+    cifrada com a chave <img src="http://latex.codecogs.com/gif.latex?k_1" alt="k_1" />. Para que o 3DES seja capaz
+    de decifrar mensagens cifradas com o DES, sua
+    implementação deve ser
+</p>
+<ol type="A">
+    <li>
+        <img src="http://latex.codecogs.com/gif.latex?D(C(D(m, k_a), k_b), k_c)" alt="D(C(D(m, k_a), k_b), k_c)" />, sendo <img src="http://latex.codecogs.com/gif.latex?k_a \neq k_b \neq k_c" alt="k_a \neq k_b \neq k_c" />
+        partes da chave usada no 3DES e <img src="http://latex.codecogs.com/gif.latex?k_a" alt="k_a" /> a chave
+        usada no DES.
+    </li>
+    <li>
+        <img src="http://latex.codecogs.com/gif.latex?D(D(D(m, k_a), k_b), k_c)" alt="D(D(D(m, k_a), k_b), k_c)" />, sendo <img src="http://latex.codecogs.com/gif.latex?k_a \neq k_b \neq k_c" alt="k_a \neq k_b \neq k_c" />, partes
+        da chave do 3DES e <img src="http://latex.codecogs.com/gif.latex?k_a" alt="k_a" /> a chave usada no DES.
+    </li>
+    <li>
+        <img src="http://latex.codecogs.com/gif.latex?D(D(D(m, k_a), k_b), k_c)" alt="D(D(D(m, k_a), k_b), k_c)" />, sendo <img src="http://latex.codecogs.com/gif.latex?k_a = k_b = k_c" alt="k_a = k_b = k_c" />, partes
+        da chave do 3DES e <img src="http://latex.codecogs.com/gif.latex?k_a" alt="k_a" /> a chave usada no DES.
+    </li>
+    <li>
+        <img src="http://latex.codecogs.com/gif.latex?D(C(D(m, k_a), k_b), k_c)" alt="D(C(D(m, k_a), k_b), k_c)" />, sendo <img src="http://latex.codecogs.com/gif.latex?k_a = k_b = k_c" alt="k_a = k_b = k_c" />
+        partes da chave usada no 3DES e <img src="http://latex.codecogs.com/gif.latex?k_a" alt="k_a" /> a chave
+        usada no DES.
+    </li>
+    <li>
+        <img src="http://latex.codecogs.com/gif.latex?D(D(C(m, k_a), kb), kc)" alt="D(D(C(m, k_a), kb), kc)" />, sendo <img src="http://latex.codecogs.com/gif.latex?k_a = k_b = k_c" alt="k_a = k_b = k_c" />
+        partes da chave usada no 3DES e <img src="http://latex.codecogs.com/gif.latex?k_a" alt="k_a" /> a chave
+        usada no DES.
+    </li>
+</ol>
+</html>

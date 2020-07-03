@@ -1,0 +1,59 @@
+<paragraph>
+    Um estudo recente de pesquisadores mostrou
+    que os algoritmos de inteligência artificial também
+    podem ser usados para prever, pelo olhar de um
+    indivíduo, se ele tem chances de sofrer um ataque
+    cardíaco. Os pesquisadores treinaram um sistema
+    de Inteligência Artificial (IA) com exames de retina
+    de 284 335 pacientes em busca de padrões nos
+    cruzamentos de vasos sanguíneos para que a
+    máquina aprenda a identificar os sinais indicadores
+    de doenças cardiovasculares.
+</paragraph>
+<source>
+    Disponível em: <link>https://g1.globo.com/ciencia-e-saude/noticia/
+    2019/03/15/como-a-ia-detecta-sinais-de-doencas-que-humanos-nao-podem-enxergar.ghtml</link>. Acesso em 01 Jun. de 2019 (adaptado).
+</source>
+<paragraph>
+    Acerca do caso apresentado, avalie as afirmações
+    a seguir.
+</paragraph>
+<question_options>
+    <item>
+        O conjunto de dados utilizado para a
+        realização da técnica de reconhecimento de
+        padrões corresponde aos exames de retina
+        de 284 335 pacientes.
+    </item>
+    <item>
+        A seleção de características que serão
+        utilizadas como base para o reconhecimento
+        de padrões equivale ao cruzamento de vasos
+        sanguíneos.
+    </item>
+    <item>
+        A classificação dos resultados corresponde a
+        identificar os sinais indicadores de doenças
+        cardiovasculares.
+    </item>
+</question_options>
+<question>
+    É correto o que se afirma em
+</question>
+<answer_options>
+    <item>
+        I, apenas.
+    </item>
+    <item>
+        II, apenas.
+    </item>
+    <item>
+        I e III, apenas.
+    </item>
+    <item>
+        II e III, apenas.
+    </item>
+    <item>
+        I, II e III.
+    </item>
+</answer_options>

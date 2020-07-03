@@ -1,0 +1,29 @@
+<paragraph>
+    Os amplificadores operacionais são utilizados em circuitos de controle e supervisão de processos
+    industriais, em que sinais de entrada são provenientes de sensores ou transdutores colocados nas malhas
+    de controle do sistema. O diagrama a seguir ilustra um exemplo de circuito utilizado para medição da
+    temperatura com um sensor do tipo NTC (<i>Negative Temperature Coefficient</i>):
+</paragraph>
+<image src="images/engenharia_de_computacao_2019_m_17_0.png" />
+<question>
+    De acordo com o manual do fabricante do sensor NTC, para uma temperatura de 30 °C é observada uma
+    resistência de 8 <formula>k\Omega</formula>, portanto, o valor da tensão exibida na tela (<i>display</i>) do voltímetro ligado na saída do
+    circuito eletrônico apresentado é de
+</question>
+<answer_options>
+    <item>
+        -6 volts.
+    </item>
+    <item>
+        6 volts.
+    </item>
+    <item>
+        3 volts.
+    </item>
+    <item>
+        -3 volts.
+    </item>
+    <item>
+        1 volt.
+    </item>
+</answer_options>

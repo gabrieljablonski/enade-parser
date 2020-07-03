@@ -1,0 +1,46 @@
+<paragraph>
+    Em um sistema computacional, os processos submetidos à execução podem estar em um dos estágios do
+    seu ciclo de vida que são classificados como em execução, em espera ou pronto. Quando o processo tem
+    a posse do processador, está em execução. Se o processo não puder ser executado, por estar aguardando
+    algum dado por exemplo, é considerado um processo em espera. Se não houver impedimentos para sua
+    execução, o processo deve aguardar sua vez para ser executado na fila dos processos prontos. O diagrama
+    a seguir representa os estados dos processos de alguns tipos de sistemas operacionais.
+</paragraph>
+<image src="images/engenharia_de_computacao_2019_m_31_0.png" />
+<paragraph>
+    Com base no texto e no diagrama de estados, avalie as afirmações a seguir.
+</paragraph>
+<question_options>
+    <item>
+        Um novo processo criado é inicializado no estado "espera".
+    </item>
+    <item>
+        Pode haver mais de um processo em estado "pronto".
+    </item>
+    <item>
+        A transição B indica que o diagrama refere-se a um sistema operacional multitarefa.
+    </item>
+    <item>
+        O diagrama é inadequado para representar um sistema monotarefa.
+    </item>
+</question_options>
+<question>
+    É correto apenas o que se afirma em
+</question>
+<answer_options>
+    <item>
+        I e II.
+    </item>
+    <item>
+        I e III.
+    </item>
+    <item>
+        III e IV.
+    </item>
+    <item>
+        I, II e IV.
+    </item>
+    <item>
+        II, III e IV.
+    </item>
+</answer_options>

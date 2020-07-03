@@ -1,0 +1,40 @@
+<paragraph>
+    Considere um software de monitoramento de estufas que possui um alarme que detecta quando um
+    medidor de temperatura excede um dado limiar. Para esse projeto, utilizou-se uma rede bayesiana para
+    inferir eventos que podem acontecer no sistema com as seguintes variáveis booleanas:
+</paragraph>
+<list>
+    <item>
+        <code>A</code>: o alarme soa;
+    </item>
+    <item>
+        <code>AD</code>: o alarme está defeituoso, o alarme é acionado sem necessidade ou é um alarme falso;
+    </item>
+    <item>
+        <code>MD</code>: o medidor de temperatura está defeituoso e pode gerar valores incorretos, levando a leituras
+        erradas do medidor;
+    </item>
+    <item>
+        <code>LM</code>: os valores de leitura do medidor;
+    </item>
+    <item>
+        <code>T</code>: a temperatura real da estufa.
+    </item>
+</list>
+<answer_options>
+    <item>
+        <image src="images/engenharia_de_computacao_2019_m_22_0.png" />
+    </item>
+    <item>
+        <image src="images/engenharia_de_computacao_2019_m_22_1.png" />
+    </item>
+    <item>
+        <image src="images/engenharia_de_computacao_2019_m_22_2.png" />
+    </item>
+    <item>
+        <image src="images/engenharia_de_computacao_2019_m_22_3.png" />
+    </item>
+    <item>
+        <image src="images/engenharia_de_computacao_2019_m_22_4.png" />
+    </item>
+</answer_options>

@@ -1,0 +1,26 @@
+<paragraph>
+    Um circuito elétrico de corrente contínua é aquele em que todas as tensões são constantes no tempo.
+    Circuitos de corrente alternada, por sua vez, possuem valores de tensão variantes no tempo. As variações
+    de tensão senoidal são expressas pela equação <formula>V(t)=V_m \sin (2 \pi ft)</formula> em que <formula>V_m</formula> representa o valor de
+    pico, <formula>f</formula> representa a frequência do sinal e <formula>t</formula> o tempo. Os gráficos a seguir mostram a tensão e a corrente
+    em uma carga.
+</paragraph>
+<image src="images/engenharia_de_computacao_2019_d_5_0.png" />
+<image src="images/engenharia_de_computacao_2019_d_5_1.png" />
+<question>
+    Com base nas informações e nos gráficos, faça o que se pede nos itens a seguir.
+</question>
+<list>
+    <item>
+        a) Determine a natureza da carga (resistiva, capacitiva ou indutiva) e justifique.
+    </item>
+    <item>
+        b) Calcule o valor da impedância da carga.
+    </item>
+    <item>
+        c) Apresente a equação da forma de onda da corrente alternada.
+    </item>
+    <item>
+        d) Calcule a tensão eficaz (RMS) do circuito de corrente alternada.
+    </item>
+</list>

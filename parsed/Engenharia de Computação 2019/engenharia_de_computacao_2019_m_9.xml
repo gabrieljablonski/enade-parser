@@ -1,0 +1,80 @@
+<paragraph>
+    O MergeSort é um método de ordenação que combina dois vetores ordenados e cria um terceiro vetor
+    maior também ordenado. O algoritmo abaixo apresenta essa ideia e combina os vetores <code>a[lo..mid]</code>
+    e <code>a[mid+1..hi]</code> no vetor <code>a[lo..hi].</code>
+</paragraph>
+<code>public class MergeSort {
+    private static Comparable[] aux;
+    public static void merge(Comparable[] a, int lo, int mid, int hi) {
+        int i = lo, j = mid+1;
+        for (int k = lo; k &lt;= hi; k++)
+            aux[k] = a[k];
+        for (int k = lo; k &lt;= hi; k++) {
+            if (i &gt; mid)
+                a[k] = aux[j++];
+            else if (j &gt; hi )
+                a[k] = aux[i++];
+            else if (aux[j].compareTo(aux[i]))
+                a[k] = aux[j++];
+            else
+                a[k] = aux[i++];
+        }
+    }
+    public static void sort(Comparable[] a) {
+        aux = new Comparable[a.length];
+        sort(a, 0, a.length - 1);
+    }
+    private static void sort(Comparable[] a, int lo, int hi) {
+        //implementação
+    }
+}
+</code>
+<source>
+    SEDGEWICK, R.; WAYNE, K. Algorithms. 4. ed. Boston: Addison-Wesley, 2011 (adaptado).
+</source>
+<question>
+    Considerando o código apresentado, a implementação do protótipo do método sort da classe MergeSort é
+</question>
+
+<answer_options>
+    <item>
+    <code>    if (hi == lo)
+        return;
+    int mid = lo + (hi - lo)/2;
+    sort(a, lo, mid);
+    sort(a, mid, hi);
+    merge(a, lo, mid, hi);</code>
+    </item>
+    <item>
+    <code>    if (hi &gt; lo)
+        return;
+    int mid = lo + (hi - lo)/2;
+    sort(a, lo, mid);
+    sort(a, mid, hi);
+    merge(a, lo, mid, hi);</code>
+    </item>
+    <item>
+    <code>    if (hi &lt;= lo)
+        return;
+    int mid = lo + (hi - lo)/2;
+    sort(a, lo, mid);
+    sort(a, mid, hi);
+    merge(a, lo, mid, hi);</code>
+    </item>
+    <item>
+    <code>    if (hi &gt; lo)
+        return;
+    int mid = lo + (hi - lo)/2;
+    sort(a, lo, mid);
+    sort(a, mid+1, hi);
+    merge(a, lo, mid, hi);</code>
+    </item>
+    <item>
+    <code>    if (hi &lt;= lo)
+        return;
+    int mid = lo + (hi - lo)/2;
+    sort(a, lo, mid);
+    sort(a, mid+1, hi);
+    merge(a, lo, mid, hi);</code>
+    </item>
+</answer_options>

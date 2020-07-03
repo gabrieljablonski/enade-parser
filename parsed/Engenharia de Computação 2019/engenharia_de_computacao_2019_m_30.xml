@@ -1,0 +1,60 @@
+<paragraph>
+    É comum a expressão "servidor web" ser utilizada para denominar processos cuja finalidade é disponibilizar
+    recursos estáticos, que são os que se encontram completos antes de uma requisição ser realizada, e
+    recursos dinâmicos, que são produzidos no momento em que um cliente o requisita e seu conteúdo
+    é definido em tempo de requisição. Um <i>Container</i> de <i>Servlets</i> é um servidor web capaz de gerenciar
+    diferentes aplicações que disponibilizam conteúdo dinâmico, e um <i>Servlet</i> é uma classe Java capaz de
+    gerar conteúdo desse tipo, mediante a requisição de um cliente. Cada requisição atendida por um <i>Servlet</i>
+    pode ser executada por uma <i>thread</i> e múltiplas requisições podem estar em execução simultaneamente.
+</paragraph>
+<paragraph>
+    Considere o <i>Servlet</i> a seguir que mantém uma variável cuja finalidade é controlar quantas requisições são
+    atendidas ao longo do tempo.
+</paragraph>
+<code>1  @WebServlet (&quot;/&quot;)
+2  public class ContaRequisicoes extends HttpServlet {
+3      private int contador;
+4      protected void doGet (HttpServletRequest req, HttpServletResponse resp) throws Exception {
+5          contador = contador + 1;
+6      }
+7  }</code>
+<source>
+    Disponível em: <link>https://www.javaee.github.io/servlet-spec/downloads/servlet-4.0/servlet-4_0_FINAL.pdf</link>.
+    Acesso em: 24 jun. 2019 (adaptado).
+</source>
+<paragraph>
+    A respeito do <i>Servlet</i> apresentado, avalie as afirmações a seguir.
+</paragraph>
+<question_options>
+    <item>
+        O código apresenta uma condição de corrida.
+    </item>
+    <item>
+        Substituir a linha 5 pela construção <code>synchronized (this) {contador = contador + 1;}</code>
+        garante o correto funcionamento do método.
+    </item>
+    <item>
+        Obter a trava do objeto referenciado por <code>request</code> antes de executar o incremento e liberá-la
+        logo a seguir, garante o correto funcionamento do método.
+    </item>
+</question_options>
+<question>
+    É correto o que se afirma em
+</question>
+<answer_options>
+    <item>
+        I, apenas.
+    </item>
+    <item>
+        II, apenas.
+    </item>
+    <item>
+        I e III, apenas.
+    </item>
+    <item>
+        II e III, apenas.
+    </item>
+    <item>
+        I, II e III.
+    </item>
+</answer_options>

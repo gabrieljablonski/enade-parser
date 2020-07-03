@@ -1,0 +1,34 @@
+<paragraph>
+    Considere a construção de um Demultiplexador digital (DEMUX) de 4 canais, usando CIs 7404 e 7411, para
+    que um mesmo controle (liga/desliga) seja compartilhado por quatro <i>leds</i>. A figura a seguir apresenta o
+    diagrama esquemático do circuito.
+</paragraph>
+<image src="images/engenharia_de_computacao_2019_m_16_0.png" />
+<paragraph>
+    Após a montagem, constatou-se que o circuito não funciona corretamente. Para certificação de que o
+    circuito do diagrama esquemático estava correto, comparou-se os estados esperados com os estados
+    observados do circuito para identificar o defeito. A tabela a seguir sintetiza os dados dessa comparação.
+</paragraph>
+<table>
+    <image src="images/engenharia_de_computacao_2019_m_16_1.png" />
+</table>
+<question>
+    Com base nos dados apresentados na tabela, o defeito que condiz com os resultados das observações é que
+</question>
+<answer_options>
+    <item>
+        o pino 11 da porta IC1C não foi conectado.
+    </item>
+    <item>
+        o pino 9 da porta IC1C está conectado com S0, ao invés de estar conectado com S1.
+    </item>
+    <item>
+        o pino 10 da porta IC1C está conectado com S0, ao invés de estar conectado com S0 negado.
+    </item>
+    <item>
+        o pino 11 da porta IC1C está conectado com S0, ao invés de estar conectado com a ENTRADA.
+    </item>
+    <item>
+        o pino 11 da porta IC1C está conectado com S1, ao invés de estar conectado com a ENTRADA.
+    </item>
+</answer_options>

@@ -1,0 +1,56 @@
+<paragraph>
+    Proporcional-Integral-Derivativo (PID) é o algoritmo de controle que mais tem sido utilizado na indústria
+    e no mundo para sistemas de controle industrial. A popularidade de controladores PID pode ser parcialmente
+    atribuída ao seu desempenho robusto em uma ampla gama de condições de funcionamento e parcialmente à
+    sua simplicidade funcional, que permite aos engenheiros operá-los de forma simples e direta.
+</paragraph>
+<source>
+    Disponível em: <link>https://www.ni.com/pt-br/innovations/white-papers/06/pid-theory-explained.html </link>. Acesso em 20 jun. 2019 (adaptado).
+</source>
+<paragraph>
+    A figura a seguir apresenta um esquema de controle PID para um processo de temperatura de um
+    forno industrial.
+</paragraph>
+<image src="images/engenharia_de_computacao_2019_m_26_0.png" />
+<paragraph>
+    Considere o trecho incompleto do código-fonte a seguir em que <code>kp</code> é o ganho proporcional (P),
+    <code>ki</code> o ganho integral (I) e <code>kd</code> o ganho derivativo (D).
+</paragraph>
+<code> 1  double ITerm = 0, lastErro = 0;
+ 2  int lastTime = 0;
+ 3  double Compute(int sampleTime, double kp, double ki, double kd, double SP, double PV)
+ 4  {
+ 5      unsigned long now = millis();
+ 6      int timeChange = (now - lastTime);
+ 7      if (timeChange &gt;= sampleTime)
+ 8      {
+ 9          double Erro = SP - PV;
+10          ITerm += Erro * sampleTime;
+11          double dErro = (Erro - lastErro);
+12          double output = _______________
+13          lastErro = Erro;
+14          lastTime = now;
+15      }
+16      return output;
+17  }</code>
+<question>
+    Considerando a necessidade de implementar o esquema de controle PID, assinale a opção que completa
+    corretamente a linha 12 desse código.
+</question>
+<answer_options>
+    <item>
+        <code>kp * Erro + ki * ITerm;</code>
+    </item>
+    <item>
+        <code>ki/kp * ITerm + kd/kp * dErro;</code>
+    </item>
+    <item>
+        <code>kp * Erro + kd * dErro * dErro;</code>
+    </item>
+    <item>
+        <code>kp * Erro + ki * ITerm + kd * dErro;</code>
+    </item>
+    <item>
+        <code>kp * Erro + ki * ITerm + kd * dErro * dErro;</code>
+    </item>
+</answer_options>

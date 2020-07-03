@@ -1,0 +1,56 @@
+<html><p>
+    Protocolos de roteamento de estado de enlace
+    utilizam difusão para propagar informações de
+    estado de enlace que são usadas para calcular rotas
+    individuais. Entretanto, algumas técnicas provocam
+    a transmissão de pacotes redundantes na rede.
+    Idealmente, cada nó deveria receber apenas uma
+    cópia do pacote de difusão.
+</p>
+<p>
+    Uma técnica utilizada para resolver o problema da
+    redundância de pacotes, é a difusão por <i>spanning
+    tree.</i> Uma <i>spanning tree</i> de um grafo <img src="http://latex.codecogs.com/gif.latex?G = (N, E)" alt="G = (N, E)" /> é
+    um grafo <img src="http://latex.codecogs.com/gif.latex?G' = (N, E')" alt="G' = (N, E')" /> tal que <img src="http://latex.codecogs.com/gif.latex?E'" alt="E'" /> é um subconjunto
+    de <img src="http://latex.codecogs.com/gif.latex?E" alt="E" />, <img src="http://latex.codecogs.com/gif.latex?G'" alt="G'" /> é conexo, não possui ciclos e contém todos
+    os nós originais em <img src="http://latex.codecogs.com/gif.latex?G" alt="G" />. Se cada enlace tiver um
+    custo associado e o custo de uma árvore for a soma
+    dos custos dos enlaces, então uma árvore cujo
+    custo seja o mínimo entre todas as <i>spanning trees</i>
+    do grafo é denominada uma <i>spanning tree</i> mínima.
+</p>
+<p style="font-style: italic">
+    KUROSE, J. F.; ROSS, K. W. <b>Redes de computadores e a Internet:</b>
+    uma abordagem top-down. 6. ed. São Paulo:
+    Pearson Education do Brasil, 2013 (adaptado).
+</p>
+<p>
+    Considere uma rede composta por 6 roteadores,
+    designados pelas letras A, B, C, D, E e F, conectados
+    conforme a seguinte tabela de custos de seus enlaces:
+</p>
+<div>
+    <img src="images/engenharia_de_computacao_2019_m_24_0.png" style="display: block; margin-left: auto; margin-right: auto; width: 80%;" />
+</div>
+<p style="font-size: 24">
+    Neste cenário, o custo da <i>spanning tree</i> mínima
+    correspondente é, exatamente:
+</p>
+<ol type="A">
+    <li>
+        5.
+    </li>
+    <li>
+        7.
+    </li>
+    <li>
+        8.
+    </li>
+    <li>
+        9.
+    </li>
+    <li>
+        11.
+    </li>
+</ol>
+</html>

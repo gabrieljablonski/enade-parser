@@ -1,0 +1,67 @@
+<html><p>
+    Rigidez é a tendência de um software ser difícil de modificar. Cada mudança causa uma cascata de
+    mudanças subsequentes em módulos dependentes. O trecho de código a seguir faz parte de um sistema
+    com suporte à comunicação entre diferentes dispositivos de comunicação via rádio (modems):
+</p>
+<p>
+<code style="font-family: monospace; white-space: pre;">     1  struct Modem { enum Type {hayes, courrier, ernie) type; };
+     2  struct Hayes {
+     3      Modem::Type type;
+     4      // Detalhes do modem tipo Hayes
+     5  };
+     6  struct Courrier {
+     7      Modem::Type type;
+     8      // Detalhes do modem tipo Courrier
+     9  };
+    10  struct Ernie {
+    11      Modem::Type type;
+    12      // Detalhes do modem tipo Ernie
+    13  };
+    14  void LogOn(Modem&amp; m, string&amp; frq, string&amp; user, string&amp; pw) {
+    15      if (m.type == Modem::hayes)
+    16          OpenHayesChannel((Hayes&amp;)m, frq);
+    17      else OpenCourrierChannel((Courrier&amp;)m, frq);
+    18      // depois de conectado, enviar user, pw, etc.
+    19      // (continua)</code>
+</p>
+<p style="font-style: italic">
+    Disponível em: <a href="http://www.staff.cs.utu.fi/staff/jouni.smed/doos_06/material/DesignPrinciplesAndPatterns.pdf">http://www.staff.cs.utu.fi/staff/jouni.smed/doos_06/material/DesignPrinciplesAndPatterns.pdf</a>.
+    Acesso em: 15 jun. 2019 (adaptado).
+</p>
+<p>
+    Nesse trecho, cada tipo de modem tem suas particularidades e foram criadas estruturas específicas
+    para cada tipo (linhas 2 a 13). Um "enumeration" (linha 1) é utilizado para identificar o tipo de modem.
+    O procedimento <code style="font-family: monospace; white-space: pre;">LogOn</code> (linhas 14 a 19) é responsável por realizar a conexão a um modem. Dados o tipo
+    do modem (<code style="font-family: monospace; white-space: pre;">m</code>), a frequência (<code style="font-family: monospace; white-space: pre;">frq</code>), o nome de usuário (<code style="font-family: monospace; white-space: pre;">user</code>) e a senha (<code style="font-family: monospace; white-space: pre;">pw</code>), inicialmente, é feita a
+    abertura do canal de comunicação, que corresponde a uma chamada específica para cada tipo de modem
+    (linhas 15 a 17). Como os modems do tipo <code style="font-family: monospace; white-space: pre;">Courrier</code> e <code style="font-family: monospace; white-space: pre;">Ernie</code> são similares em termos de abertura de
+    canal, o programador decidiu otimizar o código, utilizando a função do modem <code style="font-family: monospace; white-space: pre;">Courrier</code> para ambos
+    (<code style="font-family: monospace; white-space: pre;">OpenCourrierChannel</code> - linha 17). Uma vez conectado, o código continua o processo de <code style="font-family: monospace; white-space: pre;">LogOn</code> na
+    linha 18 em diante.
+</p>
+<p style="font-size: 24">
+    Nesse projeto do código um sintoma de rigidez é que
+</p>
+<ol type="A">
+    <li>
+        se o suporte ao modem do tipo <code style="font-family: monospace; white-space: pre;">Ernie</code> for removido do sistema, será necessário remover a estrutura
+        <code style="font-family: monospace; white-space: pre;">Ernie</code> do código.
+    </li>
+    <li>
+        se um novo tipo de modem for adicionado, será necessário alterar o número de parâmetros definidos
+        no procedimento <code style="font-family: monospace; white-space: pre;">LogOn</code>.
+    </li>
+    <li>
+        se um novo tipo de modem for adicionado, é necessário copiar e colar todo o código de uma das
+        outras estruturas de modems para incluir novos detalhes.
+    </li>
+    <li>
+        se a política de comunicação do modem do tipo <code style="font-family: monospace; white-space: pre;">Hayes</code> sofrer alteração, pode ser necessário alterar
+        o procedimento <code style="font-family: monospace; white-space: pre;">OpenHayesChannel</code> e a estrutura <code style="font-family: monospace; white-space: pre;">Hayes</code>.
+    </li>
+    <li>
+        se a política de comunicação do modem do tipo <code style="font-family: monospace; white-space: pre;">Courrier</code> sofrer alteração, pode ser necessário
+        alterar <code style="font-family: monospace; white-space: pre;">OpenCourrierChannel</code> e <code style="font-family: monospace; white-space: pre;">LogOn</code> e criar um novo procedimento <code style="font-family: monospace; white-space: pre;">OpenErnieChannel</code>.
+    </li>
+</ol>
+</html>

@@ -1,0 +1,57 @@
+<html><p>
+    Proporcional-Integral-Derivativo (PID) é o algoritmo de controle que mais tem sido utilizado na indústria
+    e no mundo para sistemas de controle industrial. A popularidade de controladores PID pode ser parcialmente
+    atribuída ao seu desempenho robusto em uma ampla gama de condições de funcionamento e parcialmente à
+    sua simplicidade funcional, que permite aos engenheiros operá-los de forma simples e direta.
+</p>
+<p style="font-style: italic">
+    Disponível em: <a href="https://www.ni.com/pt-br/innovations/white-papers/06/pid-theory-explained.html">https://www.ni.com/pt-br/innovations/white-papers/06/pid-theory-explained.html</a>. Acesso em 20 jun. 2019 (adaptado).
+</p>
+<p>
+    A figura a seguir apresenta um esquema de controle PID para um processo de temperatura de um
+    forno industrial.
+</p>
+<img src="images/engenharia_de_computacao_2019_m_26_0.png" style="display: block; margin-left: auto; margin-right: auto; width: 80%;" />
+<p>
+    Considere o trecho incompleto do código-fonte a seguir em que <code style="font-family: monospace; white-space: pre;">kp</code> é o ganho proporcional (P),
+    <code style="font-family: monospace; white-space: pre;">ki</code> o ganho integral (I) e <code style="font-family: monospace; white-space: pre;">kd</code> o ganho derivativo (D).
+</p>
+<code style="font-family: monospace; white-space: pre;"> 1  double ITerm = 0, lastErro = 0;
+ 2  int lastTime = 0;
+ 3  double Compute(int sampleTime, double kp, double ki, double kd, double SP, double PV)
+ 4  {
+ 5      unsigned long now = millis();
+ 6      int timeChange = (now - lastTime);
+ 7      if (timeChange &gt;= sampleTime)
+ 8      {
+ 9          double Erro = SP - PV;
+10          ITerm += Erro * sampleTime;
+11          double dErro = (Erro - lastErro);
+12          double output = _______________
+13          lastErro = Erro;
+14          lastTime = now;
+15      }
+16      return output;
+17  }</code>
+<p style="font-size: 24">
+    Considerando a necessidade de implementar o esquema de controle PID, assinale a opção que completa
+    corretamente a linha 12 desse código.
+</p>
+<ol type="A">
+    <li>
+        <code style="font-family: monospace; white-space: pre;">kp * Erro + ki * ITerm;</code>
+    </li>
+    <li>
+        <code style="font-family: monospace; white-space: pre;">ki/kp * ITerm + kd/kp * dErro;</code>
+    </li>
+    <li>
+        <code style="font-family: monospace; white-space: pre;">kp * Erro + kd * dErro * dErro;</code>
+    </li>
+    <li>
+        <code style="font-family: monospace; white-space: pre;">kp * Erro + ki * ITerm + kd * dErro;</code>
+    </li>
+    <li>
+        <code style="font-family: monospace; white-space: pre;">kp * Erro + ki * ITerm + kd * dErro * dErro;</code>
+    </li>
+</ol>
+</html>

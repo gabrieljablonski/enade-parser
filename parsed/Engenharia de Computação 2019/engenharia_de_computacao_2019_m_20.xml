@@ -1,0 +1,64 @@
+<paragraph>
+    Rigidez é a tendência de um software ser difícil de modificar. Cada mudança causa uma cascata de
+    mudanças subsequentes em módulos dependentes. O trecho de código a seguir faz parte de um sistema
+    com suporte à comunicação entre diferentes dispositivos de comunicação via rádio (modems):
+</paragraph>
+<code> 1  struct Modem { enum Type {hayes, courrier, ernie) type; };
+ 2  struct Hayes {
+ 3      Modem::Type type;
+ 4      // Detalhes do modem tipo Hayes
+ 5  };
+ 6  struct Courrier {
+ 7      Modem::Type type;
+ 8      // Detalhes do modem tipo Courrier
+ 9  };
+10  struct Ernie {
+11      Modem::Type type;
+12      // Detalhes do modem tipo Ernie
+13  };
+14  void LogOn(Modem&amp; m, string&amp; frq, string&amp; user, string&amp; pw) {
+15      if (m.type == Modem::hayes)
+16          OpenHayesChannel((Hayes&amp;)m, frq);
+17      else OpenCourrierChannel((Courrier&amp;)m, frq);
+18      // depois de conectado, enviar user, pw, etc.
+19      // (continua)</code>
+<source>
+    Disponível em: <link>http://www.staff.cs.utu.fi/staff/jouni.smed/doos_06/material/DesignPrinciplesAndPatterns.pdf</link>.
+    Acesso em: 15 jun. 2019 (adaptado).
+</source>
+<paragraph>
+    Nesse trecho, cada tipo de modem tem suas particularidades e foram criadas estruturas específicas
+    para cada tipo (linhas 2 a 13). Um "enumeration" (linha 1) é utilizado para identificar o tipo de modem.
+    O procedimento <code>LogOn</code> (linhas 14 a 19) é responsável por realizar a conexão a um modem. Dados o tipo
+    do modem (<code>m</code>), a frequência (<code>frq</code>), o nome de usuário (<code>user</code>) e a senha (<code>pw</code>), inicialmente, é feita a
+    abertura do canal de comunicação, que corresponde a uma chamada específica para cada tipo de modem
+    (linhas 15 a 17). Como os modems do tipo <code>Courrier</code> e <code>Ernie</code> são similares em termos de abertura de
+    canal, o programador decidiu otimizar o código, utilizando a função do modem <code>Courrier</code> para ambos
+    (<code>OpenCourrierChannel</code> - linha 17). Uma vez conectado, o código continua o processo de <code>LogOn</code> na
+    linha 18 em diante.
+</paragraph>
+<question>
+    Nesse projeto do código um sintoma de rigidez é que
+</question>
+<answer_options>
+    <item>
+        se o suporte ao modem do tipo <code>Ernie</code> for removido do sistema, será necessário remover a estrutura
+        <code>Ernie</code> do código.
+    </item>
+    <item>
+        se um novo tipo de modem for adicionado, será necessário alterar o número de parâmetros definidos
+        no procedimento <code>LogOn</code>.
+    </item>
+    <item>
+        se um novo tipo de modem for adicionado, é necessário copiar e colar todo o código de uma das
+        outras estruturas de modems para incluir novos detalhes.
+    </item>
+    <item>
+        se a política de comunicação do modem do tipo <code>Hayes</code> sofrer alteração, pode ser necessário alterar
+        o procedimento <code>OpenHayesChannel</code> e a estrutura <code>Hayes</code>.
+    </item>
+    <item>
+        se a política de comunicação do modem do tipo <code>Courrier</code> sofrer alteração, pode ser necessário
+        alterar <code>OpenCourrierChannel</code> e <code>LogOn</code> e criar um novo procedimento <code>OpenErnieChannel</code>.
+    </item>
+</answer_options>

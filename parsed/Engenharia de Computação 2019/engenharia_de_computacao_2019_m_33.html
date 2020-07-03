@@ -1,0 +1,41 @@
+<html><p>
+    Uma trilha de um PCB (<i>printed circuit board</i>) é uma conexão entre dois pontos com impedância controlada,
+    que depende de alguns parâmetros, tais como: frequência de operação, comprimento da trilha, tipo
+    de dielétrico e tipo de sinal. Considerando que ela está sendo projetada com o tipo chamado <i>stripline</i>,
+    o plano de referência é o GND (<i>ground</i>) e o dielétrico é o material FR4, cuja constante dielétrica <img src="http://latex.codecogs.com/gif.latex?k" alt="k" /> é
+    aproximadamente igual a 4, o que implica na velocidade de propagação <img src="http://latex.codecogs.com/gif.latex?V_p" alt="V_p" /> de um sinal elétrico em uma
+    <i>stripline</i> ser a metade da velocidade no ar, portanto, aproximadamente 15 cm por nanosegundo.
+</p>
+<p>
+    Em uma linha de transmissão utilizada para sinais digitais, deve-se considerar o tempo entre uma subida
+    e uma descida <img src="http://latex.codecogs.com/gif.latex?t_h" alt="t_h" /> do sinal, que é a metade do período <img src="http://latex.codecogs.com/gif.latex?T" alt="T" /> da frequência máxima do sinal. O comprimento
+    crítico <img src="http://latex.codecogs.com/gif.latex?L_c" alt="L_c" /> de uma trilha é o limite máximo para o qual a trilha ainda pode ser entendida como uma simples
+    conexão entre 2 pontos, sem necessidade de controlar sua impedância, e é dado por <img src="http://latex.codecogs.com/gif.latex?L_c=V_p\frac{t_h}{2}." alt="L_c=V_p\frac{t_h}{2}." />
+</p>
+<p>
+    Para uma trilha operar como uma conexão simples entre 2 pontos, seu comprimento <img src="http://latex.codecogs.com/gif.latex?L" alt="L" /> deve ser, no
+    máximo, igual a <img src="http://latex.codecogs.com/gif.latex?\frac{L_c}{1,5}." alt="\frac{L_c}{1,5}." />
+</p>
+<p style="font-size: 24">
+    No caso da interface <i>PCI Express,</i> cuja frequência máxima de operação especificada é de 1,25 GHz,
+    o comprimento <img src="http://latex.codecogs.com/gif.latex?L" alt="L" /> máximo da trilha para que a mesma se comporte como uma simples conexão
+    entre 2 pontos é de
+</p>
+<ol type="A">
+    <li>
+        2 cm.
+    </li>
+    <li>
+        3 cm.
+    </li>
+    <li>
+        4 cm.
+    </li>
+    <li>
+        6 cm.
+    </li>
+    <li>
+        8 cm.
+    </li>
+</ol>
+</html>

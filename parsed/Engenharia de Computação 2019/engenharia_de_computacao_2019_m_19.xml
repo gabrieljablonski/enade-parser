@@ -1,0 +1,66 @@
+<paragraph>
+    Pesquisadores vêm trabalhando na possibilidade
+    de microprocessadores comerciais <i>off-the-shelf</i>
+    terem sido adquiridos com um <i>backdoor</i> utilizado
+    para desativá-los no momento oportuno, ou seja,
+    ataques a sistemas cibernéticos poderiam ser
+    intencionalmente ativados por meio de um gatilho
+    (<i>trigger</i>), em momento definido pelo atacante.
+</paragraph>
+<source>
+    Disponível: <link>http://www.abin.gov.br</link>.
+    Acesso em: 29 jun. 2019 (adaptado).
+</source>
+<paragraph>
+    São inúmeras as possibilidades de ação por meio do
+    uso de hardware <i>trojan</i>, que permite uma infiltração
+    silenciosa e cuja detecção é extremamente complexa.
+</paragraph>
+<paragraph>
+    Com base no texto e no contexto de detecção e
+    prevenção de ameaças, avalie as afirmações a seguir.
+</paragraph>
+<question_options>
+    <item>
+        Detecção de falhas de manufatura, como
+        falhas de atraso (<i>delay</i>), garante a detecção
+        dos <i>trojans</i>.
+    </item>
+    <item>
+        Detecção por meio de inspeção física ou
+        engenharia reversa destrutiva não garante
+        que os microprocessadores comerciais
+        estejam livres do hardware <i>trojan</i>.
+    </item>
+    <item>
+        O preenchimento total de células no circuito
+        previne a inserção de hardware <i>trojan</i>, não
+        deixando espaços vagos no design.
+    </item>
+    <item>
+        Prevenção por meio de camuflagem é um
+        tipo de estratégia de ofuscação no nível
+        do <i>layout</i> físico, que consiste na adição de
+        contatos e conexões falsas.
+    </item>
+</question_options>
+<question>
+    É correto apenas o que se afirma em
+</question>
+<answer_options>
+    <item>
+        I e II.
+    </item>
+    <item>
+        I e III.
+    </item>
+    <item>
+        II e IV.
+    </item>
+    <item>
+        I, III e IV.
+    </item>
+    <item>
+        II, III e IV.
+    </item>
+</answer_options>

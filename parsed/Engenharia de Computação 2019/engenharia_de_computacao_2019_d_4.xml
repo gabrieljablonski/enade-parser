@@ -1,0 +1,19 @@
+<paragraph>
+    Na matemática, um produtório é definido como:
+</paragraph>
+<centered_text>
+    <formula>\prod_{i=m}^{n}x_i=x_m \times x_{m+1} \times x_{m+2} \times ... \times x_{n-1} \times x_n </formula>
+</centered_text>
+<question>
+    Com base nessa equação, e considerando que <formula>x_i=i+\frac{1}{i}</formula>, com <formula>i > 0</formula>, faça o que se pede nos itens a seguir.
+</question>
+<list>
+    <item>
+        a) Escreva uma <b>função iterativa,</b> em linguagem C, que receba os parâmetros de limite inferior <formula>m</formula> e de
+        limite superior <formula>n</formula>, calcule e retorne o resultado do produtório.
+    </item>
+    <item>
+        b) Escreva uma <b>função recursiva,</b> em linguagem C, que receba os parâmetros de limite inferior <formula>m</formula> e de
+        limite superior <formula>n</formula>, calcule e retorne o resultado do produtório.
+    </item>
+</list>

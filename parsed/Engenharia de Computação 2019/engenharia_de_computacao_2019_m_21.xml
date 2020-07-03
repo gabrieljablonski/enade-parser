@@ -1,0 +1,46 @@
+<paragraph>
+    Uma empresa de análise de mercado de entregas de encomendas foi contratada para selecionar aquela
+    que prestaria serviço para seu cliente e fez um levantamento de dados do setor nos últimos 10 anos,
+    produzindo um relatório com a tabela a seguir, que apresenta 5 principais fornecedores em potencial para
+    o serviço de entrega de encomendas.
+</paragraph>
+<table>
+    <image src="images/engenharia_de_computacao_2019_m_21_0.png" />
+</table>
+<paragraph>
+    Com base nessa situação e considerando que a tabela faz parte do banco de dados da empresa com o
+    nome de <code>TABELA1</code>, avalie as afirmações a seguir.
+</paragraph>
+<question_options>
+    <item>
+        O código em SQL que exclui da <code>TABELA1</code> as informações do Fornecedor 1, Fornecedor 4 e Fornecedor 5
+        é: <code>DELETE FROM TABELA1 WHERE CD6 = &#x27;Regional&#x27; OR CD1 &gt; 160 OR CD5 &gt; 1;</code>
+    </item>
+    <item>
+        A inclusão de uma nova coluna com dados de taxa de eficiência de entrega para os fornecedores
+        constantes na <code>TABELA1</code> é feita pelo código: <code>INSERT INTO TABELA1 (CD7) SET CD7 = &#x27;CD3/CD2&#x27;;</code>
+    </item>
+    <item>
+        O código que reflete a escolha do cliente, o Fornecedor 3, é: <code>SELECT Fornecedor FROM TABELA1 WHERE CD1 &gt; 100 AND (CD3/CD2) &gt; 0.99 AND CD5 &lt; 0.5 ORDER BY CD3;</code>
+    </item>
+</question_options>
+<question>
+    É correto o que se afirma em
+</question>
+<answer_options>
+    <item>
+        I, apenas.
+    </item>
+    <item>
+        III, apenas.
+    </item>
+    <item>
+        I e II, apenas.
+    </item>
+    <item>
+        II e III, apenas.
+    </item>
+    <item>
+        I, II e III.
+    </item>
+</answer_options>

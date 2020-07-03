@@ -1,0 +1,40 @@
+<paragraph>
+    Uma trilha de um PCB (<i>printed circuit board</i>) é uma conexão entre dois pontos com impedância controlada,
+    que depende de alguns parâmetros, tais como: frequência de operação, comprimento da trilha, tipo
+    de dielétrico e tipo de sinal. Considerando que ela está sendo projetada com o tipo chamado <i>stripline</i>,
+    o plano de referência é o GND (<i>ground</i>) e o dielétrico é o material FR4, cuja constante dielétrica <formula>k</formula> é
+    aproximadamente igual a 4, o que implica na velocidade de propagação <formula>V_p</formula> de um sinal elétrico em uma
+    <i>stripline</i> ser a metade da velocidade no ar, portanto, aproximadamente 15 cm por nanosegundo.
+</paragraph>
+<paragraph>
+    Em uma linha de transmissão utilizada para sinais digitais, deve-se considerar o tempo entre uma subida
+    e uma descida <formula>t_h</formula> do sinal, que é a metade do período <formula>T</formula> da frequência máxima do sinal. O comprimento
+    crítico <formula>L_c</formula> de uma trilha é o limite máximo para o qual a trilha ainda pode ser entendida como uma simples
+    conexão entre 2 pontos, sem necessidade de controlar sua impedância, e é dado por <formula>L_c=V_p\frac{t_h}{2}.</formula>
+</paragraph>
+<paragraph>
+    Para uma trilha operar como uma conexão simples entre 2 pontos, seu comprimento <formula>L</formula> deve ser, no
+    máximo, igual a <formula>\frac{L_c}{1,5}.</formula>
+</paragraph>
+<question>
+    No caso da interface <i>PCI Express,</i> cuja frequência máxima de operação especificada é de 1,25 GHz,
+    o comprimento <formula>L</formula> máximo da trilha para que a mesma se comporte como uma simples conexão
+    entre 2 pontos é de
+</question>
+<answer_options>
+    <item>
+        2 cm.
+    </item>
+    <item>
+        3 cm.
+    </item>
+    <item>
+        4 cm.
+    </item>
+    <item>
+        6 cm.
+    </item>
+    <item>
+        8 cm.
+    </item>
+</answer_options>

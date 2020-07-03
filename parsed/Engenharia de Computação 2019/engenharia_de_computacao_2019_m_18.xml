@@ -1,0 +1,50 @@
+<paragraph>
+    O algoritmo de criptografia <i>Data Encryption
+    Standard</i> (DES) cifra blocos de 64 bits utilizando
+    chaves simétricas de 56 bits. Atualmente o DES
+    não é mais considerado uma cifra segura devido
+    ao pequeno número de bits utilizado para a chave.
+    Para resolver o tamanho da chave, foi proposto
+    o DES Triplo (3DES), que utiliza três execuções do
+    DES e chaves de até 168 bits. A chave <formula>k</formula> para o
+    3DES é dividida em três partes (<formula>k_a</formula>, <formula>k_b</formula>, <formula>k_c</formula>) e cada
+    uma destas partes é utilizada na execução de uma
+    instância do DES.
+</paragraph>
+<source>
+    STALLINGS, W. <b>Criptografia e Segurança de Redes:</b> Princípios e práticas.
+    4ª ed. São Paulo: Pearson Prentice Hall, 2008 (adaptado).
+</source>
+<question>
+    O algoritmo DES define uma função <formula>C(m, k_1)</formula> que
+    cifra uma mensagem <formula>m</formula> com uma chave <formula>k_1</formula> e uma
+    função <formula>(Dc, k_1)</formula> que decifra uma mensagem <formula>C</formula>
+    cifrada com a chave <formula>k_1</formula>. Para que o 3DES seja capaz
+    de decifrar mensagens cifradas com o DES, sua
+    implementação deve ser
+</question>
+<answer_options>
+    <item>
+        <formula>D(C(D(m, k_a), k_b), k_c)</formula>, sendo <formula>k_a \neq k_b \neq k_c</formula>
+        partes da chave usada no 3DES e <formula>k_a</formula> a chave
+        usada no DES.
+    </item>
+    <item>
+        <formula>D(D(D(m, k_a), k_b), k_c)</formula>, sendo <formula>k_a \neq k_b \neq k_c</formula>, partes
+        da chave do 3DES e <formula>k_a</formula> a chave usada no DES.
+    </item>
+    <item>
+        <formula>D(D(D(m, k_a), k_b), k_c)</formula>, sendo <formula>k_a = k_b = k_c</formula>, partes
+        da chave do 3DES e <formula>k_a</formula> a chave usada no DES.
+    </item>
+    <item>
+        <formula>D(C(D(m, k_a), k_b), k_c)</formula>, sendo <formula>k_a = k_b = k_c</formula>
+        partes da chave usada no 3DES e <formula>k_a</formula> a chave
+        usada no DES.
+    </item>
+    <item>
+        <formula>D(D(C(m, k_a), kb), kc)</formula>, sendo <formula>k_a = k_b = k_c</formula>
+        partes da chave usada no 3DES e <formula>k_a</formula> a chave
+        usada no DES.
+    </item>
+</answer_options>

@@ -1,0 +1,50 @@
+<paragraph>
+    <i>Padrões de projeto</i> são soluções gerais para problemas frequentes de projetos de software. O diagrama
+    de classes UML abaixo ilustra a estrutura do padrão <i>Strategy</i>:
+</paragraph>
+<image src="images/engenharia_de_computacao_2019_m_27_0.png" />
+<source>
+    GAMMA, E. et al. <b>Padrões de projeto: Soluções reutilizáveis de software orientado a objetos.</b>
+    2. ed. Porto Alegre: Bookman, 2000 (adaptado).
+</source>
+<paragraph>
+    A partir do modelo UML apresentado e acerca dos padrões de projeto, avalie as afirmações a seguir.
+</paragraph>
+<question_options>
+    <item>
+        A Classe <i>Strategy</i> pode ser implementada como uma classe abstrata ou uma interface, pois
+        corresponde unicamente a uma abstração dos diversos tipos de estratégias definidas.
+    </item>
+    <item>
+        O padrão <i>Strategy</i> pode ser utilizado na implementação de classes para, por exemplo, permitir que
+        métodos de ordenação de coleções possam ser usados com diferentes critérios de comparação.
+    </item>
+    <item>
+        O baixo acoplamento permite que estratégias sejam incluídas ou retiradas da aplicação sem alterar
+        a estrutura das demais classes do sistema.
+    </item>
+    <item>
+        O uso do padrão <i>Singleton</i> para criação das instâncias, permitiria centralizar em um método de
+        criação a lógica de seleção da estratégia a ser utilizada.
+    </item>
+</question_options>
+<question>
+    É correto apenas o que se afirma em
+</question>
+<answer_options>
+    <item>
+        I e II.
+    </item>
+    <item>
+        I e IV.
+    </item>
+    <item>
+        III e IV.
+    </item>
+    <item>
+        I, II e III.
+    </item>
+    <item>
+        II, III e IV.
+    </item>
+</answer_options>
