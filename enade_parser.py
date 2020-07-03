@@ -132,8 +132,7 @@ def save_image(image):
         match = re.match(r'.*(\d+)\.png$', last_image)
         index = int(match.group(1)) + 1
 
-    out_path = Path(f"{prefix}_{menu.question_type}_{menu.current_question}_{index}.png")
-    out_path = str(Path(IMAGES_DIR_NAME).joinpath(out_path))
+    out_path = str(Path(IMAGES_DIR_NAME, f"{prefix}_{menu.question_type}_{menu.current_question}_{index}.png"))
     cv2.imwrite(out_path, image)
     print(f"Image saved as {out_path}")
     return out_path
@@ -169,7 +168,7 @@ def prompt_yn():
     while True:
         opt = input('>> ')
         if opt.lower() in ('y', 'n'):
-            return opt == 'y'
+            return opt.lower() == 'y'
 
 
 def get_subject_year():
@@ -220,9 +219,9 @@ def menu():
                 subject, year = get_subject_year()
 
             menu.subject, menu.year = subject, year
-            base_path = f"{subject} {year}"
-            Path(base_path).joinpath(Path(IMAGES_DIR_NAME)).mkdir(parents=True, exist_ok=True)
-            os.chdir(base_path)
+            base_path = Path('parsed', f"{subject} {year}")
+            base_path.joinpath(Path(IMAGES_DIR_NAME)).mkdir(parents=True, exist_ok=True)
+            os.chdir(str(base_path))
         else:
             qt = 'discursive' if menu.question_type == 'd' else 'multiple choice'
             EXIT = 'Exit.'

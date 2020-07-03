@@ -1,6 +1,7 @@
 import re
 from pyperclip import copy, paste
 from time import sleep
+from html import escape
 
 from utils.hotkeys import send_hotkey, Key
 from xml_tags import Tag
@@ -65,19 +66,18 @@ def surround_with(text, tag, pad_nl=True, indent_level=DEFAULT_INDENT_LEVEL, fir
         if not text.startswith('<') and not text.endswith('>'):
             print('Selected text is invalid. It should be: `<link>`')
             return text
-        text = text[1:-1].replace('&', '&amp;')
+        text = escape(text[1:-1])
     elif first_level_call:
         text = _auto_tag_link(text)
+
+    if tag in (Tag.CODE, Tag.FORMULA):
+        text = escape(text)
 
     if tag == Tag.PARAGRAPH and first_level_call:
         text = CRLF.join(s.strip() for s in text.split(CRLF))
         items = text.split(2 * CRLF)
         text = CRLF.join(surround_with(item, Tag.PARAGRAPH, first_level_call=False) for item in items)
         return text
-
-    if tag in (Tag.CENTERED_TEXT, Tag.TEXT):
-        lines = map(str.strip, text.split('\n'))
-        text = f"<br/>{CRLF}".join(lines) + '<br/>'
 
     if tag == Tag.LIST:
         if '•' in text:

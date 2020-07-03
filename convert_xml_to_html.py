@@ -31,7 +31,7 @@ XML_TO_HTML_TAG_MAPPING = {
     Tag.PQ: HTMLTag('p', style='text-align: center; font-style: bold; font-size: 20'),
 
     Tag.PARAGRAPH: HTMLTag('p'),
-    Tag.TEXT: HTMLTag('p'),
+    Tag.TEXT: HTMLTag('pre'),
 
     # both have special handling
     Tag.LINK: HTMLTag('a'),
@@ -42,6 +42,10 @@ XML_TO_HTML_TAG_MAPPING = {
     Tag.CAPTION: HTMLTag('p', style='font-style: bold'),
 
     Tag.SOURCE: HTMLTag('p', style='font-style: italic'),
+    Tag.CODE: HTMLTag(
+        'code',
+        style='font-family: monospace; white-space: pre;'
+    ),
     Tag.LIST: HTMLTag('ul'),
     Tag.QUESTION: HTMLTag('p', style='font-size: 24'),
 
@@ -67,6 +71,7 @@ def xml_to_html(xml_string, file_path='', include_reload_script=True):
                     html_tag.generic_attributes = {
                         'href': el.text,
                     }
+
                 if xml_tag == Tag.FORMULA:
                     html_tag.generic_attributes = {
                         'src': FORMULA_BASE_URL.format(el.text),
@@ -79,6 +84,7 @@ def xml_to_html(xml_string, file_path='', include_reload_script=True):
 
                 if html_tag.style is not None:
                     el.set('style', f"{html_tag.style}")
+
                 for attr, val in html_tag.generic_attributes.items():
                     el.set(attr, val)
 
