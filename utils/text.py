@@ -188,7 +188,7 @@ def surround_with(text, tag, pad_nl=True, indent_level=DEFAULT_INDENT_LEVEL, fir
 
     attrs = ''
     if tag == Tag.FORMULA:
-        attrs += f" id={uuid4()}"
+        attrs += f' id="{uuid4()}"'
 
     padding = CRLF if pad_nl else ''
     content = text if not padding else indent_text(text, indent_level)
