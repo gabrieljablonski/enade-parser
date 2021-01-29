@@ -2,6 +2,7 @@ import re
 from pyperclip import copy, paste
 from time import sleep
 from html import escape
+from uuid import uuid4
 
 from utils.hotkeys import send_hotkey, Key
 from xml_tags import Tag
@@ -185,9 +186,13 @@ def surround_with(text, tag, pad_nl=True, indent_level=DEFAULT_INDENT_LEVEL, fir
             answer_options = surround_with(text, tag=Tag.ANSWER_OPTIONS, first_level_call=False)
             return f"{question}{CRLF}{answer_options}"
 
+    attrs = ''
+    if tag == Tag.FORMULA:
+        attrs += f" id={uuid4()}"
+
     padding = CRLF if pad_nl else ''
     content = text if not padding else indent_text(text, indent_level)
-    return f"""<{tag}>{padding}{content}{padding}</{tag}>"""
+    return f"""<{tag}{attrs}>{padding}{content}{padding}</{tag}>"""
 
 
 def remove_tag(text):

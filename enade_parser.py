@@ -151,7 +151,6 @@ def save_question():
     try:
         with open(CURRENT_QUESTION_FILE_NAME, encoding='utf8') as f:
             xml = f.read()
-        xml = f"<html>{xml}</html>"
         html_path = str(out_path).replace('xml', 'html')
         html = xml_to_html(xml, include_reload_script=False)
         with open(html_path, 'w', encoding='utf8') as out:
@@ -331,9 +330,8 @@ def update_html_file():
                 else 'Discursive'
             )
             xml = (
-                f"<html><h1>{qt} Question Number: {menu.current_question}</h1><br/>\n"
+                f"<h1>{qt} Question Number: {menu.current_question}</h1><br/>\n"
                 f"{xml}\n"
-                f"</html>\n"
             )
             try:
                 html = xml_to_html(xml, file_path=CURRENT_QUESTION_HTML)

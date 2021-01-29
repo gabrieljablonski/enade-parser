@@ -1,0 +1,67 @@
+.centered-text {
+    text-align: center;
+}
+
+.text-header {
+    text-align: left;
+}
+
+.title {
+    text-align: center;
+}
+
+/* .porque {} */
+
+.pq {
+    text-align: center; 
+    font-style: bold; 
+    font-size: 20;
+}
+
+/* .paragraph {} */
+
+/* .text {} */
+
+/* .link {} */
+
+/* .formula {} */
+
+.image {
+    display: block;
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 80%;
+}
+
+/* .table {} */
+
+.caption {
+    font-style: bold;
+}
+
+.source {
+    font-style: italic;
+}
+
+.code {
+    font-family: monospace;
+    white-space: pre;
+}
+
+/* .list {} */
+
+.question {
+    font-size: 24;
+}
+
+/* .questions-options {} */
+
+.first {
+    text-align: center;
+}
+
+.second {
+    text-align: center;
+}
+
+/* .item {} */

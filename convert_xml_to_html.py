@@ -4,6 +4,8 @@ from urllib.parse import quote
 
 from xml_tags import Tag
 
+DEFAULT_STYLE_SHEET_PATH = '../../quiz.css'
+
 RELOAD_SCRIPT = """
 <script>
     setInterval(function(){{
@@ -58,7 +60,7 @@ XML_TO_HTML_TAG_MAPPING = {
 }
 
 
-def xml_to_html(xml_string, file_path='', include_reload_script=True):
+def xml_to_html(xml_string, file_path='', style_sheet_path=DEFAULT_STYLE_SHEET_PATH, include_reload_script=True):
     root = ET.fromstring(xml_string)
     for xml_tag, html_tag in XML_TO_HTML_TAG_MAPPING.items():
         for child in root.iter():
@@ -82,8 +84,10 @@ def xml_to_html(xml_string, file_path='', include_reload_script=True):
                 if xml_tag == Tag.PQ:
                     el.text = 'PORQUE'
 
-                if html_tag.style is not None:
-                    el.set('style', f"{html_tag.style}")
+                el.set('class', xml_tag.replace('_', '-'))
+                # styles are set on css file
+                # if html_tag.style is not None:
+                #     el.set('style', f"{html_tag.style}")
 
                 for attr, val in html_tag.generic_attributes.items():
                     el.set(attr, val)
@@ -91,10 +95,21 @@ def xml_to_html(xml_string, file_path='', include_reload_script=True):
     file_path = str(Path(file_path).absolute()).replace('\\','/')
 
     html = ET.tostring(root, encoding='unicode')
-    if include_reload_script:
-        script = RELOAD_SCRIPT.format(
-            file_path=quote(file_path, safe=':/'),
-            reload_interval=RELOAD_INTERVAL
-        ) if file_path else ''
-        html = f"{html}\r\n\r\n{script}"
-    return html.strip()
+
+    reload_script = RELOAD_SCRIPT.format(
+        file_path=quote(file_path, safe=':/'),
+        reload_interval=RELOAD_INTERVAL
+    ) if file_path and include_reload_script else ''
+
+    indented = html.replace('\n', f"\n{' '*8}")
+    return f"""
+<html>
+    <head>
+        <link rel="stylesheet" href="{style_sheet_path}">
+        {reload_script}
+    </head>
+    <body>
+        {indented}
+    </body>
+</html>
+    """
