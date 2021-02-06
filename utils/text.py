@@ -89,7 +89,7 @@ def surround_with(text, tag, pad_nl=True, indent_level=DEFAULT_INDENT_LEVEL, fir
         text = CRLF.join(surround_with(item, Tag.ITEM) for item in items)
 
     if tag == Tag.PORQUE:
-        match = re.match(r'([\s\S]*)PORQUE([\s\S]*)', text)
+        match = re.match(r'([\s\S]*)[Pq][Oo][Rr][Qq][Uu[Ee]([\s\S]*)', text)
         if match is None:
             msg = f"""
                 Failed to match options. Format should be:
