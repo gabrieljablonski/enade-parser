@@ -61,7 +61,7 @@ XML_TO_HTML_TAG_MAPPING = {
 
 
 def xml_to_html(xml_string, file_path='', style_sheet_path=DEFAULT_STYLE_SHEET_PATH, include_reload_script=True):
-    root = ET.fromstring(xml_string)
+    root = ET.fromstring(f"<root>{xml_string}</root>")
     for xml_tag, html_tag in XML_TO_HTML_TAG_MAPPING.items():
         for child in root.iter():
             elements = child.findall(xml_tag) or []
@@ -85,9 +85,9 @@ def xml_to_html(xml_string, file_path='', style_sheet_path=DEFAULT_STYLE_SHEET_P
                     el.text = 'PORQUE'
 
                 el.set('class', xml_tag.replace('_', '-'))
-                # styles are set on css file
-                # if html_tag.style is not None:
-                #     el.set('style', f"{html_tag.style}")
+                # styles are also set on css file
+                if html_tag.style is not None:
+                    el.set('style', f"{html_tag.style}")
 
                 for attr, val in html_tag.generic_attributes.items():
                     el.set(attr, val)
@@ -101,7 +101,7 @@ def xml_to_html(xml_string, file_path='', style_sheet_path=DEFAULT_STYLE_SHEET_P
         reload_interval=RELOAD_INTERVAL
     ) if file_path and include_reload_script else ''
 
-    indented = html.replace('\n', f"\n{' '*8}")
+    indented = html.replace('\n', f"\n{' '*8}").replace('<root>', '').replace('</root>', '')
     return f"""
 <html>
     <head>
