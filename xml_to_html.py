@@ -130,8 +130,12 @@ if __name__ == '__main__':
   for d in root_path.rglob('*[0-9].xml'):
     if str(d).startswith('venv'):
       continue
-    xml = d.read_text(encoding='utf8')
-    html = xml_to_html(xml)
     html_path = Path(f"{str(d).rstrip('.xml')}.html")
-    if not html_path.exists():
+    if html_path.exists():
+      continue
+    xml = d.read_text(encoding='utf8')
+    try:
+      html = xml_to_html(xml)
       html_path.write_text(html, encoding='utf8')
+    except Exception as e:
+      print(f"\n\nfailed to parse '{str(d)}':\n\n{e}\n")
