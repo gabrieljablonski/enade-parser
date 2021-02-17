@@ -127,9 +127,12 @@ def xml_to_html(xml_string):
 
 if __name__ == '__main__':
   root_path = Path('.')
+  q = 0
+  errors = 0
   for d in root_path.rglob('*[0-9].xml'):
     if str(d).startswith('venv'):
       continue
+    q += 1
     html_path = Path(f"{str(d).rstrip('.xml')}.html")
     if html_path.exists():
       continue
@@ -138,4 +141,6 @@ if __name__ == '__main__':
       html = xml_to_html(xml)
       html_path.write_text(html, encoding='utf8')
     except Exception as e:
+      errors += 1
       print(f"\n\nfailed to parse '{str(d)}':\n\n{e}\n")
+  print(f"Total de questões: {q}\nCom problema:{errors}\n")
