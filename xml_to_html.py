@@ -2,20 +2,41 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 from urllib.parse import quote
 
-from xml_tags import Tag
 
-DEFAULT_STYLE_SHEET_PATH = '../../quiz.css'
-
-RELOAD_SCRIPT = """
-<script>
-    setInterval(function(){{
-        window.open('file:///{file_path}', "_self")
-    }}, {reload_interval});
-</script>
-"""
-
-RELOAD_INTERVAL = 5000
 FORMULA_BASE_URL = 'http://latex.codecogs.com/gif.latex?{}'
+
+
+class Tag:
+    CENTERED_TEXT = 'centered_text'
+    TEXT_HEADER = 'text_header'  # 'texto 01', 'texto 02', ...; left aligned
+    TITLE = 'title'  # generic title, centered
+    PORQUE = 'porque'
+    PQ = 'pq'  # placeholder for the actual "PORQUE" text
+
+    PARAGRAPH = 'paragraph'  # generic paragraphs, formatting is not relevant
+    TEXT = 'text'  # text that should maintain its formatting (e.g. poems)
+    LINK = 'link'
+    FORMULA = 'formula'
+
+    SOURCE = 'source'
+    CODE = 'code'
+    LIST = 'list'
+    CAPTION = 'caption'
+
+    QUESTION = 'question'
+    QUESTION_OPTIONS = 'question_options'
+    ANSWER_OPTIONS = 'answer_options'
+
+    ITALIC = 'i'
+    BOLD = 'b'
+
+    IMAGE = 'image'
+    TABLE = 'table'  # placed around img tags for tables, may be useful later on
+
+    # no hotkey bindings
+    FIRST = 'first'  # first sentence inside <porque> tag
+    SECOND = 'second'  # second sentence inside <porque> tag
+    ITEM = 'item'  # for both questions and answers
 
 
 class HTMLTag:
@@ -60,7 +81,7 @@ XML_TO_HTML_TAG_MAPPING = {
 }
 
 
-def xml_to_html(xml_string, file_path='', style_sheet_path=DEFAULT_STYLE_SHEET_PATH, include_reload_script=True):
+def xml_to_html(xml_string):
     root = ET.fromstring(f"<root>{xml_string}</root>")
     for xml_tag, html_tag in XML_TO_HTML_TAG_MAPPING.items():
         for child in root.iter():
@@ -92,24 +113,25 @@ def xml_to_html(xml_string, file_path='', style_sheet_path=DEFAULT_STYLE_SHEET_P
                 for attr, val in html_tag.generic_attributes.items():
                     el.set(attr, val)
 
-    file_path = str(Path(file_path).absolute()).replace('\\','/')
-
     html = ET.tostring(root, encoding='unicode')
-
-    reload_script = RELOAD_SCRIPT.format(
-        file_path=quote(file_path, safe=':/'),
-        reload_interval=RELOAD_INTERVAL
-    ) if file_path and include_reload_script else ''
 
     indented = html.replace('\n', f"\n{' '*8}").replace('<root>', '').replace('</root>', '')
     return f"""
 <html>
-    <head>
-        <link rel="stylesheet" href="{style_sheet_path}">
-        {reload_script}
-    </head>
     <body>
         {indented}
     </body>
 </html>
     """.strip()
+
+
+if __name__ == '__main__':
+  root_path = Path('.')
+  for d in root_path.rglob('*[0-9].xml'):
+    if str(d).startswith('venv'):
+      continue
+    xml = d.read_text(encoding='utf8')
+    html = xml_to_html(xml)
+    html_path = Path(f"{str(d).rstrip('.xml')}.html")
+    if not html_path.exists():
+      html_path.write_text(html, encoding='utf8')
