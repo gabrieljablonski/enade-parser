@@ -2,7 +2,7 @@ EasyProcess==0.2.8
 keyboard==0.13.4
 MouseInfo==0.1.2
 numpy==1.18.1
-opencv-python==4.1.2.30
+opencv-python==4.2.0.32
 Pillow>=7.1.0
 PyGetWindow==0.0.8
 PyMsgBox==1.0.7
